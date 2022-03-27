@@ -1,0 +1,61 @@
+{
+    "action": {
+        "default_icon": {
+            "16": "/icon/16.png",
+            "32": "/icon/32.png",
+            "48": "/icon/64.png",
+            "128": "/icon/128.png"
+        },
+        "default_popup": "/popup.html"
+    },
+    "default_locale": "zh_CN",
+    "content_scripts": [
+        {
+            "all_frames": true,
+            "css": [
+                "/css/content.css"
+            ],
+            "js": [
+                "/js/content.js"
+            ],
+            "matches": [
+                "*://*.17yy.com/*",
+                "*://*.4399.com/*",
+                "*://*.7k7k.com/*",
+                "*://*.aiwan4399.com/*",
+                "*://*.iwan4399.com/*",
+                "*://gameapp.qq.com/*",
+                "*://h5.07073.com/*",
+                "*://zxwyouxi.com/*"
+            ],
+            "run_at": "document_start"
+        }
+    ],
+    "description": "~~快乐没有年龄之分~~",
+    "icons": {
+        "16": "/icon/16.png",
+        "32": "/icon/32.png",
+        "48": "/icon/64.png",
+        "128": "/icon/128.png"
+    },
+    "manifest_version": 3,
+    "minimum_chrome_version": "88.0.0.0",
+    "name": "防沉迷终结者",
+    "version": "1.0",
+    "web_accessible_resources": [
+        {
+            "matches": [
+                "*://*.17yy.com/*",
+                "*://*.4399.com/*",
+                "*://*.7k7k.com/*",
+                "*://*.aiwan4399.com/*",
+                "*://*.iwan4399.com/*",
+                "*://h5.07073.com/*",
+                "*://zxwyouxi.com/*"
+            ],
+            "resources": [
+                "/js/no-fcm.js"
+            ]
+        }
+    ]
+}

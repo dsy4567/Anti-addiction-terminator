@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>防沉迷终结者</title>
+        <style>
+            @media (prefers-color-scheme: dark) {
+                :root {
+                    --theme-color1: rgb(30, 30, 30);
+                    --theme-color2: white;
+                    --theme-color3: rgba(255, 255, 255, 0.5);
+                }
+
+                .图标 {
+                    filter: invert(1);
+                }
+            }
+
+            @media (prefers-color-scheme: light) {
+                :root {
+                    --theme-color1: white;
+                    --theme-color2: rgb(30, 30, 30);
+                    --theme-color3: rgba(150, 150, 150, 0.5);
+                }
+            }
+
+            * {
+                transition: all 0.2s;
+                -webkit-user-drag: none;
+            }
+            body {
+                background-color: var(--theme-color1);
+                color: var(--theme-color2);
+                margin: 0;
+                padding: 0;
+                user-select: none;
+                width: 250px;
+            }
+
+            a {
+                text-decoration: none;
+                color: var(--theme-color2);
+            }
+            a:hover {
+                text-decoration: 1px underline var(--theme-color2);
+            }
+            p {
+                font-size: 16px;
+            }
+
+            #顶部 {
+                display: flex;
+                width: 100%;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+            #logo {
+                border-radius: 50%;
+            }
+
+            .主要 {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                align-items: center;
+            }
+            .主要 * {
+                margin: 4px;
+            }
+
+            .一些按钮 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        </style>
+    </head>
+    <script src="/js/popup.js"></script>
+    <body>
+        <div id="顶部">
+            <img
+                width="32"
+                height="32"
+                src="/icon/32.png"
+                alt="图标"
+                id="logo"
+            />
+            <h1>防沉迷终结者</h1>
+        </div>
+
+        <hr />
+
+        <p style="text-align: center">
+            ~~快乐没有年龄之分~~<br /><br />
+            防沉迷终结者 Copyright (C) 2022 dsy4567 (
+            <a target="_blank" href="https://github.com/dsy4567">GitHub</a>
+            |
+            <a target="_self" href="mailto:dsy4567@outlook.com">邮箱</a> )
+    </body>
+</html>

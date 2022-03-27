@@ -1,0 +1,50 @@
+#addiv,
+#anti-indulge,
+#anti-indulge-prompt,
+#Anti_mask,
+#Anti_open,
+#chCoverDiv,
+#codepop6,
+#cover,
+#div_dialog,
+#easyDialogBox,
+#fcmIframe,
+#Guide,
+#loginCertify,
+#messageBox,
+#overlay,
+#page_wallpaper
+    > div.xiaowei.xiaowei-orange
+    > div.xw-left
+    > div.xw-game
+    > div.xw-top
+    > div
+    > div,
+#pop2,
+#pusher,
+#shadow,
+#swfdiv > div.box,
+#tc100,
+#yx_log,
+.codegs,
+.cmMask,
+.fixedModal,
+.mask,
+.play_load,
+.popup-c,
+.realName,
+.sdkDialog,
+.toolDialog,
+.ui-forbidden,
+.webtipss {
+    display: none !important;
+    min-width: 0 !important;
+    width: 0 !important;
+    max-width: 0 !important;
+    min-height: 0 !important;
+    height: 0 !important;
+    max-height: 0 !important;
+    z-index: -999 !important;
+    font-size: 0 !important;
+    overflow: hidden !important;
+}
