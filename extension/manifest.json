@@ -1,4 +1,5 @@
 {
+    "author": "dsy4567",
     "action": {
         "default_icon": {
             "16": "/icon/16.png",
@@ -32,6 +33,7 @@
         }
     ],
     "description": "~~快乐没有年龄之分~~",
+    "homepage_url": "http://github.com/dsy4567/Anti-addiction-terminator",
     "icons": {
         "16": "/icon/16.png",
         "32": "/icon/32.png",
