@@ -34,8 +34,7 @@ const 网址 = location.href;
 
 function 破解() {
     if (网址.includes("4399.com/flash")) {
-        // 搞破坏 4399
-
+        // 搞破坏
         try {
             Object.defineProperty(window, "isLoadingAntiindulgence", {
                 value: 0,
@@ -54,27 +53,98 @@ function 破解() {
                 writable: false,
             });
         } catch (e) {}
-    }
-
-    if (window.play22 && 网址.includes("7k7k.com")) {
-        // 7k7k获取游戏直链1
+    } else if (window.play22 && 网址.includes("7k7k.com")) {
+        // 7k7k获取游戏直链
         try {
+            console.log("[防沉迷减点料] 尝试7k7k防沉迷减料");
+            // window.Play24.prototype.playLoading();
             window.play22.playLoading();
             window.play22.playLoading = () => {}; // 防止重复调用
-            减料成功 = 1;
+            // window.Play24.prototype.playLoading = ()=> {};
+        } catch (err) {
+            console.error(err);
+        }
+    } else if (网址.includes("//i.7724.com/user/danjilogin?url=")) {
+        try {
+            console.log("[防沉迷减点料] 尝试7724防沉迷减料");
+            location.href = 网址.substring(
+                网址.indexOf("danjilogin?url=") + "danjilogin?url=".length
+            );
+        } catch (err) {}
+    } else if (网址.includes("wvw.9377.com/game_login.php")) {
+        try {
+            console.log("[防沉迷减点料] 尝试9377防沉迷减料");
+            $.get(网址, (html) => {
+                location.href = html.substring(
+                    html.indexOf('id="iframe" src="') + 'id="iframe" src="'.length,
+                    html.indexOf('" name="mainFrame" scrolling="auto"')
+                );
+            });
+        } catch (err) {}
+    } else if (网址.includes("game.37.com/play.php")) {
+        try {
+            console.log("[防沉迷减点料] 尝试37防沉迷减料");
+            $.get(网址, (html) => {
+                location.href = html.substring(
+                    html.indexOf('src="//gameapp.37.com/controller/enter_game.php') +
+                        'src="'.length,
+                    html.indexOf('" id="mainFrame"')
+                );
+            });
+        } catch (err) {}
+    } else if (网址.includes("wvw.4366.com/game_login.php")) {
+        try {
+            console.log("[防沉迷减点料] 尝试4366防沉迷减料");
+            $.get(网址, (html) => {
+                location.href = html.substring(
+                    html.indexOf('align="left" id="iframe" src="') +
+                        'align="left" id="iframe" src="'.length,
+                    html.indexOf('" name="mainFrame" scrolling="auto"')
+                );
+            });
         } catch (err) {}
     }
 }
 
-破解();
-setTimeout(破解, 3000);
-addEventListener(
-    "load",
-    () => {
-        破解();
-        setTimeout(破解, 3000);
-    },
-    true
-);
+function load() {
+    破解();
+    setTimeout(破解, 3000);
+    addEventListener(
+        "load",
+        () => {
+            破解();
+            setTimeout(破解, 3000);
 
-console.log("[防沉迷终结者] 脚本注入成功");
+            if (网址.includes("ptlogin.4399.com")) {
+                setTimeout(() => {
+                    if (document.querySelector(".ptlogin_btn")) {
+                        document.querySelector(".ptlogin_btn").addEventListener("mouseup", () => {
+                            alert("请在稍后刷新网页");
+                        });
+                    }
+                }, 1000);
+            }
+        },
+        true
+    );
+    console.log("[防沉迷终结者] 开始执行");
+}
+
+try {
+    window.$.get;
+} catch (e) {
+    window.$ = {
+        get: (url, call) => {
+            let xhr = new XMLHttpRequest();
+            let response = "";
+            xhr.open("get", url);
+            xhr.send(null);
+            xhr.onload = () => {
+                response = xhr.responseText;
+                call(response);
+            };
+        },
+    };
+}
+
+load();

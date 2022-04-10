@@ -25,9 +25,14 @@
                 "*://*.7k7k.com/*",
                 "*://*.aiwan4399.com/*",
                 "*://*.iwan4399.com/*",
-                "*://gameapp.qq.com/*",
+                "*://*.5054399.net/*",
                 "*://h5.07073.com/*",
-                "*://zxwyouxi.com/*"
+                "*://*.7724.com/*",
+                "*://*.u7u9.com/*",
+                "*://*.gamedog.com/*",
+                "*://*.9377.com/*",
+                "*://*.37.com/*",
+                "*://*.4366.com/*"
             ],
             "run_at": "document_start"
         }
@@ -43,7 +48,7 @@
     "manifest_version": 3,
     "minimum_chrome_version": "88.0.0.0",
     "name": "防沉迷终结者",
-    "version": "1.0",
+    "version": "1.1",
     "web_accessible_resources": [
         {
             "matches": [
@@ -52,8 +57,14 @@
                 "*://*.7k7k.com/*",
                 "*://*.aiwan4399.com/*",
                 "*://*.iwan4399.com/*",
+                "*://*.5054399.net/*",
                 "*://h5.07073.com/*",
-                "*://zxwyouxi.com/*"
+                "*://*.7724.com/*",
+                "*://*.u7u9.com/*",
+                "*://*.gamedog.com/*",
+                "*://*.9377.com/*",
+                "*://*.37.com/*",
+                "*://*.4366.com/*"
             ],
             "resources": [
                 "/js/no-fcm.js"

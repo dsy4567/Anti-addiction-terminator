@@ -13,13 +13,7 @@
 #loginCertify,
 #messageBox,
 #overlay,
-#page_wallpaper
-    > div.xiaowei.xiaowei-orange
-    > div.xw-left
-    > div.xw-game
-    > div.xw-top
-    > div
-    > div,
+#page_wallpaper > div.xiaowei.xiaowei-orange > div.xw-left > div.xw-game > div.xw-top > div > div,
 #pop2,
 #pusher,
 #shadow,
@@ -36,7 +30,8 @@
 .sdkDialog,
 .toolDialog,
 .ui-forbidden,
-.webtipss {
+.webtipss,
+body > div.show_box.popup_bg {
     display: none !important;
     min-width: 0 !important;
     width: 0 !important;

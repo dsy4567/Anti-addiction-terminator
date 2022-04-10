@@ -35,7 +35,7 @@
                 margin: 0;
                 padding: 0;
                 user-select: none;
-                width: 250px;
+                width: 512px;
             }
 
             a {
@@ -54,8 +54,12 @@
                 width: 100%;
                 flex-direction: row;
                 flex-wrap: nowrap;
-                justify-content: space-evenly;
+                justify-content: center;
                 align-items: center;
+            }
+            #顶部 * {
+                margin-left: 4px;
+                margin-right: 4px;
             }
             #logo {
                 border-radius: 50%;
@@ -81,23 +85,24 @@
     <script src="/js/popup.js"></script>
     <body>
         <div id="顶部">
-            <img
-                width="32"
-                height="32"
-                src="/icon/32.png"
-                alt="图标"
-                id="logo"
-            />
+            <img width="32" height="32" src="/icon/32.png" alt="图标" id="logo" />
             <h1>防沉迷终结者</h1>
         </div>
 
         <hr />
 
-        <p style="text-align: center">
+        <p style="text-align: center">✨该扩展可以破解一些游戏平台的防沉迷, 帮您实现游戏自由✨</p>
+        <p style="text-align: center">⚠️沉迷于游戏不利于身体健康, 请合理安排游戏时间, 适度游戏⚠️</p>
+
+        <p id="about" style="text-align: center">
             ~~快乐没有年龄之分~~<br /><br />
-            防沉迷终结者 Copyright (C) 2022 dsy4567 (
+            Copyright (C) 2022 dsy4567 (
             <a target="_blank" href="https://github.com/dsy4567">GitHub</a>
             |
-            <a target="_self" href="mailto:dsy4567@outlook.com">邮箱</a> )
+            <a target="_self" href="mailto:dsy4567@outlook.com">邮箱</a> ) <br /><br />
+            这是一个使用 GPL-3.0 (<a target="_blank" href="/LICENSE.txt">English</a> |
+            <a target="_blank" href="https://jxself.org/translations/gpl-3.zh.shtml">简体中文</a>)
+            许可的自由软件
+        </p>
     </body>
 </html>

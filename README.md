@@ -1,5 +1,9 @@
 > 再傻逼的防沉迷也不能阻止牛逼程序猿对快乐的追求
 
+_该扩展部分代码修改自 https://github.com/dsy4567/Fucking-Anti-Indulgence/_
+
+---
+
 <center>
 <img alt="对联" title="对联" src="https://fcmsb250.github.io/img1.jpeg" />
 </center>
@@ -11,7 +15,8 @@
 # ✅ 已支持的游戏
 
 > _**如果游戏地址以它们开头, 那么该脚本完全支持该游戏**_  
-> _**提示 💡: 该脚本不支持破解页游防沉迷**_
+> _**提示 💡: 该脚本对 QQ 空间游戏支持不佳**_  
+> _**提示 💡: 该脚本无法支持少数自带防沉迷的页游(或防沉迷弹窗界面风格与游戏一模一样)**_
 >
 > ## 4399:
 >
@@ -31,14 +36,39 @@
 > ## 07373:
 >
 > > -   h5.07073.com/gameplay/
+>
+> ## 7724:
+>
+> > -   7724.com/JieXianMiTi2/game 或 7724.com/JieXianMiTi2/
+>
+> ## 游戏狗:
+>
+> > -   sdkh5.gamedog.cn/game/1255/1/ 或 www.gamedog.cn/h5/
+>
+> ## u7u9:
+>
+> > -   www.u7u9.com/flash/game/ 或 www.u7u9.com/flash/play
+>
+> ## 9377:
+>
+> > -   wvw.9377.com/game_login.php
+>
+> ## 37:
+>
+> > -   game.37.com/play.php
+>
+> ## 4366:
+>
+> > -   wvw.4366.com/game_login.php
 
 # 💪 更新日志
 
-> -   **1.0** 第一个版本
+> -   **1.1** 添加游戏平台支持
+> -   1.0 第一个版本
 
 # ⚖️ 许可证
 
-> 暂时没有, 到时候再说~
+> 使用 [GPL-3.0](LICENSE.txt) 许可
 
 # 💦 引流大法
 
