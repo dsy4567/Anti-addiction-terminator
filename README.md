@@ -1,3 +1,5 @@
+> 这是开发中的版本, 可能存在bug, 或功能不完善
+
 > 再傻逼的防沉迷也不能阻止牛逼程序猿对快乐的追求
 
 _该扩展部分代码修改自 https://github.com/dsy4567/Fucking-Anti-Indulgence/_
