@@ -1,0 +1,110 @@
+<!-- 此代码采用 GPL-3.0 开源许可证, 请查看 LICENSE.txt 或 https://www.gnu.org/licenses/gpl-3.0.txt -->
+<!-- Copyright (C) 2022 dsy4567 (https://github.com/dsy4567 | dsy4567@outlook.com) -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>防沉迷终结者</title>
+        <style>
+            @media (prefers-color-scheme: dark) {
+                :root {
+                    --theme-color1: rgb(30, 30, 30);
+                    --theme-color2: white;
+                    --theme-color3: rgba(255, 255, 255, 0.5);
+                }
+
+                .图标 {
+                    filter: invert(1);
+                }
+            }
+
+            @media (prefers-color-scheme: light) {
+                :root {
+                    --theme-color1: white;
+                    --theme-color2: rgb(30, 30, 30);
+                    --theme-color3: rgba(150, 150, 150, 0.5);
+                }
+            }
+
+            * {
+                transition: all 0.2s;
+                -webkit-user-drag: none;
+            }
+            body {
+                background-color: var(--theme-color1);
+                color: var(--theme-color2);
+                margin: 0;
+                padding: 0;
+                user-select: none;
+                width: 512px;
+            }
+
+            a {
+                text-decoration: none;
+                color: var(--theme-color2);
+            }
+            a:hover {
+                text-decoration: 1px underline var(--theme-color2);
+            }
+            p {
+                font-size: 16px;
+            }
+
+            #顶部 {
+                display: flex;
+                width: 100%;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: center;
+                align-items: center;
+            }
+            #顶部 * {
+                margin-left: 4px;
+                margin-right: 4px;
+            }
+            #logo {
+                border-radius: 50%;
+            }
+
+            .主要 {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                align-items: center;
+            }
+            .主要 * {
+                margin: 4px;
+            }
+
+            .一些按钮 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        </style>
+    </head>
+    <script src="/js/popup.js"></script>
+    <body>
+        <div id="顶部">
+            <img width="32" height="32" src="/icon/32.png" alt="图标" id="logo" />
+            <h1>防沉迷终结者</h1>
+        </div>
+
+        <hr />
+
+        <p style="text-align: center">✨该扩展可以破解一些游戏平台的防沉迷, 帮您实现游戏自由✨</p>
+        <p style="text-align: center">⚠️沉迷于游戏不利于身体健康, 请合理安排游戏时间, 适度游戏⚠️</p>
+
+        <p id="about" style="text-align: center">
+            ~~快乐没有年龄之分~~<br /><br />
+            Copyright (C) 2022 dsy4567 (
+            <a target="_blank" href="https://github.com/dsy4567">GitHub</a>
+            |
+            <a target="_self" href="mailto:dsy4567@outlook.com">邮箱</a> ) <br /><br />
+            这是一个使用 GPL-3.0 (<a target="_blank" href="/LICENSE.txt">English</a> |
+            <a target="_blank" href="https://jxself.org/translations/gpl-3.zh.shtml">简体中文</a>)
+            许可的自由软件
+        </p>
+    </body>
+</html>
