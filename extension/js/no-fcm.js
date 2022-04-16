@@ -1,4 +1,9 @@
 /**
+ * 此代码采用 GPL-3.0 开源许可证, 请查看 LICENSE.txt 或 https://www.gnu.org/licenses/gpl-3.0.txt
+ * Copyright (C) 2022 dsy4567 (https://github.com/dsy4567 | dsy4567@outlook.com)
+ */
+
+/**
  *  ________ ___  ___  ________  ___  __            ___  _________
  * |\  _____\\  \|\  \|\   ____\|\  \|\  \         |\  \|\___   ___\     |
  * \ \  \__/\ \  \\\  \ \  \___|\ \  \/  /|_       \ \  \|___ \  \_|     |
@@ -36,12 +41,6 @@ function 破解() {
     if (网址.includes("4399.com/flash")) {
         // 搞破坏
         try {
-            Object.defineProperty(window, "isLoadingAntiindulgence", {
-                value: 0,
-                writable: false,
-            });
-        } catch (e) {}
-        try {
             Object.defineProperty(window, "isIniframe", {
                 value: "", // 原来是Function, 这样做可以使防沉迷报错
                 writable: false,
@@ -67,40 +66,66 @@ function 破解() {
     } else if (网址.includes("//i.7724.com/user/danjilogin?url=")) {
         try {
             console.log("[防沉迷减点料] 尝试7724防沉迷减料");
-            location.href = 网址.substring(
-                网址.indexOf("danjilogin?url=") + "danjilogin?url=".length
-            );
+            var url = 网址.substring(网址.indexOf("danjilogin?url=") + "danjilogin?url=".length);
+            if (
+                url.substring(0, 2) == "//" ||
+                url.substring(0, 7) == "http://" ||
+                url.substring(0, 8) == "https://"
+            ) {
+                location.href = url;
+            }
         } catch (err) {}
     } else if (网址.includes("wvw.9377.com/game_login.php")) {
         try {
             console.log("[防沉迷减点料] 尝试9377防沉迷减料");
             $.get(网址, (html) => {
-                location.href = html.substring(
+                var url = html.substring(
                     html.indexOf('id="iframe" src="') + 'id="iframe" src="'.length,
                     html.indexOf('" name="mainFrame" scrolling="auto"')
                 );
+                if (
+                    url.substring(0, 2) == "//" ||
+                    url.substring(0, 7) == "http://" ||
+                    url.substring(0, 8) == "https://"
+                ) {
+                    location.href = url;
+                }
             });
         } catch (err) {}
     } else if (网址.includes("game.37.com/play.php")) {
         try {
             console.log("[防沉迷减点料] 尝试37防沉迷减料");
             $.get(网址, (html) => {
-                location.href = html.substring(
+                var url = html.substring(
                     html.indexOf('src="//gameapp.37.com/controller/enter_game.php') +
                         'src="'.length,
                     html.indexOf('" id="mainFrame"')
                 );
+                if (
+                    url.substring(0, 2) == "//" ||
+                    url.substring(0, 7) == "http://" ||
+                    url.substring(0, 8) == "https://"
+                ) {
+                    location.href = url;
+                }
             });
         } catch (err) {}
     } else if (网址.includes("wvw.4366.com/game_login.php")) {
         try {
             console.log("[防沉迷减点料] 尝试4366防沉迷减料");
             $.get(网址, (html) => {
-                location.href = html.substring(
+                var url = html.substring(
                     html.indexOf('align="left" id="iframe" src="') +
                         'align="left" id="iframe" src="'.length,
                     html.indexOf('" name="mainFrame" scrolling="auto"')
                 );
+                if (
+                    url.substring(0, 2) == "//" ||
+                    url.substring(0, 7) == "http://" ||
+                    url.substring(0, 8) == "https://"
+                ) {
+                    location.href = url;
+                }
             });
         } catch (err) {}
     }
@@ -133,7 +158,7 @@ function load() {
 try {
     window.$.get;
 } catch (e) {
-    window.$ = {
+    var $ = {
         get: (url, call) => {
             let xhr = new XMLHttpRequest();
             let response = "";
