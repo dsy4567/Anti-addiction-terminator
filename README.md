@@ -1,7 +1,8 @@
 > 再傻逼的防沉迷也不能阻止牛逼程序猿对快乐的追求
 
 >_该扩展部分代码修改自 https://github.com/dsy4567/Fucking-Anti-Indulgence/blob/main/Fucking-Anti-Indulgence.user.js_  
->_您还可以在 [GreasyFork](https://greasyfork.org/zh-CN/scripts/437233-) 或 [ScriptCat](https://scriptcat.org/script-show-page/297) 上找到该源码_
+>_您还可以在 [GreasyFork](https://greasyfork.org/zh-CN/scripts/437233-) 或 [ScriptCat](https://scriptcat.org/script-show-page/297) 上找到该源码_  
+>所做的更改: 对原代码进行大幅度的精简后进行少许改动, 保留了它最基本的功能
 
 ---
 
