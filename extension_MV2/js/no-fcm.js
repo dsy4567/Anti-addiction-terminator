@@ -36,16 +36,21 @@
  */
 
 const 网址 = location.href;
+var 成功 = 0;
+var 游戏真实地址_17yy = "";
+
+function qs(选择器) {
+    return document.querySelector(选择器);
+}
+function qsa(选择器) {
+    return document.querySelectorAll(选择器);
+}
 
 function 破解() {
+    if (成功) return;
+
     if (网址.includes("4399.com/flash")) {
         // 搞破坏
-        try {
-            Object.defineProperty(window, "isLoadingAntiindulgence", {
-                value: 0,
-                writable: false,
-            });
-        } catch (e) {}
         try {
             Object.defineProperty(window, "isIniframe", {
                 value: "", // 原来是Function, 这样做可以使防沉迷报错
@@ -58,6 +63,7 @@ function 破解() {
                 writable: false,
             });
         } catch (e) {}
+        成功 = 1;
     } else if (window.play22 && 网址.includes("7k7k.com")) {
         // 7k7k获取游戏直链
         try {
@@ -66,46 +72,123 @@ function 破解() {
             window.play22.playLoading();
             window.play22.playLoading = () => {}; // 防止重复调用
             // window.Play24.prototype.playLoading = ()=> {};
+            成功 = 1;
         } catch (err) {
             console.error(err);
         }
     } else if (网址.includes("//i.7724.com/user/danjilogin?url=")) {
         try {
             console.log("[防沉迷减点料] 尝试7724防沉迷减料");
-            location.href = 网址.substring(
-                网址.indexOf("danjilogin?url=") + "danjilogin?url=".length
-            );
+            var url = 网址.substring(网址.indexOf("danjilogin?url=") + "danjilogin?url=".length);
+            if (
+                url.substring(0, 2) == "//" ||
+                url.substring(0, 7) == "http://" ||
+                url.substring(0, 8) == "https://"
+            ) {
+                location.href = url;
+                成功 = 1;
+            }
         } catch (err) {}
     } else if (网址.includes("wvw.9377.com/game_login.php")) {
         try {
             console.log("[防沉迷减点料] 尝试9377防沉迷减料");
             $.get(网址, (html) => {
-                location.href = html.substring(
+                var url = html.substring(
                     html.indexOf('id="iframe" src="') + 'id="iframe" src="'.length,
                     html.indexOf('" name="mainFrame" scrolling="auto"')
                 );
+                if (
+                    url.substring(0, 2) == "//" ||
+                    url.substring(0, 7) == "http://" ||
+                    url.substring(0, 8) == "https://"
+                ) {
+                    location.href = url;
+                }
             });
+            成功 = 1;
         } catch (err) {}
     } else if (网址.includes("game.37.com/play.php")) {
         try {
             console.log("[防沉迷减点料] 尝试37防沉迷减料");
             $.get(网址, (html) => {
-                location.href = html.substring(
+                var url = html.substring(
                     html.indexOf('src="//gameapp.37.com/controller/enter_game.php') +
                         'src="'.length,
                     html.indexOf('" id="mainFrame"')
                 );
+                if (
+                    url.substring(0, 2) == "//" ||
+                    url.substring(0, 7) == "http://" ||
+                    url.substring(0, 8) == "https://"
+                ) {
+                    location.href = url;
+                }
             });
+            成功 = 1;
         } catch (err) {}
     } else if (网址.includes("wvw.4366.com/game_login.php")) {
         try {
             console.log("[防沉迷减点料] 尝试4366防沉迷减料");
             $.get(网址, (html) => {
-                location.href = html.substring(
+                var url = html.substring(
                     html.indexOf('align="left" id="iframe" src="') +
                         'align="left" id="iframe" src="'.length,
                     html.indexOf('" name="mainFrame" scrolling="auto"')
                 );
+                if (
+                    url.substring(0, 2) == "//" ||
+                    url.substring(0, 7) == "http://" ||
+                    url.substring(0, 8) == "https://"
+                ) {
+                    location.href = url;
+                }
+            });
+            成功 = 1;
+        } catch (err) {}
+    } else if (网址.includes("www.17yy.com/f/play")) {
+        try {
+            try {
+                if (qs("#flashgame").src == 游戏真实地址_17yy) return;
+            } catch (e) {}
+            try {
+                if (qs("#flash_frame").src == 游戏真实地址_17yy) return;
+            } catch (e) {}
+
+            $.ajax({
+                url: "http://www.17yy.com/e/payapi/vip_ajax.php",
+                data: {
+                    action: "getStatus",
+                    id: 网址.substring(
+                        网址.indexOf("/f/play/") + "/f/play/".length,
+                        网址.indexOf(".html")
+                    ),
+                },
+                type: "POST",
+                dataType: "json",
+                success: function (resp) {
+                    try {
+                        qs("#flashgame").src = 游戏真实地址_17yy =
+                            "http://" +
+                            server +
+                            "/" +
+                            classes +
+                            "/" +
+                            date +
+                            "/" +
+                            resp.data.game_path;
+                    } catch (e) {}
+                    try {
+                        qs("#flash_frame").src = 游戏真实地址_17yy =
+                            "http://" +
+                            server +
+                            "/" +
+                            classes +
+                            "/" +
+                            date +
+                            "/" +
+                            resp.data.game_path;
+                    } catch (e) {}
+                },
             });
         } catch (err) {}
     }
@@ -122,8 +205,8 @@ function load() {
 
             if (网址.includes("ptlogin.4399.com")) {
                 setTimeout(() => {
-                    if (document.querySelector(".ptlogin_btn")) {
-                        document.querySelector(".ptlogin_btn").addEventListener("mouseup", () => {
+                    if (qs(".ptlogin_btn")) {
+                        qs(".ptlogin_btn").addEventListener("mouseup", () => {
                             alert("请在稍后刷新网页");
                         });
                     }
@@ -138,7 +221,7 @@ function load() {
 try {
     window.$.get;
 } catch (e) {
-    window.$ = {
+    var $ = {
         get: (url, call) => {
             let xhr = new XMLHttpRequest();
             let response = "";
@@ -147,6 +230,22 @@ try {
             xhr.onload = () => {
                 response = xhr.responseText;
                 call(response);
+            };
+        },
+    };
+}
+try {
+    window.$.ajax;
+} catch (e) {
+    var $ = {
+        ajax: (o) => {
+            let xhr = new XMLHttpRequest();
+            let response = "";
+            xhr.open("post", o.url);
+            xhr.send("action=getStatus&id=" + o.data.id);
+            xhr.onload = () => {
+                response = xhr.responseText;
+                o.success(JSON.parse(response));
             };
         },
     };
