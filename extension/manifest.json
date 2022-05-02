@@ -4,10 +4,13 @@
         "default_icon": {
             "16": "/icon/16.png",
             "32": "/icon/32.png",
-            "64": "/icon/64.png",
+            "48": "/icon/48.png",
             "128": "/icon/128.png"
         },
         "default_popup": "/popup.html"
+    },
+    "background": {
+        "service_worker": "background.js"
     },
     "default_locale": "zh_CN",
     "content_scripts": [
@@ -44,12 +47,15 @@
     "icons": {
         "16": "/icon/16.png",
         "32": "/icon/32.png",
-        "64": "/icon/64.png",
+        "48": "/icon/48.png",
         "128": "/icon/128.png"
     },
     "manifest_version": 3,
     "minimum_chrome_version": "88.0.0.0",
     "name": "防沉迷终结者",
+    "permissions": [
+        "tabs","notifications","webNavigation","storage"
+    ],
     "version": "1.1",
     "web_accessible_resources": [
         {
