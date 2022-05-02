@@ -38,10 +38,22 @@
 const 网址 = location.href;
 var 成功 = 0;
 var 游戏真实地址_17yy = "";
+var 正在玩17yy = 0;
+var 已全屏 = 0;
 
+/**
+ *
+ * @param {*} 选择器
+ * @returns document.querySelector("div")
+ */
 function qs(选择器) {
     return document.querySelector(选择器);
 }
+/**
+ *
+ * @param {*} 选择器
+ * @returns document.querySelector("div")
+ */
 function qsa(选择器) {
     return document.querySelectorAll(选择器);
 }
@@ -49,22 +61,7 @@ function qsa(选择器) {
 function 破解() {
     if (成功) return;
 
-    if (网址.includes("4399.com/flash")) {
-        // 搞破坏
-        try {
-            Object.defineProperty(window, "isIniframe", {
-                value: "", // 原来是Function, 这样做可以使防沉迷报错
-                writable: false,
-            });
-        } catch (e) {}
-        try {
-            Object.defineProperty(window, "getBizid", {
-                value: "", // 原来是Function, 这样做可以使防沉迷报错
-                writable: false,
-            });
-        } catch (e) {}
-        成功 = 1;
-    } else if (window.play22 && 网址.includes("7k7k.com")) {
+    if (window.play22 && 网址.includes("7k7k.com")) {
         // 7k7k获取游戏直链
         try {
             console.log("[防沉迷减点料] 尝试7k7k防沉迷减料");
@@ -176,6 +173,7 @@ function 破解() {
                             date +
                             "/" +
                             resp.data.game_path;
+                        正在玩17yy = 1;
                     } catch (e) {}
                     try {
                         qs("#flash_frame").src = 游戏真实地址_17yy =
@@ -187,6 +185,7 @@ function 破解() {
                             date +
                             "/" +
                             resp.data.game_path;
+                        正在玩17yy = 1;
                     } catch (e) {}
                 },
             });
@@ -197,58 +196,29 @@ function 破解() {
 function load() {
     破解();
     setTimeout(破解, 3000);
-    addEventListener(
-        "load",
-        () => {
-            破解();
-            setTimeout(破解, 3000);
-
-            if (网址.includes("ptlogin.4399.com")) {
-                setTimeout(() => {
-                    if (qs(".ptlogin_btn")) {
-                        qs(".ptlogin_btn").addEventListener("mouseup", () => {
-                            alert("请在稍后刷新网页");
-                        });
-                    }
-                }, 1000);
+    if (网址.includes("ptlogin.4399.com")) {
+        setTimeout(() => {
+            if (qs(".ptlogin_btn")) {
+                qs(".ptlogin_btn").addEventListener("mouseup", () => {
+                    alert("请在稍后刷新网页");
+                });
             }
-        },
-        true
-    );
+        }, 1000);
+    }
     console.log("[防沉迷终结者] 开始执行");
 }
 
-try {
-    window.$.get;
-} catch (e) {
-    var $ = {
-        get: (url, call) => {
-            let xhr = new XMLHttpRequest();
-            let response = "";
-            xhr.open("get", url);
-            xhr.send(null);
-            xhr.onload = () => {
-                response = xhr.responseText;
-                call(response);
-            };
-        },
-    };
-}
-try {
-    window.$.ajax;
-} catch (e) {
-    var $ = {
-        ajax: (o) => {
-            let xhr = new XMLHttpRequest();
-            let response = "";
-            xhr.open("post", o.url);
-            xhr.send("action=getStatus&id=" + o.data.id);
-            xhr.onload = () => {
-                response = xhr.responseText;
-                o.success(JSON.parse(response));
-            };
-        },
-    };
-}
-
 load();
+
+document.body.addEventListener("mousedown", () => {
+    if (已全屏 == 0 && 正在玩17yy == 1) {
+        try {
+            qs("#flash_frame").requestFullscreen();
+        } catch (e) {
+            try {
+                qs("#flashgame").requestFullscreen();
+            } catch (ee) {}
+        }
+    }
+    已全屏 = 1; 
+});

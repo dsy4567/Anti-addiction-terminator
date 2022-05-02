@@ -1,111 +1,76 @@
 <!-- 此代码采用 GPL-3.0 开源许可证, 请查看 LICENSE.txt 或 https://www.gnu.org/licenses/gpl-3.0.txt -->
 <!-- Copyright (C) 2022 dsy4567 (https://github.com/dsy4567 | dsy4567@outlook.com) -->
+
 <!DOCTYPE html>
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>防沉迷终结者</title>
-        <style>
-            @media (prefers-color-scheme: dark) {
-                :root {
-                    --theme-color1: rgb(30, 30, 30);
-                    --theme-color2: white;
-                    --theme-color3: rgba(255, 255, 255, 0.5);
-                }
-
-                .图标 {
-                    filter: invert(1);
-                }
-            }
-
-            @media (prefers-color-scheme: light) {
-                :root {
-                    --theme-color1: white;
-                    --theme-color2: rgb(30, 30, 30);
-                    --theme-color3: rgba(150, 150, 150, 0.5);
-                }
-            }
-
-            * {
-                transition: all 0.2s;
-                -webkit-user-drag: none;
-            }
-            body {
-                background-color: var(--theme-color1);
-                color: var(--theme-color2);
-                margin: 0;
-                padding: 0;
-                user-select: none;
-                width: 512px;
-            }
-
-            a {
-                text-decoration: none;
-                color: var(--theme-color2);
-            }
-            a:hover {
-                text-decoration: 1px underline var(--theme-color2);
-            }
-            p {
-                font-size: 16px;
-                text-align: center;
-            }
-
-            #顶部 {
-                display: flex;
-                width: 100%;
-                flex-direction: row;
-                flex-wrap: nowrap;
-                justify-content: center;
-                align-items: center;
-            }
-            #顶部 * {
-                margin-left: 4px;
-                margin-right: 4px;
-            }
-            #logo {
-                border-radius: 50%;
-            }
-
-            .主要 {
-                display: flex;
-                flex-direction: column;
-                flex-wrap: nowrap;
-                align-items: center;
-            }
-            .主要 * {
-                margin: 4px;
-            }
-
-            .一些按钮 {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-        </style>
+        <link rel="stylesheet" href="/css/global.css" />
+        <link rel="stylesheet" href="/css/popup.css" />
+        <script src="/lib/jquery-3.6.0.min.js"></script>
     </head>
-    <script src="/js/popup.js"></script>
     <body>
         <div id="顶部">
-            <img width="32" height="32" src="/icon/32.png" alt="图标" id="logo" />
-            <h1>防沉迷终结者</h1>
+            <div class="左">
+                <img width="32" height="32" src="/icon/32.png" alt="logo" id="logo" title="logo" />
+                <h1>防沉迷终结者</h1>
+            </div>
+            <div class="右">
+                <img class="图标" src="/icon/info.svg" alt="关于" title="关于" id="打开关于" />
+            </div>
         </div>
 
         <hr />
 
-        <p>✨该扩展可以破解一些游戏平台的防沉迷, 帮您实现游戏自由✨</p>
-        <p>⚠️沉迷于游戏不利于身体健康, 请合理安排游戏时间, 适度游戏⚠️</p>
+        <div id="一些警告"></div>
 
-        <p id="about">
-            ~~快乐没有年龄之分~~<br /><br />
-            Copyright (C) 2022 dsy4567 (
-            <a target="_blank" href="https://github.com/dsy4567">GitHub</a>
-            |
-            <a target="_self" href="mailto:dsy4567@outlook.com">邮箱</a> ) <br /><br />
-            这是一个使用 GPL-3.0 (<a target="_blank" href="/LICENSE.txt">English</a> |
-            <a target="_blank" href="https://jxself.org/translations/gpl-3.zh.shtml">简体中文</a>)
-            许可的自由软件
-        </p>
+        <div id="关于">
+            <p>✨该扩展可以破解一些游戏平台的防沉迷, 帮您实现游戏自由✨</p>
+            <p>⚠️沉迷于游戏不利于身心健康, 请合理安排游戏时间, 适度游戏⚠️</p>
+
+            <p>
+                <!--  (<a target="_blank" href="/LICENSE.txt">English</a> |
+                <a target="_blank" href="https://jxself.org/translations/gpl-3.zh.shtml">简体中文</a
+                >)  -->
+                ~~快乐没有年龄之分~~<br /><br />
+                Copyright (C) 2022 dsy4567 (
+                <a target="_blank" href="https://github.com/dsy4567">GitHub</a>
+                |
+                <a target="_self" href="mailto:dsy4567@outlook.com">邮箱</a> ) <br /><br />
+                此扩展使用 <a target="_blank" href="/LICENSE.txt">GPL-3.0</a> 许可
+            </p>
+            <p>
+                感谢
+                <a target="_blank" href="https://iconpark.bytedance.com">IconPark</a> 提供的图标
+            </p>
+            <p>
+                <a
+                    target="_blank"
+                    href="https://microsoftedge.microsoft.com/addons/detail/%E9%98%B2%E6%B2%89%E8%BF%B7%E7%BB%88%E7%BB%93%E8%80%85/chpenmljpdpkebnohfbbdpfelabcnlnp"
+                    >👍给个好评</a
+                >
+                |
+                <a
+                    target="_blank"
+                    href="https://github.com/dsy4567/Anti-addiction-terminator/issues"
+                    >🐛报告bug</a
+                >
+            </p>
+        </div>
+
+        <div id="工具">
+            <div class="按钮">
+                <button id="使用通用规则破解">使用通用规则破解</button>
+            </div>
+            <div class="按钮">
+                <button id="大人来了按钮">大人来了</button>
+            </div>
+            <div class="按钮">
+                <button id="大人走了按钮">大人走了</button>
+            </div>
+        </div>
+        <script src="/js/popup.js"></script>
     </body>
 </html>

@@ -39,9 +39,30 @@
                 "*://*.37.com/*",
                 "*://*.4366.com/*"
             ],
+            "run_at": "document_idle"
+        },
+        {
+            "all_frames": true,
+            "js": [
+                "/js/content-4399.js"
+            ],
+            "matches": [
+                "*://*.4399.com/*",
+                "*://*.aiwan4399.com/*",
+                "*://*.iwan4399.com/*"
+            ],
             "run_at": "document_start"
         }
     ],
+    "declarative_net_request": {
+        "rule_resources": [
+            {
+                "id": "4399",
+                "enabled": true,
+                "path": "/rule/4399.json"
+            }
+        ]
+    },
     "description": "~~快乐没有年龄之分~~",
     "homepage_url": "http://github.com/dsy4567/Anti-addiction-terminator",
     "icons": {
@@ -54,9 +75,13 @@
     "minimum_chrome_version": "88.0.0.0",
     "name": "防沉迷终结者",
     "permissions": [
-        "tabs","notifications","webNavigation","storage"
+        "declarativeNetRequest","declarativeNetRequestFeedback",
+        "declarativeNetRequestWithHostAccess",
+        "notifications",
+        "storage",
+        "tabs"
     ],
-    "version": "1.1",
+    "version": "1.2",
     "web_accessible_resources": [
         {
             "matches": [
@@ -77,7 +102,8 @@
                 "*://*.4366.com/*"
             ],
             "resources": [
-                "/js/no-fcm.js"
+                "/js/no-fcm.js",
+                "/css/content.css"
             ]
         }
     ]
