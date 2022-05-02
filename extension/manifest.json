@@ -75,11 +75,11 @@
     "minimum_chrome_version": "88.0.0.0",
     "name": "防沉迷终结者",
     "permissions": [
-        "declarativeNetRequest","declarativeNetRequestFeedback",
+        "declarativeNetRequest",
+        "declarativeNetRequestFeedback",
         "declarativeNetRequestWithHostAccess",
         "notifications",
-        "storage",
-        "tabs"
+        "storage"
     ],
     "version": "1.2",
     "web_accessible_resources": [

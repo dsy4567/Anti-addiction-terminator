@@ -1,5 +1,11 @@
 {
     "author": "dsy4567",
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    },
     "browser_action": {
         "default_popup": "popup.html",
         "default_icon": {
@@ -51,15 +57,6 @@
             "run_at": "document_start"
         }
     ],
-    "declarative_net_request": {
-        "rule_resources": [
-            {
-                "id": "4399",
-                "enabled": true,
-                "path": "/rule/4399.json"
-            }
-        ]
-    },
     "description": "~~快乐没有年龄之分~~",
     "homepage_url": "http://github.com/dsy4567/Anti-addiction-terminator",
     "icons": {
@@ -71,6 +68,10 @@
     "manifest_version": 2,
     "minimum_chrome_version": "83.0.0.0",
     "name": "防沉迷终结者",
+    "permissions": [
+        "notifications",
+        "storage"
+    ],
     "version": "1.2",
     "version_name": "1.2 (MV2)"
 }
