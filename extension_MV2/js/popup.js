@@ -1,34 +1,49 @@
-// let 简陋代码补齐 = {
-//     tabs: [
-//         {
-//             active: false,
-//             audible: false,
-//             autoDiscardable: true,
-//             discarded: false,
-//             favIconUrl: "https://www.example.com/favicon.ico",
-//             groupId: -1,
-//             height: 0,
-//             highlighted: false,
-//             id: 1,
-//             incognito: false,
-//             index: 0,
-//             mutedInfo: {
-//                 muted: false,
-//             },
-//             pinned: false,
-//             selected: false,
-//             status: "",
-//             title: "example",
-//             url: "https://www.example.com/",
-//             width: 0,
-//             windowId: 1,
-//         },
-//     ],
-// };
+var i18n = {
+    "沉迷于游戏不利于身心健康, 请合理安排游戏时间, 适度游戏": {
+        zh: "沉迷于游戏不利于身心健康, 请合理安排游戏时间, 适度游戏",
+        "zh-CN": "沉迷于游戏不利于身心健康, 请合理安排游戏时间, 适度游戏",
+        en: "Indulging in games is not conducive to physical and mental health. Please arrange the game time reasonably and play appropriately",
+        "en-US":
+            "Indulging in games is not conducive to physical and mental health. Please arrange the game time reasonably and play appropriately",
+        "en-GB":
+            "Indulging in games is not conducive to physical and mental health. Please arrange the game time reasonably and play appropriately",
+        "zh-TW": "沉迷於遊戲不利於身心健康，請合理安排遊戲時間，適度遊戲",
+        "zh-HK": "沉迷於遊戲不利於身心健康，請合理安排遊戲時間，適度遊戲",
+    },
+    "使用 / 取消通用规则破解": {
+        zh: "使用 / 取消通用规则破解",
+        "zh-CN": "使用 / 取消通用规则破解",
+        en: "Use / cancel general rule cracking",
+        "en-US": "Use / cancel general rule cracking",
+        "en-GB": "Use / cancel general rule cracking",
+        "zh-TW": "使用 / 取消通用規則破解",
+        "zh-HK": "使用 / 取消通用規則破解",
+    },
+    "大人来了 / 走了": {
+        zh: "大人来了 / 走了",
+        "zh-CN": "大人来了 / 走了",
+        en: "The adult is coming / leaving",
+        "en-US": "The adult is coming / leaving",
+        "en-GB": "The adult is coming / leaving",
+        "zh-TW": "大人來了 / 走了",
+        "zh-HK": "大人來了 / 走了",
+    },
+    防沉迷终结者: {
+        zh: "防沉迷终结者",
+        "zh-CN": "防沉迷终结者",
+        en: "Anti-addiction Terminator",
+        "en-US": "Anti-addiction Terminator",
+        "en-GB": "Anti-addiction Terminator",
+        "zh-TW": "防沉迷終結者",
+        "zh-HK": "防沉迷終結者",
+    },
+};
 
-// function 与后台通信(操作) {
-//     chrome.runtime.sendMessage({ 操作: 操作 });
-// }
+function 国际化(文字) {
+    let 翻译后 = i18n[文字][navigator.language];
+    if (!翻译后) 翻译后 = 文字;
+    return 翻译后;
+}
 function 通用规则破解() {
     chrome.storage.local.set({ 通用规则破解: Math.random() }, () => {});
 }
@@ -65,13 +80,16 @@ try {
             $(工具).toggle();
             $(关于).toggle();
         });
+        $(名字).html(国际化($(名字).html()));
+        $(使用通用规则破解).html(国际化($(使用通用规则破解).html()));
         $(使用通用规则破解).on("click", () => {
             通用规则破解();
         });
+        $(大人来了按钮).html(国际化($(大人来了按钮).html()));
         $(大人来了按钮).on("click", () => {
             大人来了();
         });
-        创建警告("沉迷于游戏不利于身心健康, 请合理安排游戏时间, 适度游戏");
+        创建警告(国际化("沉迷于游戏不利于身心健康, 请合理安排游戏时间, 适度游戏"));
     });
 } catch (e) {
     错误(e);
