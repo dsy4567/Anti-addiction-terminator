@@ -42,6 +42,12 @@ try {
     });
 } catch (e) {}
 try {
+    Object.defineProperty(window, "PageWebApiSdkConf", {
+        value: null,
+        writable: false,
+    });
+} catch (e) {}
+try {
     Object.defineProperty(window, "PageWebApiSdk", {
         value: null,
         writable: false,

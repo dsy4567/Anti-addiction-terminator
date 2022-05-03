@@ -40,8 +40,7 @@ a:hover {
     text-decoration: 1px underline var(--theme-color2);
 }
 
-.按钮 {
-    margin: 4px;
+.按钮组 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,6 +50,7 @@ button {
     border: none;
     border-radius: 8px;
     font-size: 16px;
+    margin: 4px;
     padding: 12px;
 }
 button:active {
