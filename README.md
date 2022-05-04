@@ -67,6 +67,10 @@
 
 > https://github.com/dsy4567/Anti-addiction-terminator/releases
 
+# ❤️ 做出贡献
+
+> https://github.com/dsy4567/Anti-addiction-terminator/blob/master/CONTRIBUTING.md
+
 # ⚖️ 许可证
 
 > 使用 [GPL-3.0](LICENSE.txt) 许可
