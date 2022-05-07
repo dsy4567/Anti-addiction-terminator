@@ -1,8 +1,6 @@
 > 再傻逼的防沉迷也不能阻止牛逼程序猿对快乐的追求
 
-> _该扩展部分代码修改自 https://github.com/dsy4567/Fucking-Anti-Indulgence/blob/main/Fucking-Anti-Indulgence.user.js_  
-> _您还可以在 [GreasyFork](https://greasyfork.org/zh-CN/scripts/437233-) 或 [ScriptCat](https://scriptcat.org/script-show-page/297) 上找到该源码_  
-> 所做的更改: 对原代码进行一些改动, 并去除了它少量的功能
+> _该扩展由 https://github.com/dsy4567/Fucking-Anti-Indulgence/ 改造而来_
 
 ---
 
@@ -12,7 +10,8 @@
 
 # ✨ 扩展功能
 
-> 支持破解 17yy, 07073 , 7k7k h5, 4399 的防沉迷
+> - 破解 4366，37，9377，游戏狗，u7u9，7724，17yy，qq空间部分游戏，07073，7k7k，4399 的防沉迷
+> - 大人来了和通用破解规则
 
 # ✅ 已支持的游戏
 
@@ -66,6 +65,10 @@
 # 💪 更新日志
 
 > https://github.com/dsy4567/Anti-addiction-terminator/releases
+
+# ❤️ 做出贡献
+
+> https://github.com/dsy4567/Anti-addiction-terminator/blob/master/CONTRIBUTING.md
 
 # ⚖️ 许可证
 
