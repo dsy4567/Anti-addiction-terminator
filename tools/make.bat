@@ -5,8 +5,13 @@ set /p ver=
 
 cd ..
 
-tools\7-Zip\7z.exe a extension_v%ver%.zip aat-dev\mv3\*
-tools\7-Zip\7z.exe a extension_v%ver%_mv2.zip aat-dev\mv2\*
-tools\7-Zip\7z.exe a extension_v%ver%_ff.zip aat-dev\ff\*
+cd aat-dev\mv3
+..\..\tools\7-Zip\7z.exe a ..\..\extension_v%ver%.zip     .\*
 
-cd tools
+cd ..\mv2
+..\..\tools\7-Zip\7z.exe a ..\..\extension_v%ver%_mv2.zip .\*
+
+cd ..\ff
+..\..\tools\7-Zip\7z.exe a ..\..\extension_v%ver%_ff.zip  .\*
+
+cd ..\..\tools
