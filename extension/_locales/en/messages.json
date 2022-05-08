@@ -1,1 +1,23 @@
-{}
+{
+    "name": {
+        "message": "Anti-Addiction Terminator"
+    },
+    "dec": {
+        "message": "Play the game you want to play, regardless of age restriction"
+    },
+    "1": {
+        "message": "Indulging in games is not conducive to physical and mental health. Please arrange the game time reasonably and play appropriately."
+    },
+    "2": {
+        "message": "The adult is coming / leaving"
+    },
+    "3": {
+        "message": "Use / cancel general rule cracking"
+    },
+    "4": {
+        "message": "Log in to your 7k7k account(No restrictions)"
+    },
+    "about": {
+        "message": "<p>✨This extension can crack the anti addiction of some game platforms and help you realize game freedom✨</p><p>⚠️Indulging in games is not conducive to physical and mental health. Please arrange the game time reasonably and play appropriately⚠️</p>        <p>            ~~Happiness is not divided into age~~<br /><br />            Copyright (C) 2022 dsy4567 (            <a target=\"_blank\" href=\"https://github.com/dsy4567\">GitHub</a>            |            <a target=\"_self\" href=\"mailto:dsy4567@outlook.com\">Email</a> ) <br /><br />            This extension uses the <a target=\"_blank\" href=\"/LICENSE.txt\">GPL-3.0</a> license        </p>        <p>            Thanks to icons provided by            <a target=\"_blank\" href=\"https://iconpark.bytedance.com\">IconPark</a>        </p>        <p>            <a id=\"给个好评\"               target=\"_blank\"                href=\"https://microsoftedge.microsoft.com/addons/detail/%E9%98%B2%E6%B2%89%E8%BF%B7%E7%BB%88%E7%BB%93%E8%80%85/chpenmljpdpkebnohfbbdpfelabcnlnp\"                >👍 Give a positive review</a            >            |            <a                target=\"_blank\"                href=\"https://github.com/dsy4567/Anti-addiction-terminator/issues\"                >🐛Report bugs</a            >        </p>"
+    }
+}

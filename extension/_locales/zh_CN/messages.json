@@ -1,1 +1,23 @@
-{}
+{
+    "name": {
+        "message": "防沉迷终结者"
+    },
+    "dec": {
+        "message": "玩您想玩的游戏, 不受年龄限制"
+    },
+    "1": {
+        "message": "沉迷于游戏不利于身心健康, 请合理安排游戏时间, 适度游戏"
+    },
+    "2": {
+        "message": "大人来了 / 走了"
+    },
+    "3": {
+        "message": "使用 / 取消通用规则破解"
+    },
+    "4": {
+        "message": "登录7k7k账号(无限制)"
+    },
+    "about": {
+        "message": "<p>✨该扩展可以破解一些游戏平台的防沉迷, 帮您实现游戏自由✨</p><p>⚠️沉迷于游戏不利于身心健康, 请合理安排游戏时间, 适度游戏⚠️</p>        <p>            ~~快乐没有年龄之分~~<br /><br />            Copyright (C) 2022 dsy4567 (            <a target=\"_blank\" href=\"https://github.com/dsy4567\">GitHub</a>            |            <a target=\"_self\" href=\"mailto:dsy4567@outlook.com\">邮箱</a> ) <br /><br />            此扩展使用 <a target=\"_blank\" href=\"/LICENSE.txt\">GPL-3.0</a> 许可        </p>        <p>            感谢            <a target=\"_blank\" href=\"https://iconpark.bytedance.com\">IconPark</a> 提供的图标        </p>        <p>            <a id=\"给个好评\"                target=\"_blank\"                href=\"https://microsoftedge.microsoft.com/addons/detail/%E9%98%B2%E6%B2%89%E8%BF%B7%E7%BB%88%E7%BB%93%E8%80%85/chpenmljpdpkebnohfbbdpfelabcnlnp\"                >👍给个好评</a            >            |            <a                target=\"_blank\"                href=\"https://github.com/dsy4567/Anti-addiction-terminator/issues\"                >🐛报告bug</a            >        </p>"
+    }
+}

@@ -1,49 +1,9 @@
-var i18n = {
-    "沉迷于游戏不利于身心健康, 请合理安排游戏时间, 适度游戏": {
-        zh: "沉迷于游戏不利于身心健康, 请合理安排游戏时间, 适度游戏",
-        "zh-CN": "沉迷于游戏不利于身心健康, 请合理安排游戏时间, 适度游戏",
-        en: "Indulging in games is not conducive to physical and mental health. Please arrange the game time reasonably and play appropriately",
-        "en-US":
-            "Indulging in games is not conducive to physical and mental health. Please arrange the game time reasonably and play appropriately",
-        "en-GB":
-            "Indulging in games is not conducive to physical and mental health. Please arrange the game time reasonably and play appropriately",
-        "zh-TW": "沉迷於遊戲不利於身心健康，請合理安排遊戲時間，適度遊戲",
-        "zh-HK": "沉迷於遊戲不利於身心健康，請合理安排遊戲時間，適度遊戲",
-    },
-    "使用 / 取消通用规则破解": {
-        zh: "使用 / 取消通用规则破解",
-        "zh-CN": "使用 / 取消通用规则破解",
-        en: "Use / cancel general rule cracking",
-        "en-US": "Use / cancel general rule cracking",
-        "en-GB": "Use / cancel general rule cracking",
-        "zh-TW": "使用 / 取消通用規則破解",
-        "zh-HK": "使用 / 取消通用規則破解",
-    },
-    "大人来了 / 走了": {
-        zh: "大人来了 / 走了",
-        "zh-CN": "大人来了 / 走了",
-        en: "The adult is coming / leaving",
-        "en-US": "The adult is coming / leaving",
-        "en-GB": "The adult is coming / leaving",
-        "zh-TW": "大人來了 / 走了",
-        "zh-HK": "大人來了 / 走了",
-    },
-    防沉迷终结者: {
-        zh: "防沉迷终结者",
-        "zh-CN": "防沉迷终结者",
-        en: "Anti-addiction Terminator",
-        "en-US": "Anti-addiction Terminator",
-        "en-GB": "Anti-addiction Terminator",
-        "zh-TW": "防沉迷終結者",
-        "zh-HK": "防沉迷終結者",
-    },
-};
+/**
+ * 此代码采用 GPL-3.0 开源许可证, 请查看 LICENSE.txt 或 https://www.gnu.org/licenses/gpl-3.0.txt
+ * Copyright (C) 2022 dsy4567 (https://github.com/dsy4567 | dsy4567@outlook.com)
+ * 您还可以在这里找到源码 https://github.com/dsy4567/Anti-addiction-terminator
+ */
 
-function 国际化(文字) {
-    let 翻译后 = i18n[文字][navigator.language];
-    if (!翻译后) 翻译后 = 文字;
-    return 翻译后;
-}
 function 通用规则破解() {
     chrome.storage.local.set({ 通用规则破解: Math.random() }, () => {});
 }
@@ -69,9 +29,47 @@ function 创建警告(警告) {
         }
     } catch (e) {}
 }
+function 温馨提示(提示) {
+    try {
+        if (提示) {
+            $(一些警告).append(`
+            <div class="提示">
+                <img class="警告图标" src="/icon/smile.svg" alt="提示" title="提示" />
+                <div class="警告信息">${提示}</div>
+                <img class="图标 关闭警告" src="/icon/close.svg" alt="关闭" title="关闭" />
+            </div>
+        `);
+            for (let i = 0; i < $(".关闭警告").length; i++) {
+                const el = $(".关闭警告")[i];
+                $(el).on("click", () => {
+                    $(el).parent().remove();
+                });
+            }
+        }
+    } catch (e) {}
+}
+function 特别提示(提示) {
+    try {
+        if (提示) {
+            $(一些警告).append(`
+            <div class="提示">
+                <div class="警告图标" alt="提示" title="提示">✨</div>
+                <div class="警告信息">${提示}</div>
+                <img class="图标 关闭警告" src="/icon/close.svg" alt="关闭" title="关闭" />
+            </div>
+        `);
+            for (let i = 0; i < $(".关闭警告").length; i++) {
+                const el = $(".关闭警告")[i];
+                $(el).on("click", () => {
+                    $(el).parent().remove();
+                });
+            }
+        }
+    } catch (e) {}
+}
 function 错误(e) {
     console.error(e);
-    创建警告(e);
+    创建警告(e.stack);
 }
 
 try {
@@ -80,16 +78,24 @@ try {
             $(工具).toggle();
             $(关于).toggle();
         });
-        $(名字).html(国际化($(名字).html()));
-        $(使用通用规则破解).html(国际化($(使用通用规则破解).html()));
+        $(名字).html(chrome.i18n.getMessage("name"));
+        $(使用通用规则破解).html(chrome.i18n.getMessage("3"));
         $(使用通用规则破解).on("click", () => {
             通用规则破解();
         });
-        $(大人来了按钮).html(国际化($(大人来了按钮).html()));
+        $(大人来了按钮).html(chrome.i18n.getMessage("2"));
         $(大人来了按钮).on("click", () => {
             大人来了();
         });
-        创建警告(国际化("沉迷于游戏不利于身心健康, 请合理安排游戏时间, 适度游戏"));
+        $(关于).html(chrome.i18n.getMessage("about"));
+        if (navigator.userAgent.includes("Firefox")) {
+            给个好评.setAttribute(
+                "href",
+                "https://addons.mozilla.org/zh-CN/firefox/addon/anti-addiction-terminator/"
+            );
+        }
+        $(登录7k7k).html(chrome.i18n.getMessage("4"));
+        创建警告(chrome.i18n.getMessage("1"));
     });
 } catch (e) {
     错误(e);

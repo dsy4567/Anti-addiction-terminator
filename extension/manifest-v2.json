@@ -9,9 +9,6 @@
     "browser_action": {
         "default_popup": "popup.html",
         "default_icon": {
-            "16": "/icon/16.png",
-            "32": "/icon/32.png",
-            "48": "/icon/48.png",
             "128": "/icon/128.png"
         }
     },
@@ -57,17 +54,14 @@
             "run_at": "document_start"
         }
     ],
-    "description": "~~快乐没有年龄之分~~",
+    "description": "__MSG_dec__",
     "homepage_url": "http://github.com/dsy4567/Anti-addiction-terminator",
     "icons": {
-        "16": "/icon/16.png",
-        "32": "/icon/32.png",
-        "48": "/icon/48.png",
         "128": "/icon/128.png"
     },
     "manifest_version": 2,
     "minimum_chrome_version": "64.0.0.0",
-    "name": "防沉迷终结者",
+    "name": "__MSG_name__",
     "permissions": [
         "notifications",
         "storage"

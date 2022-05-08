@@ -1,6 +1,7 @@
 /**
  * 此代码采用 GPL-3.0 开源许可证, 请查看 LICENSE.txt 或 https://www.gnu.org/licenses/gpl-3.0.txt
  * Copyright (C) 2022 dsy4567 (https://github.com/dsy4567 | dsy4567@outlook.com)
+ * 您还可以在这里找到源码 https://github.com/dsy4567/Anti-addiction-terminator
  */
 
 var 已有通用规则破解样式 = false;
@@ -46,12 +47,12 @@ function 使用通用规则破解() {
         return;
     }
 
-        try {
-            一个弹窗.remove();
-            遮罩.remove();
-            已有一个弹窗的样式 = 移除样式("2");
-        } catch (e) { }
-    
+    try {
+        一个弹窗.remove();
+        遮罩.remove();
+        已有一个弹窗的样式 = 移除样式("2");
+    } catch (e) {}
+
     let 游戏元素id或class = ["flash", "game", "play", "youxi", "swf", "flash"];
     let 防沉迷元素id或class = [
         "anti",
@@ -140,7 +141,7 @@ function 大人来了() {
     一个弹窗 = document.createElement("div");
     一个弹窗.className = "mysdkDialog";
     一个弹窗.innerHTML +=
-        '<div class="myfcmdialog"><span class="close-btn">关闭</span><h2 class="title">未成年限制登录提醒</h2><div class="stitle">您使用的是未成年账号，仅周五、周六、周日及法定节假日晚上8:00-9:00可以游戏！当前已被限制！</div><div class="countDown" style=""><p class="txt1">下次可玩游戏时段</p><p class="txt2">本周五晚上8:00-9:00</p></div><div class="countDown" style="display:none">当前已限制游戏</div><div class="mod-tip" style=""><h3 class="tip-title">温馨提示：</h3><ul class="tip-info">1.如果身份信息有误，请点击<a href="https://u.4399.com/profile/realname-bizId-1199006632.html" target="_blank">》》申请修改《《</a><br>2.如果您身份信息已经变动，可点击<a target="_self" href="#">》》刷新身份《《</a></ul></div><div class="mod-btn" style=""><span class="btn-fcmprimary">更换账号</span><span class="btn-fcmprimary">确定</span></div></div>';
+        '<div class="myfcmdialog"><span class="close-btn">关闭</span><h2 class="title">未成年限制登录提醒</h2><div class="stitle">您使用的是未成年账号，仅周五、周六、周日及法定节假日晚上8:00-9:00可以游戏！当前已被限制！</div><div class="countDown" style=""><p class="txt1">下次可玩游戏时段</p><p class="txt2">本周五晚上8:00-9:00</p></div><div class="countDown" style="display:none">当前已限制游戏</div><div class="mod-tip" style=""><h3 class="tip-title">温馨提示：</h3><ul class="tip-info">1.如果身份信息有误，请点击<a href="#" target="_self">》》申请修改《《</a><br>2.如果您身份信息已经变动，可点击<a target="_self" href="#">》》刷新身份《《</a></ul></div><div class="mod-btn" style=""><span class="btn-fcmprimary">更换账号</span><span class="btn-fcmprimary">确定</span></div></div>';
     // 不知道从哪借(chao)鉴(xi)来的
     document.body.appendChild(一个弹窗);
 
@@ -163,7 +164,7 @@ function 创建警告(警告) {
 }
 function 错误(e) {
     console.error(e);
-    创建警告("错误: " + e.message);
+    创建警告("错误: " + e.stack);
 }
 
 try {
@@ -194,6 +195,18 @@ try {
             错误(e);
         }
     });
+} catch (e) {
+    错误(e);
+}
+
+try {
+    if (location.href.includes("aat-doLogin")) {
+        document
+            .querySelector(
+                "#theme-blue > div.header > div > div.h_site > div.login_no > div.h_login.login_btn > span"
+            )
+            .click();
+    }
 } catch (e) {
     错误(e);
 }
