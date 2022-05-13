@@ -1,5 +1,5 @@
 ---
-name: "❓ 提问和吐槽"
+name: "📚 翻译错误"
 about: 有什么问题, 或者哪里用得不爽, 尽管提
 title: "(xxx 不知道怎么用 / xxx 不好用)"
 labels: help wanted, question
