@@ -2,7 +2,7 @@
 name: "\U0001F41B 报告bug"
 about: 报告 防沉迷终结者 的功能缺陷
 title: "(在此简要概述您遇到的问题)"
-labels: bug
+labels: 功能缺陷
 assignees: dsy4567
 
 ---
