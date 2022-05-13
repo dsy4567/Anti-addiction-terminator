@@ -1,8 +1,8 @@
 ---
 name: "📚 翻译错误"
-about: 有什么问题, 或者哪里用得不爽, 尽管提
-title: "(xxx 不知道怎么用 / xxx 不好用)"
-labels: help wanted, question
+about: 报告 防沉迷终结者 的翻译错误
+title: "翻译错误"
+labels: 翻译问题
 assignees: dsy4567
 
 ---
@@ -14,7 +14,12 @@ assignees: dsy4567
 💡 点击 Submit new issue 以提交问题
 注释区域 结束  -->
 
-# ⚠️ 为什么 / 怎么了
+# ⚠️ 哪错了
+- 巴啦啦拉  
+- 巴啦啦拉  
+- 巴啦啦拉
+
+# ❓ 咋弄
 - 巴啦啦拉  
 - 巴啦啦拉  
 - 巴啦啦拉
