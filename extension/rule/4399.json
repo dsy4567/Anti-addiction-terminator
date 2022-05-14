@@ -6,10 +6,7 @@
             "type": "block"
         },
         "condition": {
-            "urlFilter": "Antiindulgence.js",
-            "domains": [
-                "www.4399.com"
-            ],
+            "urlFilter": "www.4399.com/antijs/Antiindulgence.js",
             "resourceTypes": [
                 "main_frame",
                 "sub_frame",
@@ -23,8 +20,6 @@
                 "csp_report",
                 "media",
                 "websocket",
-                "webtransport",
-                "webbundle",
                 "other"
             ]
         }
@@ -36,10 +31,7 @@
             "type": "block"
         },
         "condition": {
-            "urlFilter": "fcmv2.js",
-            "domains": [
-                "web.4399.com"
-            ],
+            "urlFilter": "pic.my4399.com/re/cms/gamebox/js/fcmv2.js",
             "resourceTypes": [
                 "main_frame",
                 "sub_frame",
@@ -53,8 +45,6 @@
                 "csp_report",
                 "media",
                 "websocket",
-                "webtransport",
-                "webbundle",
                 "other"
             ]
         }
@@ -66,10 +56,7 @@
             "type": "block"
         },
         "condition": {
-            "urlFilter": "ifs-web_sdk",
-            "domains": [
-                "my.4399.com"
-            ],
+            "urlFilter": "my.4399.com/webgame/home/ifs-web_sdk",
             "resourceTypes": [
                 "main_frame",
                 "sub_frame",
@@ -83,8 +70,6 @@
                 "csp_report",
                 "media",
                 "websocket",
-                "webtransport",
-                "webbundle",
                 "other"
             ]
         }
@@ -96,10 +81,7 @@
             "type": "block"
         },
         "condition": {
-            "urlFilter": "heartbeat",
-            "domains": [
-                "apps.4399.com"
-            ],
+            "urlFilter": "apps.4399.com/online/heartbeat",
             "resourceTypes": [
                 "main_frame",
                 "sub_frame",
@@ -113,8 +95,6 @@
                 "csp_report",
                 "media",
                 "websocket",
-                "webtransport",
-                "webbundle",
                 "other"
             ]
         }

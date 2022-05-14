@@ -6,10 +6,7 @@
             "type": "block"
         },
         "condition": {
-            "urlFilter": "Anti.js",
-            "domains": [
-                "h5.7k7k.com"
-            ],
+            "urlFilter": "h5.7k7k.com/js/anti/Anti.js",
             "resourceTypes": [
                 "main_frame",
                 "sub_frame",
@@ -23,8 +20,6 @@
                 "csp_report",
                 "media",
                 "websocket",
-                "webtransport",
-                "webbundle",
                 "other"
             ]
         }

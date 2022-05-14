@@ -75,12 +75,10 @@
     "name": "__MSG_name__",
     "permissions": [
         "declarativeNetRequest",
-        "declarativeNetRequestFeedback",
-        "declarativeNetRequestWithHostAccess",
         "notifications",
         "storage"
     ],
-    "version": "1.2",
+    "version": "1.2.1",
     "web_accessible_resources": [
         {
             "matches": [

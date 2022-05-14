@@ -54,6 +54,20 @@
             "run_at": "document_start"
         }
     ],
+    "declarative_net_request": {
+        "rule_resources": [
+            {
+                "id": "4399",
+                "enabled": true,
+                "path": "/rule/4399.json"
+            },
+            {
+                "id": "7k7k",
+                "enabled": true,
+                "path": "/rule/7k7k.json"
+            }
+        ]
+    },
     "description": "__MSG_dec__",
     "homepage_url": "http://github.com/dsy4567/Anti-addiction-terminator",
     "icons": {
@@ -63,9 +77,15 @@
     "minimum_chrome_version": "64.0.0.0",
     "name": "__MSG_name__",
     "permissions": [
+        "declarativeNetRequest",
         "notifications",
-        "storage"
+        "storage",
+        "*://*.4399.com/*",
+        "*://*.7k7k.com/*",
+        "*://*.aiwan4399.com/*",
+        "*://*.iwan4399.com/*",
+        "*://*.zxwyouxi.com/*"
     ],
-    "version": "1.2",
-    "version_name": "1.2 (MV2)"
+    "version": "1.2.1",
+    "version_name": "1.2.1 (MV2)"
 }

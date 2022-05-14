@@ -1,5 +1,5 @@
 /**
- * 此代码采用 GPL-3.0 开源许可证, 请查看 LICENSE.txt 或 https://www.gnu.org/licenses/gpl-3.0.txt
+ * 此代码采用 GPL-3.0 许可证, 请查看 LICENSE.txt 或 https://www.gnu.org/licenses/gpl-3.0.txt
  * Copyright (C) 2022 dsy4567 (https://github.com/dsy4567 | dsy4567@outlook.com)
  * 您还可以在这里找到源码 https://github.com/dsy4567/Anti-addiction-terminator
  */
@@ -200,12 +200,13 @@ try {
 }
 
 try {
-    if (location.href.includes("aat-doLogin")) {
-        document
-            .querySelector(
-                "#theme-blue > div.header > div > div.h_site > div.login_no > div.h_login.login_btn > span"
-            )
-            .click();
+    if (location.host == "www.7k7k.com") {
+        try {
+            document.querySelector("div.login_no").title = chrome.i18n.getMessage("5");
+        } catch (e) {}
+
+        if (location.href.includes("aat-doLogin"))
+            document.querySelector("div.login_no > div.h_login.login_btn > span").click();
     }
 } catch (e) {
     错误(e);
