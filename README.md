@@ -1,6 +1,8 @@
 > 再傻逼的防沉迷也不能阻止牛逼程序猿对快乐的追求
 
-> _该扩展由 https://github.com/dsy4567/Fucking-Anti-Indulgence/ 改造而来_
+> _该扩展基于 https://github.com/dsy4567/Fucking-Anti-Indulgence/ 改造而来_
+
+> 镜像 https://notabug.org/dsy4567/Anti-addiction-terminator
 
 ---
 
