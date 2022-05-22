@@ -4,6 +4,8 @@
  * 您还可以在这里找到源码 https://github.com/dsy4567/Anti-addiction-terminator
  */
 
+/* global chrome:false */
+
 function 创建警告(警告) {
     if (self == top)
         chrome.storage.local.set(

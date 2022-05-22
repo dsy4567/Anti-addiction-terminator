@@ -4,6 +4,8 @@
  * 您还可以在这里找到源码 https://github.com/dsy4567/Anti-addiction-terminator
  */
 
+/* global chrome:false */
+
 function 存储警告(警告内容) {
     chrome.storage.local.get(["一堆警告"], (存储) => {
         if (!警告内容) 警告内容 = "w";
@@ -29,6 +31,8 @@ chrome.runtime.onInstalled.addListener(() => {
         message: "游戏虽好, 但不能贪玩哦",
     });
 });
+
+/*eslint-disable */
 chrome.storage.onChanged.addListener(function (变化, 名称空间) {
     for (let [值, { 旧值, 新值 }] of Object.entries(变化)) {
         switch (值) {

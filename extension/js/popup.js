@@ -4,6 +4,8 @@
  * 您还可以在这里找到源码 https://github.com/dsy4567/Anti-addiction-terminator
  */
 
+/*eslint-disable */
+
 function 通用规则破解() {
     chrome.storage.local.set({ 通用规则破解: Math.random() }, () => {});
 }
@@ -73,6 +75,7 @@ function 错误(e) {
 }
 
 try {
+    版本.innerText = chrome.runtime.getManifest().version;
     $(function () {
         $(打开关于).on("click", () => {
             $(工具).toggle();

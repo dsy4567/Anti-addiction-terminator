@@ -4,6 +4,8 @@
  * 您还可以在这里找到源码 https://github.com/dsy4567/Anti-addiction-terminator
  */
 
+/* global chrome:false */
+
 var 已有通用规则破解样式 = false;
 var 已有一个弹窗的样式 = false;
 var 一个弹窗 = { remove: () => {} };
@@ -176,10 +178,13 @@ try {
     错误(e);
 }
 
+/*eslint-disable */
 try {
     chrome.storage.onChanged.addListener(function (变化, 名称空间) {
+        
         try {
             for (let [值, { 旧值, 新值 }] of Object.entries(变化)) {
+                
                 switch (值) {
                     case "通用规则破解":
                         使用通用规则破解();
@@ -199,6 +204,7 @@ try {
     错误(e);
 }
 
+/*eslint-enable */
 try {
     if (location.host == "www.7k7k.com") {
         try {
