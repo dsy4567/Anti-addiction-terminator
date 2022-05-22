@@ -13,3 +13,17 @@
 ## 打包
 
 -   `cd` 到 `tools` 目录, 然后先执行 `dev.bat`, 再执行 `make.bat`
+
+## 公钥
+
+```
+-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAquxadj5QOzXgefG+9L5a
+LRJIsq71QWxBuLfRJUss2rgxlPHa7Z5tIezS0+vaw5pSdjF1wLhK/rC5nJ/rNeOE
+OoNdTYM9JAY7faUtz5Fx4SdmjHD5dKw2HsgDcOay4OuZgaoMMyBkf4oUNbKg6tqo
+VotMyRJG/a4erJpul5H3ybnDkEesIbnRhraegOAAthPg+hhYk16IRGzTP7ScqyHk
+Wok4/djWOuJitzbVX+hfOqiJhlYoVJdfplyZ9gf830S9E7D0ugA0LyZE2rEGNY0C
+dDIqjMTjgbvONu8BuG3PmEamHOVTyFeRi0+mNLBVGFkq2nITM8YNqdAq4leh4iKp
+1wIDAQAB
+-----END PUBLIC KEY-----
+```
