@@ -4,7 +4,7 @@
  * 您还可以在这里找到源码 https://github.com/dsy4567/Anti-addiction-terminator
  */
 
-/* global chrome 一些警告 版本 打开关于 工具 关于 名字 使用通用规则破解 大人来了按钮 给个好评 登录7k7k $*/
+/* global chrome 一些警告 版本 打开关于 工具 关于 名字 使用通用规则破解 大人来了按钮 给个好评 登录7k7k $ 快捷键*/
 
 function 通用规则破解() {
     // chrome.storage.local.set({ 通用规则破解: Math.random() }, () => {});
@@ -86,13 +86,26 @@ function 错误(e) {
     创建警告(e.stack);
 }
 
+var isFF = navigator.userAgent.includes("Firefox");
+
 try {
     版本.innerText = chrome.runtime.getManifest().version;
     $(function () {
+        $(快捷键).on("click", () => {
+            if (isFF) {
+                return alert("请在设置中配置快捷键");
+            }
+            chrome.tabs.create({
+                url: "chrome://extensions/shortcuts",
+                active: true,
+            });
+        });
         $(打开关于).on("click", () => {
             $(工具).toggle();
             $(关于).toggle();
         });
+        $(打开关于).attr("alt", chrome.i18n.getMessage("0"));
+        $(打开关于).attr("title", chrome.i18n.getMessage("0"));
         $(名字).html(chrome.i18n.getMessage("name"));
         $(使用通用规则破解).html(chrome.i18n.getMessage("3"));
         $(使用通用规则破解).on("click", () => {
@@ -103,7 +116,7 @@ try {
             大人来了();
         });
         $(关于).html(chrome.i18n.getMessage("about"));
-        if (navigator.userAgent.includes("Firefox")) {
+        if (isFF) {
             给个好评.setAttribute(
                 "href",
                 "https://addons.mozilla.org/zh-CN/firefox/addon/anti-addiction-terminator/"
@@ -117,13 +130,13 @@ try {
 }
 
 try {
-    chrome.storage.local.get(["一堆警告"], (存储) => {
-        存储.一堆警告.forEach((警告内容) => {
-            if (警告内容 == "w") return;
-            创建警告(警告内容);
-        });
-        chrome.storage.local.set({ 一堆警告: [] }, () => {});
-    });
+    // chrome.storage.local.get(["一堆警告"], (存储) => {
+    //     存储.一堆警告.forEach((警告内容) => {
+    //         if (警告内容 == "w") return;
+    //         创建警告(警告内容);
+    //     });
+    //     chrome.storage.local.set({ 一堆警告: [] }, () => {});
+    // });
 } catch (e) {
     错误(e);
 }

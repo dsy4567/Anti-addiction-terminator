@@ -25,19 +25,19 @@ function 大人来了() {
     });
 }
 function 存储警告(警告内容) {
-    chrome.storage.local.get(["一堆警告"], (存储) => {
-        if (!警告内容) 警告内容 = "w";
-        try {
-            if (!存储.一堆警告[0]) {
-                throw "";
-            }
-        } catch (e) {
-            return chrome.storage.local.set({ 一堆警告: ["w", 警告内容] }, () => {});
-        }
-        let 一堆警告 = 存储.一堆警告;
-        一堆警告.push(警告内容);
-        return chrome.storage.local.set({ 一堆警告: 一堆警告 }, () => {});
-    });
+    // chrome.storage.local.get(["一堆警告"], (存储) => {
+    //     if (!警告内容) 警告内容 = "w";
+    //     try {
+    //         if (!存储.一堆警告[0]) {
+    //             throw "";
+    //         }
+    //     } catch (e) {
+    //         return chrome.storage.local.set({ 一堆警告: ["w", 警告内容] }, () => {});
+    //     }
+    //     let 一堆警告 = 存储.一堆警告;
+    //     一堆警告.push(警告内容);
+    //     return chrome.storage.local.set({ 一堆警告: 一堆警告 }, () => {});
+//     });
 }
 
 存储警告();
@@ -53,7 +53,7 @@ chrome.runtime.onInstalled.addListener(() => {
 chrome.commands.onCommand.addListener((命令) => {
     switch (命令) {
         case "1":
-            console.log(chrome.i18n.getMessage("1"));
+            console.log(chrome.i18n.getMessage("3"));
             通用规则破解();
             break;
 
@@ -68,17 +68,17 @@ chrome.commands.onCommand.addListener((命令) => {
 });
 
 /*eslint-disable */
-chrome.storage.onChanged.addListener(function (变化, 名称空间) {
-    for (let [值, { 旧值, 新值 }] of Object.entries(变化)) {
-        switch (值) {
-            case "发出警告":
-                chrome.storage.local.get((存储) => {
-                    存储警告(存储.警告内容);
-                });
-                break;
+// chrome.storage.onChanged.addListener(function (变化, 名称空间) {
+//     for (let [值, { 旧值, 新值 }] of Object.entries(变化)) {
+//         switch (值) {
+//             case "发出警告":
+//                 chrome.storage.local.get((存储) => {
+//                     存储警告(存储.警告内容);
+//                 });
+//                 break;
 
-            default:
-                break;
-        }
-    }
-});
+//             default:
+//                 break;
+//         }
+//     }
+// });

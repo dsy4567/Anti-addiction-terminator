@@ -48,7 +48,8 @@ p {
     z-index: 9;
 }
 
-#工具 {
+#工具,
+#设置 {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -90,3 +91,4 @@ p {
     padding: 4px;
     z-index: 99;
 }
+

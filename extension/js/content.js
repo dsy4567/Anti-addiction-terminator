@@ -155,14 +155,14 @@ function 大人来了() {
     document.body.appendChild(遮罩);
 }
 function 创建警告(警告) {
-    if (self == top)
-        chrome.storage.local.set(
-            {
-                警告内容: 警告,
-                发出警告: Math.random(),
-            },
-            () => {}
-        );
+    // if (self == top)
+    //     chrome.storage.local.set(
+    //         {
+    //             警告内容: 警告,
+    //             发出警告: Math.random(),
+    //         },
+    //         () => {}
+    //     );
 }
 function 错误(e) {
     console.error(e);

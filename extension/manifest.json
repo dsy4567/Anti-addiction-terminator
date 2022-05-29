@@ -11,9 +11,12 @@
     },
     "default_locale": "zh_CN",
     "commands": {
-       "2": {
-          "description": "__MSG_2__"
-       }
+        "1": {
+            "description": "__MSG_3__"
+        },
+        "2": {
+            "description": "__MSG_2__"
+        }
     },
     "content_scripts": [
         {
@@ -80,8 +83,7 @@
     "name": "__MSG_name__",
     "permissions": [
         "declarativeNetRequest",
-        "notifications",
-        "storage"
+        "notifications"
     ],
     "version": "1.2.3",
     "web_accessible_resources": [

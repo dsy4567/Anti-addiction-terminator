@@ -8,7 +8,6 @@
     :root {
         --theme-color1: rgb(30, 30, 30);
         --theme-color2: white;
-        --theme-color3: rgba(255, 255, 255, 0.5);
     }
 
     .图标 {
@@ -20,8 +19,10 @@
     :root {
         --theme-color1: white;
         --theme-color2: rgb(30, 30, 30);
-        --theme-color3: rgba(150, 150, 150, 0.5);
     }
+}
+:root {
+    --theme-color3: rgba(100, 100, 100);
 }
 
 * {
@@ -59,10 +60,12 @@ button {
     margin: 4px;
     padding: 12px;
 }
-button:active {
+button:active,
+.选项:active {
     filter: brightness(0.8) !important;
 }
-button:hover {
+button:hover,
+.选项:hover {
     filter: brightness(1.2);
 }
 button * {
@@ -72,4 +75,19 @@ button * {
 
 .图标 {
     cursor: pointer;
+}
+
+.选项 {
+    font-size: 16px;
+    height: 50px;
+    width: 95%;
+    background-color: var(--theme-color3);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.选项 * {
+    margin-left: 32px;
+    margin-right: 32px;
 }

@@ -13,6 +13,14 @@
         }
     },
     "default_locale": "zh_CN",
+    "commands": {
+        "1": {
+            "description": "__MSG_3__"
+        },
+        "2": {
+            "description": "__MSG_2__"
+        }
+    },
     "content_scripts": [
         {
             "all_frames": true,
@@ -79,7 +87,6 @@
     "permissions": [
         "declarativeNetRequest",
         "notifications",
-        "storage",
         "*://*.4399.com/*",
         "*://*.7k7k.com/*",
         "*://*.aiwan4399.com/*",
