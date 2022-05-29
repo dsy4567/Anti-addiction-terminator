@@ -3,7 +3,9 @@
 > _该扩展基于 https://github.com/dsy4567/Fucking-Anti-Indulgence/ 改造而来_
 
 > 镜像 https://notabug.org/dsy4567/Anti-addiction-terminator
- 
+
+> edge: https://microsoftedge.crxsoso.com/addons/detail/chpenmljpdpkebnohfbbdpfelabcnlnp  
+
 > firefox: https://addons.mozilla.org/zh-CN/firefox/addon/anti-addiction-terminator/ (更新慢, 服务器太辣鸡)  
 
 ---
