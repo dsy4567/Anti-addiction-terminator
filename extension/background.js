@@ -6,6 +6,9 @@
 
 /* global chrome:false */
 
+function 大人来了() {
+    chrome.storage.local.set({ 大人来了: Math.random() }, () => {});
+}
 function 存储警告(警告内容) {
     chrome.storage.local.get(["一堆警告"], (存储) => {
         if (!警告内容) 警告内容 = "w";
@@ -32,6 +35,18 @@ chrome.runtime.onInstalled.addListener(() => {
     });
 });
 
+chrome.commands.onCommand.addListener((命令) => {
+    switch (命令) {
+        case "2":
+            console.log(chrome.i18n.getMessage("2"));
+            大人来了();
+            break;
+
+        default:
+            break;
+    }
+});
+
 /*eslint-disable */
 chrome.storage.onChanged.addListener(function (变化, 名称空间) {
     for (let [值, { 旧值, 新值 }] of Object.entries(变化)) {
@@ -47,3 +62,4 @@ chrome.storage.onChanged.addListener(function (变化, 名称空间) {
         }
     }
 });
+

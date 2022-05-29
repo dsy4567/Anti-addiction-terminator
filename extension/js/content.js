@@ -178,26 +178,40 @@ try {
     错误(e);
 }
 
-/*eslint-disable */
 try {
-    chrome.storage.onChanged.addListener(function (变化, 名称空间) {
-        
-        try {
-            for (let [值, { 旧值, 新值 }] of Object.entries(变化)) {
-                
-                switch (值) {
-                    case "通用规则破解":
-                        使用通用规则破解();
-                        break;
-                    case "大人来了":
-                        大人来了();
-                        break;
-                    default:
-                        break;
-                }
+    // chrome.storage.onChanged.addListener(function (变化, 名称空间) {
+    //     try {
+    //         // eslint-disable-next-line
+    //         for (let [值, { 旧值, 新值 }] of Object.entries(变化)) {
+    //             switch (值) {
+    //                 case "通用规则破解":
+    //                     使用通用规则破解();
+    //                     break;
+    //                 case "大人来了":
+    //                     大人来了();
+    //                     break;
+    //                 default:
+    //                     break;
+    //             }
+    //         }
+    //     } catch (e) {
+    //         错误(e);
+    //     }
+    // });
+
+    // eslint-disable-next-line
+    chrome.runtime.onMessage.addListener(function (请求, 发送者, 发送回复) {
+        if (typeof 请求 == "object" && !document.hidden) {
+            console.log(请求);
+            switch (请求.操作) {
+                case "1":
+                    使用通用规则破解();
+                    break;
+                case "2":
+                    大人来了();
+                default:
+                    break;
             }
-        } catch (e) {
-            错误(e);
         }
     });
 } catch (e) {

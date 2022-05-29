@@ -10,6 +10,11 @@
         "service_worker": "background.js"
     },
     "default_locale": "zh_CN",
+    "commands": {
+       "2": {
+          "description": "__MSG_2__"
+       }
+    },
     "content_scripts": [
         {
             "all_frames": true,
@@ -78,7 +83,7 @@
         "notifications",
         "storage"
     ],
-    "version": "1.2.2",
+    "version": "1.2.3",
     "web_accessible_resources": [
         {
             "matches": [

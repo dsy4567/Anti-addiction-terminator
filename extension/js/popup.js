@@ -4,13 +4,21 @@
  * 您还可以在这里找到源码 https://github.com/dsy4567/Anti-addiction-terminator
  */
 
-/*eslint-disable */
+/* global chrome 一些警告 版本 打开关于 工具 关于 名字 使用通用规则破解 大人来了按钮 给个好评 登录7k7k $*/
 
 function 通用规则破解() {
-    chrome.storage.local.set({ 通用规则破解: Math.random() }, () => {});
+    // chrome.storage.local.set({ 通用规则破解: Math.random() }, () => {});
+
+    chrome.runtime.sendMessage({ 操作: "1" }, function (回复) {
+        console.log("收到回复：" + 回复);
+    });
 }
 function 大人来了() {
-    chrome.storage.local.set({ 大人来了: Math.random() }, () => {});
+    // chrome.storage.local.set({ 大人来了: Math.random() }, () => {});
+
+    chrome.runtime.sendMessage({ 操作: "2" }, function (response) {
+        console.log("收到回复：" + response);
+    });
 }
 function 创建警告(警告) {
     try {
@@ -31,44 +39,44 @@ function 创建警告(警告) {
         }
     } catch (e) {}
 }
-function 温馨提示(提示) {
-    try {
-        if (提示) {
-            $(一些警告).append(`
-            <div class="提示">
-                <img class="警告图标" src="/icon/smile.svg" alt="提示" title="提示" />
-                <div class="警告信息">${提示}</div>
-                <img class="图标 关闭警告" src="/icon/close.svg" alt="关闭" title="关闭" />
-            </div>
-        `);
-            for (let i = 0; i < $(".关闭警告").length; i++) {
-                const el = $(".关闭警告")[i];
-                $(el).on("click", () => {
-                    $(el).parent().remove();
-                });
-            }
-        }
-    } catch (e) {}
-}
-function 特别提示(提示) {
-    try {
-        if (提示) {
-            $(一些警告).append(`
-            <div class="提示">
-                <div class="警告图标" alt="提示" title="提示">✨</div>
-                <div class="警告信息">${提示}</div>
-                <img class="图标 关闭警告" src="/icon/close.svg" alt="关闭" title="关闭" />
-            </div>
-        `);
-            for (let i = 0; i < $(".关闭警告").length; i++) {
-                const el = $(".关闭警告")[i];
-                $(el).on("click", () => {
-                    $(el).parent().remove();
-                });
-            }
-        }
-    } catch (e) {}
-}
+// function 温馨提示(提示) {
+//     try {
+//         if (提示) {
+//             $(一些警告).append(`
+//             <div class="提示">
+//                 <img class="警告图标" src="/icon/smile.svg" alt="提示" title="提示" />
+//                 <div class="警告信息">${提示}</div>
+//                 <img class="图标 关闭警告" src="/icon/close.svg" alt="关闭" title="关闭" />
+//             </div>
+//         `);
+//             for (let i = 0; i < $(".关闭警告").length; i++) {
+//                 const el = $(".关闭警告")[i];
+//                 $(el).on("click", () => {
+//                     $(el).parent().remove();
+//                 });
+//             }
+//         }
+//     } catch (e) {}
+// }
+// function 特别提示(提示) {
+//     try {
+//         if (提示) {
+//             $(一些警告).append(`
+//             <div class="提示">
+//                 <div class="警告图标" alt="提示" title="提示">✨</div>
+//                 <div class="警告信息">${提示}</div>
+//                 <img class="图标 关闭警告" src="/icon/close.svg" alt="关闭" title="关闭" />
+//             </div>
+//         `);
+//             for (let i = 0; i < $(".关闭警告").length; i++) {
+//                 const el = $(".关闭警告")[i];
+//                 $(el).on("click", () => {
+//                     $(el).parent().remove();
+//                 });
+//             }
+//         }
+//     } catch (e) {}
+// }
 function 错误(e) {
     console.error(e);
     创建警告(e.stack);
