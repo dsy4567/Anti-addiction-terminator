@@ -57,6 +57,16 @@
                 "*://*.iwan4399.com/*"
             ],
             "run_at": "document_start"
+        },
+        {
+            "all_frames": true,
+            "js": [
+                "/js/content-report.js"
+            ],
+            "matches": [
+                "*://jubao.chinaso.com/*"
+            ],
+            "run_at": "document_start"
         }
     ],
     "declarative_net_request": {
@@ -103,12 +113,14 @@
                 "*://*.gamedog.cn/*",
                 "*://*.9377.com/*",
                 "*://*.37.com/*",
-                "*://*.4366.com/*"
+                "*://*.4366.com/*",
+                "*://jubao.chinaso.com/*"
             ],
             "resources": [
                 "/js/no-fcm.js",
                 "/js/no-fcm-4399.js",
-                "/css/content.css"
+                "/css/content.css",
+                "/js/content-report.js"
             ]
         }
     ]

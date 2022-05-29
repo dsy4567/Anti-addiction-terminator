@@ -37,7 +37,7 @@ function 存储警告(警告内容) {
     //     let 一堆警告 = 存储.一堆警告;
     //     一堆警告.push(警告内容);
     //     return chrome.storage.local.set({ 一堆警告: 一堆警告 }, () => {});
-//     });
+    //     });
 }
 
 存储警告();
@@ -64,6 +64,28 @@ chrome.commands.onCommand.addListener((命令) => {
 
         default:
             break;
+    }
+});
+
+chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+    if (request) sender.tab.id;
+    sendResponse("");
+});
+
+chrome.runtime.onMessage.addListener(function (请求, 发送者, 发送回复) {
+    if (typeof 请求 == "object") {
+        console.log(请求, 发送者);
+        switch (请求.操作) {
+            case "0":
+                chrome.tabs.create({
+                    url: chrome.runtime.getURL("/report.html"),
+                    active: true,
+                });
+                chrome.tabs.remove(发送者.tab.id, () => {});
+            default:
+                break;
+        }
+        发送回复("ok");
     }
 });
 
