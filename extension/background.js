@@ -6,8 +6,23 @@
 
 /* global chrome:false */
 
+function 通用规则破解() {
+    // chrome.storage.local.set({ 通用规则破解: Math.random() }, () => {});
+
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        chrome.tabs.sendMessage(tabs[0].id, { 操作: "1" }, function (回复) {
+            console.log("收到回复：" + 回复);
+        });
+    });
+}
 function 大人来了() {
-    chrome.storage.local.set({ 大人来了: Math.random() }, () => {});
+    // chrome.storage.local.set({ 大人来了: Math.random() }, () => {});
+
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        chrome.tabs.sendMessage(tabs[0].id, { 操作: "2" }, function (回复) {
+            console.log("收到回复：" + 回复);
+        });
+    });
 }
 function 存储警告(警告内容) {
     chrome.storage.local.get(["一堆警告"], (存储) => {
@@ -37,6 +52,11 @@ chrome.runtime.onInstalled.addListener(() => {
 
 chrome.commands.onCommand.addListener((命令) => {
     switch (命令) {
+        case "1":
+            console.log(chrome.i18n.getMessage("1"));
+            通用规则破解();
+            break;
+
         case "2":
             console.log(chrome.i18n.getMessage("2"));
             大人来了();
@@ -62,4 +82,3 @@ chrome.storage.onChanged.addListener(function (变化, 名称空间) {
         }
     }
 });
-

@@ -208,10 +208,14 @@ try {
                     使用通用规则破解();
                     break;
                 case "2":
-                    大人来了();
+                    if (self == top) {
+                        大人来了();
+                    }
+                    break;
                 default:
                     break;
             }
+            发送回复("ok");
         }
     });
 } catch (e) {

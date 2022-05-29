@@ -9,15 +9,19 @@
 function 通用规则破解() {
     // chrome.storage.local.set({ 通用规则破解: Math.random() }, () => {});
 
-    chrome.runtime.sendMessage({ 操作: "1" }, function (回复) {
-        console.log("收到回复：" + 回复);
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        chrome.tabs.sendMessage(tabs[0].id, { 操作: "1" }, function (回复) {
+            console.log("收到回复：" + 回复);
+        });
     });
 }
 function 大人来了() {
     // chrome.storage.local.set({ 大人来了: Math.random() }, () => {});
 
-    chrome.runtime.sendMessage({ 操作: "2" }, function (response) {
-        console.log("收到回复：" + response);
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        chrome.tabs.sendMessage(tabs[0].id, { 操作: "2" }, function (回复) {
+            console.log("收到回复：" + 回复);
+        });
     });
 }
 function 创建警告(警告) {
