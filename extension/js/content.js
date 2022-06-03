@@ -154,6 +154,7 @@ function 大人来了() {
     遮罩.innerHTML = "";
     document.body.appendChild(遮罩);
 }
+// eslint-disable-next-line
 function 创建警告(警告) {
     // if (self == top)
     //     chrome.storage.local.set(
@@ -168,6 +169,16 @@ function 错误(e) {
     console.error(e);
     创建警告("错误: " + e.stack);
 }
+// function get(url, 回调) {
+//     let xhr = new XMLHttpRequest();
+//     let res = "";
+//     xhr.open("get", url);
+//     xhr.send(null);
+//     xhr.onload = () => {
+//         res = xhr.responseText;
+//         回调(res);
+//     };
+// }
 
 try {
     var $script = document.createElement("script");

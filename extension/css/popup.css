@@ -39,7 +39,8 @@ p {
 .关于 * {
     margin: 4px;
 }
-#关于 {
+#关于,
+#设置 {
     background-color: var(--theme-color1);
     display: none;
     flex-direction: column;
@@ -48,8 +49,7 @@ p {
     z-index: 9;
 }
 
-#工具,
-#设置 {
+#工具 {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -92,3 +92,6 @@ p {
     z-index: 99;
 }
 
+#返回 {
+    display: none;
+}

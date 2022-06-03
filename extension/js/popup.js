@@ -4,14 +4,14 @@
  * 您还可以在这里找到源码 https://github.com/dsy4567/Anti-addiction-terminator
  */
 
-/* global chrome 一些警告 版本 打开关于 工具 关于 名字 使用通用规则破解 大人来了按钮 给个好评 登录7k7k $ 快捷键*/
+/* global chrome 一些警告 版本 打开关于 工具 关于 名字 使用通用规则破解 大人来了按钮 给个好评 登录7k7k $ 快捷键 设置 打开设置 返回 */
 
 function 通用规则破解() {
     // chrome.storage.local.set({ 通用规则破解: Math.random() }, () => {});
 
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
         chrome.tabs.sendMessage(tabs[0].id, { 操作: "1" }, function (回复) {
-            console.log("收到回复：" + 回复);
+            console.log("收到回复: " + 回复);
         });
     });
 }
@@ -20,7 +20,7 @@ function 大人来了() {
 
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
         chrome.tabs.sendMessage(tabs[0].id, { 操作: "2" }, function (回复) {
-            console.log("收到回复：" + 回复);
+            console.log("收到回复: " + 回复);
         });
     });
 }
@@ -85,6 +85,17 @@ function 错误(e) {
     console.error(e);
     创建警告(e.stack);
 }
+function 显示返回按钮() {
+    if ($(返回).css("display") == "none") {
+        $(打开设置).hide();
+        $(打开关于).hide();
+        $(返回).show();
+    } else {
+        $(返回).hide();
+        $(打开设置).show();
+        $(打开关于).show();
+    }
+}
 
 var isFF = navigator.userAgent.includes("Firefox");
 
@@ -100,9 +111,47 @@ try {
                 active: true,
             });
         });
+        $(返回).on("click", () => {
+            $(关于).hide();
+            $(设置).hide();
+            显示返回按钮();
+            $(工具).show();
+        });
         $(打开关于).on("click", () => {
-            $(工具).toggle();
-            $(关于).toggle();
+            $(工具).hide();
+            $(设置).hide();
+            显示返回按钮();
+            $(关于).css("display", "flex");
+            // $(关于).show();
+
+            // if ($(工具).css("display") == "none") {
+            //     // 现在关于是显示的
+            //     $(关于).hide();
+            //     $(设置).hide();
+            //     $(工具).show();
+            // } else {
+            //     $(设置).hide();
+            //     $(工具).hide();
+            //     $(关于).css("display", "flex");
+            //     // $(关于).show();
+            // }
+        });
+        $(打开设置).on("click", () => {
+            $(工具).hide();
+            $(关于).hide();
+            显示返回按钮();
+            $(设置).css("display", "flex");
+
+            // if ($(工具).css("display") == "none") {
+            //     $(设置).hide();
+            //     $(关于).hide();
+            //     $(工具).show();
+            // } else {
+            //     $(关于).hide();
+            //     $(工具).hide();
+            //     $(设置).css("display", "flex");
+            //     // $(设置).show();
+            // }
         });
         $(打开关于).attr("alt", chrome.i18n.getMessage("0"));
         $(打开关于).attr("title", chrome.i18n.getMessage("0"));
