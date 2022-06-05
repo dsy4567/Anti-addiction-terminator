@@ -10,8 +10,11 @@
 
 ---
 
-<center>
-<img alt="对联" title="对联" src="https://fcmsb250.github.io/img1.jpeg" />
+
+
+
+<center style="text-align:center;">
+<img style="text-align:center;" alt="logo" title="logo" src="https://dsy4567.github.io/logo.svg" />
 </center>
 
 # ✨ 扩展功能
@@ -72,7 +75,7 @@
 
 > https://github.com/dsy4567/Anti-addiction-terminator/releases
 
-# ❤️ 做出贡献
+# ❤️ 贡献指南
 
 > https://github.com/dsy4567/Anti-addiction-terminator/blob/master/CONTRIBUTING.md
 
