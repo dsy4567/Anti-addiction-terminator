@@ -4,14 +4,14 @@
  * 您还可以在这里找到源码 https://github.com/dsy4567/Anti-addiction-terminator
  */
 
-/* global chrome:false */
+/* global chrome */
 
 function 通用规则破解() {
     // chrome.storage.local.set({ 通用规则破解: Math.random() }, () => {});
 
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
         chrome.tabs.sendMessage(tabs[0].id, { 操作: "1" }, function (回复) {
-            console.log("收到回复：" + 回复);
+            console.log("收到回复: " + 回复);
         });
     });
 }
@@ -20,10 +20,12 @@ function 大人来了() {
 
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
         chrome.tabs.sendMessage(tabs[0].id, { 操作: "2" }, function (回复) {
-            console.log("收到回复：" + 回复);
+            console.log("收到回复: " + 回复);
         });
     });
 }
+
+// eslint-disable-next-line
 function 存储警告(警告内容) {
     // chrome.storage.local.get(["一堆警告"], (存储) => {
     //     if (!警告内容) 警告内容 = "w";

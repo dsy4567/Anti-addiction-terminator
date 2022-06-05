@@ -73,6 +73,11 @@
                 "id": "7k7k",
                 "enabled": true,
                 "path": "/rule/7k7k.json"
+            },
+            {
+                "id": "report",
+                "enabled": true,
+                "path": "/rule/report.json"
             }
         ]
     },
@@ -91,7 +96,8 @@
         "*://*.7k7k.com/*",
         "*://*.aiwan4399.com/*",
         "*://*.iwan4399.com/*",
-        "*://*.zxwyouxi.com/*"
+        "*://*.zxwyouxi.com/*",
+        "*://jubao,chinaso.com/*"
     ],
     "version": "1.2.4",
     "version_name": "1.2.4 (MV2)"
