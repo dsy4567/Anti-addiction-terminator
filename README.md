@@ -13,9 +13,9 @@
 
 
 
-<center style="text-align:center;">
+<div style="text-align:center;">
 <img style="text-align:center;" alt="logo" title="logo" src="https://dsy4567.github.io/logo.svg" />
-</center>
+</div>
 
 # ✨ 扩展功能
 
