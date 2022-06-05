@@ -4,23 +4,22 @@
 
 > 镜像 https://notabug.org/dsy4567/Anti-addiction-terminator
 
-> edge: https://microsoftedge.crxsoso.com/addons/detail/chpenmljpdpkebnohfbbdpfelabcnlnp  
+> edge: https://microsoftedge.crxsoso.com/addons/detail/chpenmljpdpkebnohfbbdpfelabcnlnp
 
-> firefox: https://addons.mozilla.org/zh-CN/firefox/addon/anti-addiction-terminator/ (更新慢, 服务器太辣鸡)  
+> firefox: https://addons.mozilla.org/zh-CN/firefox/addon/anti-addiction-terminator/ (更新慢, 服务器太辣鸡)
 
 ---
 
-
-
-
-<div style="text-align:center;">
+<center>
+<p align="center" style="text-align:center;">
 <img style="text-align:center;" alt="logo" title="logo" src="https://dsy4567.github.io/logo.svg" />
-</div>
+</p>
+</center>
 
 # ✨ 扩展功能
 
-> - 破解 4366，37，9377，游戏狗，u7u9，7724，17yy，qq空间部分游戏，07073，7k7k，4399 的防沉迷
-> - 大人来了和通用破解规则
+> -   破解 4366，37，9377，游戏狗，u7u9，7724，17yy，qq 空间部分游戏，07073，7k7k，4399 的防沉迷
+> -   大人来了和通用破解规则
 
 # ✅ 已支持的游戏
 
