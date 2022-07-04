@@ -20,10 +20,20 @@
                 <small id="版本"></small>
             </div>
             <div class="右">
-                <img class="图标" src="/icon/setting.svg" alt="设置" title="设置" id="打开设置" />
-                <img class="图标" src="/icon/info.svg" alt="关于" title="关于" id="打开关于" />
-
-                <img class="图标" src="/icon/back.svg" alt="返回" title="返回" id="返回" />
+                <button class="图标按钮">
+                    <img
+                        class="图标"
+                        src="/icon/setting.svg"
+                        alt="设置"
+                        title="设置"
+                        id="打开设置"
+                    /></button
+                ><button class="图标按钮">
+                    <img class="图标" src="/icon/info.svg" alt="关于" title="关于" id="打开关于" />
+                </button>
+                <button class="图标按钮">
+                    <img class="图标" src="/icon/back.svg" alt="返回" title="返回" id="返回" />
+                </button>
             </div>
         </div>
 
@@ -72,13 +82,13 @@
 
         <div id="工具">
             <div class="按钮组">
-                <button id="使用通用规则破解">使用 / 取消通用规则破解</button>
+                <button class="大按钮" id="使用通用规则破解">使用 / 取消通用规则破解</button>
             </div>
             <div class="按钮组">
-                <button id="大人来了按钮">大人来了 / 走了</button>
+                <button class="大按钮" id="大人来了按钮">大人来了 / 走了</button>
             </div>
             <div class="按钮组">
-                <button>
+                <button class="大按钮">
                     <a
                         target="_blank"
                         id="登录7k7k"
@@ -91,7 +101,8 @@
 
         <div id="设置">
             <div class="选项" title="快捷键" id="快捷键">
-                <span> <img class="图标" src="/icon/kbd.svg" alt="快捷键" /></span><span>配置快捷键</span>
+                <button><img class="图标" src="/icon/kbd.svg" alt="快捷键" /></button
+                ><span>配置快捷键</span>
             </div>
         </div>
 

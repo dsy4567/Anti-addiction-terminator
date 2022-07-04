@@ -7,6 +7,16 @@
 /* body {
     padding-bottom: 25%;
 } */
+
+@keyframes 齿轮 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 p {
     font-size: 16px;
     text-align: center;
@@ -34,6 +44,13 @@ p {
 }
 #logo {
     border-radius: 50%;
+}
+#打开设置:active {
+    animation-name: 齿轮;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-delay: 1s;
 }
 
 .关于 * {

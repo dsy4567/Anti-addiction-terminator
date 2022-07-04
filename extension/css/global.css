@@ -47,28 +47,32 @@ a:hover {
     text-decoration: 1px underline var(--theme-color2);
 }
 
-.按钮组 {
+/* .按钮组 {
+    border: rgba(0, 0, 0,0) solid 1px;
+    border-radius: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
+} */
+.按钮组:focus {
+    /* border: var(--theme-color2) solid 1px; */
 }
-button {
+button.大按钮 {
     background-color: rgb(70, 200, 200);
-    border: none;
     border-radius: 8px;
     font-size: 16px;
     margin: 4px;
     padding: 12px;
 }
-button:active,
+button.大按钮:active,
 .选项:active {
     filter: brightness(0.8) !important;
 }
-button:hover,
+button.大按钮:hover,
 .选项:hover {
     filter: brightness(1.2);
 }
-button * {
+button.大按钮 * {
     text-decoration: none;
     cursor: default;
 }
@@ -77,6 +81,16 @@ button * {
     cursor: pointer;
 }
 
+.图标按钮 {
+    background-color: var(--theme-color-1);
+    border: rgba(0, 0, 0, 0) solid 1px;
+    border-radius: 8px;
+    padding: 2px;
+    margin: 0;
+}
+.图标按钮:focus {
+    border: var(--theme-color2) solid 1px;
+}
 .选项 {
     font-size: 16px;
     height: 50px;
