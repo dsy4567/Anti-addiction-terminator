@@ -1,7 +1,7 @@
 /**
- * 此代码采用 GPL-3.0 许可证, 请查看 LICENSE.txt 或 https://www.gnu.org/licenses/gpl-3.0.txt
- * Copyright (C) 2022 dsy4567 (https://github.com/dsy4567 | dsy4567@outlook.com)
- * 您还可以在这里找到源码 https://github.com/dsy4567/Anti-addiction-terminator
+ * 此代码在 GPL-3.0 下获得许可, 请查看 LICENSE.txt 或 <https://www.gnu.org/licenses/gpl-3.0.txt>
+ * Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
+ * 您还可以在这里找到源码 <https://github.com/dsy4567/Anti-addiction-terminator>
  */
 
 @media (prefers-color-scheme: dark) {
@@ -30,8 +30,8 @@
     -webkit-user-drag: none;
 }
 body {
-    background-color: var(--theme-color1);
-    color: var(--theme-color2);
+    background-color: rgb(32 33 36);
+    color: rgb(255 255 255);
     margin: 0;
     padding: 0;
     user-select: none;
@@ -59,6 +59,7 @@ a:hover {
 }
 button.大按钮 {
     background-color: rgb(70, 200, 200);
+    border: none;
     border-radius: 8px;
     font-size: 16px;
     margin: 4px;
@@ -73,6 +74,13 @@ button.大按钮:hover,
     filter: brightness(1.2);
 }
 button.大按钮 * {
+
+    /* background-color: rgb(70, 200, 200);
+    border-radius: 8px;
+    font-size: 16px;
+    margin: 4px;
+    padding: 12px; */
+
     text-decoration: none;
     cursor: default;
 }
@@ -83,13 +91,11 @@ button.大按钮 * {
 
 .图标按钮 {
     background-color: var(--theme-color-1);
-    border: rgba(0, 0, 0, 0) solid 1px;
+    /* border: rgba(0, 0, 0, 0) solid 2px; */
+    border:  none;
     border-radius: 8px;
     padding: 2px;
     margin: 0;
-}
-.图标按钮:focus {
-    border: var(--theme-color2) solid 1px;
 }
 .选项 {
     font-size: 16px;
@@ -98,11 +104,17 @@ button.大按钮 * {
     background-color: var(--theme-color3);
     border-radius: 8px;
     display: flex;
-    align-items: center;
     justify-content: flex-start;
+    align-items: center;
 }
 .选项 * {
     /* display: flex; */
+    cursor:default ;
     margin-left: 8px;
     margin-right: 8px;
+}
+.选项 button{
+    background-color: var(--theme-color3);
+    border: none;
+    margin-top: 6px;
 }

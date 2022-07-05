@@ -1,7 +1,7 @@
 /**
- * 此代码采用 GPL-3.0 许可证, 请查看 LICENSE.txt 或 https://www.gnu.org/licenses/gpl-3.0.txt
- * Copyright (C) 2022 dsy4567 (https://github.com/dsy4567 | dsy4567@outlook.com)
- * 您还可以在这里找到源码 https://github.com/dsy4567/Anti-addiction-terminator
+ * 此代码在 GPL-3.0 下获得许可, 请查看 LICENSE.txt 或 <https://www.gnu.org/licenses/gpl-3.0.txt>
+ * Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
+ * 您还可以在这里找到源码 <https://github.com/dsy4567/Anti-addiction-terminator>
  */
 
 /* global chrome 一些警告 版本 打开关于 工具 关于 名字 使用通用规则破解 大人来了按钮 给个好评 登录7k7k $ 快捷键 设置 打开设置 返回 */
@@ -87,9 +87,9 @@ function 错误(e) {
 }
 function 显示返回按钮() {
     if ($(返回).css("display") == "none") {
-        $(打开设置).hide();
-        $(打开关于).hide();
-        $(返回).show();
+        $(打开设置).parent().hide();
+        $(打开关于).parent().hide();
+        $(返回).parent().show();
     } else {
         $(返回).hide();
         $(打开设置).show();

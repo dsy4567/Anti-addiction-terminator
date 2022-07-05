@@ -24,7 +24,7 @@
 
 > 附: 公钥
 >
-> ```
+> ```plaintext
 > -----BEGIN PUBLIC KEY-----
 > MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAquxadj5QOzXgefG+9L5a
 > LRJIsq71QWxBuLfRJUss2rgxlPHa7Z5tIezS0+vaw5pSdjF1wLhK/rC5nJ/rNeOE
