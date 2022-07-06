@@ -10,9 +10,9 @@ Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>防沉迷终结者</title>
+        <script src="/lib/jquery-3.6.0.min.js"></script>
         <link rel="stylesheet" href="/css/global.css" />
         <link rel="stylesheet" href="/css/popup.css" />
-        <script src="/lib/jquery-3.6.0.min.js"></script>
     </head>
     <body>
         <div id="顶部">
@@ -48,7 +48,7 @@ Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
 
         <hr />
 
-        <div id="一些警告"></div>
+        <div id="一些横幅"></div>
 
         <div id="关于">
             <p>✨该扩展可以破解一些游戏平台的防沉迷, 帮您实现游戏自由✨</p>
@@ -94,24 +94,19 @@ Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
                 <span>使用 / 取消通用规则破解</span>
             </button>
             <button class="大按钮" id="大人来了按钮"><span>隐藏游戏</span></button>
-            <button class="大按钮">
-                <a
-                    target="_blank"
-                    id="登录7k7k"
-                    href="http://www.7k7k.com/swf/204220.htm#aat-doLogin"
-                    >登录7k7k账号(无限制)</a
-                >
+            <button class="大按钮" id="登录7k7k">
+                <span>登录7k7k账号(无限制)</span>
             </button>
 
-            <img class="飞机 装饰品" src="/icon/plane.svg" alt="飞机" />
-            <img class="游戏手柄 装饰品" src="/icon/gamehandle.svg" alt="飞机" />
+            <img title="飞机" class="飞机 装饰品 图标 不点击" src="/icon/plane.svg" alt="飞机" />
+            <img title="游戏手柄" class="游戏手柄 装饰品 图标 不点击" src="/icon/gamehandle.svg" alt="飞机" />
         </div>
 
         <div id="设置">
-            <div class="选项" title="快捷键" id="快捷键">
-                <button><img class="图标" src="/icon/kbd.svg" alt="快捷键" /></button
+            <button class="选项" title="快捷键" id="快捷键">
+                <span><img class="图标" src="/icon/kbd.svg" alt="快捷键" /></span
                 ><span>配置快捷键</span>
-            </div>
+            </button>
         </div>
 
         <script src="/js/popup.js"></script>

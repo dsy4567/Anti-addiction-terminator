@@ -16,7 +16,43 @@
         transform: rotate(360deg);
     }
 }
+@keyframes 飞机 {
+    0% {
+        transform: translate(-1vw, 1vh);
+    }
+    50% {
+        transform: translate(1vw, -1vh);
+    }
+    100% {
+        transform: translate(-1vw, 1vh);
+    }
+}
+@keyframes 游戏手柄 {
+    0% {
+        transform: rotate(15deg);
+    }
+    50% {
+        transform: rotate(-15deg);
+    }
+    100% {
+        transform: rotate(15deg);
+    }
+}
 
+html {
+    display: none;
+    background-color: var(--theme-color1);
+    color: var(--theme-color2);
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    max-width: 512px;
+    min-width: 512px;
+    width: 512px;
+}
+body {
+    margin: 0;
+}
 p {
     font-size: 16px;
     text-align: center;
@@ -57,6 +93,10 @@ p {
     margin: 4px;
 }
 #关于,
+.横幅 {
+    user-select: text;
+}
+#关于,
 #设置 {
     background-color: var(--theme-color1);
     display: none;
@@ -75,40 +115,50 @@ p {
     align-content: center;
 }
 
-.警告 {
-    background-color: rgba(255, 0, 0, 0.3);
+.横幅 {
+    /* background-color: rgba(255, 0, 0, 0.3); */
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     font-size: large;
     width: 100%;
-    height: 50px;
+    min-height: 50px;
     margin-bottom: 4px;
     text-align: center;
     padding: 4px;
     z-index: 99;
+    flex-direction: row;
 }
-.警告图标 {
+.横幅 span {
+    max-width: calc(100% - 96px);
+    min-width: calc(100% - 96px);
+}
+.横幅图标,
+.关闭横幅 {
+    width: 24px;
     margin: 8px;
-}
-.关闭警告 {
-    margin: 8px;
-}
-
-.提示 {
-    background-color: rgba(0, 255, 0, 0.3);
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    font-size: large;
-    width: 100%;
-    height: 50px;
-    margin-bottom: 4px;
-    text-align: center;
-    padding: 4px;
-    z-index: 99;
 }
 
 #返回 {
     display: none;
+}
+
+.装饰品 {
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    position: absolute;
+    width: 5vw;
+    height: auto;
+    z-index: -1;
+}
+.飞机 {
+    animation-name: 飞机;
+    right: 5vw;
+    bottom: 5vh;
+}
+.游戏手柄 {
+    animation-name: 游戏手柄;
+    left: 5vw;
+    bottom: 5vh;
 }

@@ -8,6 +8,9 @@
     :root {
         --theme-color1: rgb(30, 30, 30);
         --theme-color2: white;
+        --theme-color3: rgba(128, 128, 128, 0.3);
+        --green: rgb(0, 128, 0);
+        --red: rgb(128, 0, 0);
     }
 
     .图标 {
@@ -19,23 +22,15 @@
     :root {
         --theme-color1: white;
         --theme-color2: rgb(30, 30, 30);
+        --theme-color3: rgba(200, 200, 200, 0.3);
+        --green: rgb(0, 200, 0);
+        --red: rgb(200, 0, 0);
     }
-}
-:root {
-    --theme-color3: rgba(100, 100, 100);
 }
 
 * {
     transition: all 0.2s;
     -webkit-user-drag: none;
-}
-body {
-    background-color: rgb(32 33 36);
-    color: rgb(255 255 255);
-    margin: 0;
-    padding: 0;
-    user-select: none;
-    width: 512px;
 }
 
 a {
@@ -74,7 +69,6 @@ button.大按钮:hover,
     filter: brightness(1.2);
 }
 button.大按钮 * {
-
     /* background-color: rgb(70, 200, 200);
     border-radius: 8px;
     font-size: 16px;
@@ -88,20 +82,25 @@ button.大按钮 * {
 .图标 {
     cursor: pointer;
 }
+.图标.不点击 {
+    cursor: default;
+}
 
 .图标按钮 {
     background-color: var(--theme-color-1);
     /* border: rgba(0, 0, 0, 0) solid 2px; */
-    border:  none;
+    border: none;
     border-radius: 8px;
     padding: 2px;
     margin: 0;
 }
 .选项 {
+    border: none;
     font-size: 16px;
     height: 50px;
     width: 95%;
     background-color: var(--theme-color3);
+    color: var(--theme-color2);
     border-radius: 8px;
     display: flex;
     justify-content: flex-start;
@@ -109,11 +108,11 @@ button.大按钮 * {
 }
 .选项 * {
     /* display: flex; */
-    cursor:default ;
+    cursor: default;
     margin-left: 8px;
     margin-right: 8px;
 }
-.选项 button{
+.选项 button {
     background-color: var(--theme-color3);
     border: none;
     margin-top: 6px;
