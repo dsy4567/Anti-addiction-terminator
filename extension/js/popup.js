@@ -12,7 +12,6 @@ var 已提示错误太多 = 0;
 var 最近一次错误;
 
 /**
- *
  * @param {string | Event} 事件
  * @param {string | undefined} 源
  * @param {number | undefined} 行
@@ -23,11 +22,11 @@ window.onerror = (事件, 源, 行, c, 错误) => {
     if (错误) {
         处理错误(错误);
     } else {
-        处理错误(事件);
+        处理错误(String(事件));
     }
 };
 /**
- * @param {Error | string} e
+ * @param {string} e
  * @param {string} 友好错误信息
  */
 function 处理错误(e, 友好错误信息) {
@@ -37,7 +36,6 @@ function 处理错误(e, 友好错误信息) {
         e.toString().includes("SyntaxError")
     )
         return;
-    if (e.stack) e = e.stack;
 
     console.error(e);
     最近一次错误 = e;
@@ -60,7 +58,7 @@ function 处理错误(e, 友好错误信息) {
  * @param {string} 内容
  * @param {number} 类型 0: 警告 1: 提示(默认)
  */
-function 创建横幅(内容, 类型 = 1) {
+function 创建横幅(内容, 类型 = 1, 关闭时回调 = () => {}) {
     if (内容) {
         let 图标 = ["/icon/warn.svg", "/icon/smile.svg"];
         let 颜色 = ["var(--red)", "var(--green)"];
@@ -69,17 +67,18 @@ function 创建横幅(内容, 类型 = 1) {
         let $横幅 = document.createElement("div");
         let $横幅图标 = document.createElement("img");
         let $横幅内容 = document.createElement("span");
-        let $关闭横幅 = document.createElement("img");
+        let $关闭横幅 = document.createElement("button");
         $横幅.className = "横幅";
         $横幅.style.backgroundColor = 颜色[类型];
         $横幅图标.className = "横幅图标 图标 不点击";
         $横幅图标.src = 图标[类型];
         $横幅图标.title = 描述[类型];
         $横幅内容.innerText = 内容;
-        $关闭横幅.src = "/icon/close.svg";
+        // $关闭横幅.src = "/icon/close.svg";
         $关闭横幅.className = "关闭横幅 图标";
         $关闭横幅.title = "关闭";
         $关闭横幅.onclick = () => {
+            关闭时回调();
             $横幅.remove();
         };
         $横幅.append($横幅图标);
@@ -97,16 +96,9 @@ function 通用规则破解() {
                 .then((回复) => {
                     console.log("收到回复: " + 回复);
                 })
-                .catch((e) =>
-                    处理错误(
-                        new Error(e),
-                        chrome.i18n.getMessage("msg3")
-                    )
-                );
+                .catch((e) => 处理错误(new Error(e), chrome.i18n.getMessage("msg3")));
         })
-        .catch((e) =>
-            处理错误(new Error(e), chrome.i18n.getMessage("msg3"))
-        );
+        .catch((e) => 处理错误(new Error(e), chrome.i18n.getMessage("msg3")));
 }
 function 大人来了() {
     chrome.tabs
@@ -117,28 +109,15 @@ function 大人来了() {
                 .then((回复) => {
                     console.log("收到回复: " + 回复);
                 })
-                .catch((e) =>
-                    处理错误(
-                        new Error(e)
-                        , chrome.i18n.getMessage("msg3")
-                    )
-                );
+                .catch((e) => 处理错误(new Error(e), chrome.i18n.getMessage("msg3")));
         })
-        .catch((e) =>
-            处理错误(new Error(e), chrome.i18n.getMessage("msg3"))
-        );
+        .catch((e) => 处理错误(new Error(e), chrome.i18n.getMessage("msg3")));
 }
 function 显示返回按钮() {
-    // if ($(返回).css("display") == "none") {
     $(打开设置).toggle();
     $(打开关于).toggle();
-    $(打开通知).toggle();
+    // $(打开通知).toggle();
     $(返回).toggle();
-    // } else {
-    //     $(返回).hide();
-    //     $(打开设置).show();
-    //     $(打开关于).show();
-    // }
 }
 
 // var 一些横幅 = $("#一些横幅")[0];
@@ -157,8 +136,8 @@ var 快捷键图标 = $("#快捷键 img")[0];
 var 设置 = $("#设置")[0];
 var 打开设置 = $("#打开设置")[0];
 var 返回 = $("#返回")[0];
-var 打开通知 = $("#打开通知")[0];
-var 通知 = $("#通知")[0];
+// var 打开通知 = $("#打开通知")[0];
+// var 通知 = $("#通知")[0];
 var 重启 = $("#重启")[0];
 var 重启文本 = $("#重启 span")[0];
 var 重启图标 = $("#重启 img")[0];
@@ -169,31 +148,31 @@ $(function () {
     $(返回).on("click", () => {
         $(关于).hide();
         $(设置).hide();
-        $(通知).hide();
+        // $(通知).hide();
         显示返回按钮();
         $(工具).show();
     });
     $(打开关于).on("click", () => {
         $(工具).hide();
         $(设置).hide();
-        $(通知).hide();
+        // $(通知).hide();
         显示返回按钮();
         $(关于).css("display", "flex");
     });
     $(打开设置).on("click", () => {
         $(工具).hide();
         $(关于).hide();
-        $(通知).hide();
+        // $(通知).hide();
         显示返回按钮();
         $(设置).css("display", "flex");
     });
-    $(打开通知).on("click", () => {
-        $(工具).hide();
-        $(关于).hide();
-        $(设置).hide();
-        显示返回按钮();
-        $(通知).css("display", "flex");
-    });
+    // $(打开通知).on("click", () => {
+    //     $(工具).hide();
+    //     $(关于).hide();
+    //     $(设置).hide();
+    //     显示返回按钮();
+    //     // $(通知).css("display", "flex");
+    // });
     $(使用通用规则破解).on("click", () => {
         通用规则破解();
     });
@@ -218,20 +197,21 @@ $(function () {
                 active: true,
             })
             .catch((e) => 处理错误(new Error(e), chrome.i18n.getMessage("msg4")));
-    }); $(重启).on("click",()=> {
-        chrome.runtime.reload()
-    })
+    });
+    $(重启).on("click", () => {
+        chrome.runtime.reload();
+    });
 
     $(打开关于).children().attr("alt", chrome.i18n.getMessage("alt0"));
     $(打开设置).children().attr("alt", chrome.i18n.getMessage("alt1"));
-    $(打开通知).children().attr("alt", chrome.i18n.getMessage("alt4"));
+    // $(打开通知).children().attr("alt", chrome.i18n.getMessage("alt4"));
     $(快捷键图标).attr("alt", chrome.i18n.getMessage("btn3"));
     $(重启图标).attr("alt", chrome.i18n.getMessage("alt5"));
     $(返回).children().attr("alt", chrome.i18n.getMessage("alt3"));
 
     $(打开关于).attr("title", chrome.i18n.getMessage("alt0"));
     $(打开设置).attr("title", chrome.i18n.getMessage("alt1"));
-    $(打开通知).attr("title", chrome.i18n.getMessage("alt4"));
+    // $(打开通知).attr("title", chrome.i18n.getMessage("alt4"));
     $(快捷键).attr("title", chrome.i18n.getMessage("btn3"));
     $(重启).attr("title", chrome.i18n.getMessage("alt5"));
     $(返回).attr("title", chrome.i18n.getMessage("alt3"));
@@ -252,21 +232,28 @@ $(function () {
     }
 
     创建横幅(chrome.i18n.getMessage("msg0"));
+
+    const 隐私策略最后修改日期 = "2022.7.7";
+    if (localStorage.getItem("隐私策略最后修改日期") != 隐私策略最后修改日期) {
+        创建横幅(chrome.i18n.getMessage("msg6"), 1, () => {
+            localStorage.setItem("隐私策略最后修改日期", 隐私策略最后修改日期);
+        });
+    }
+
     $("html").show();
 });
 
 console.log(`
     #############           
-   ##            ##              欢迎使用防沉迷终结者
-  ##            #  ##            ~快乐没有年龄之分~
- ##            #    ##       Copyright (C) 2022 dsy4567
-##  ### ### # #   #  ##     
-##  #   #   ##   ##  ##     
-##  ### #   # # # #  ##         防沉迷终结者 popup 界面
-##  #   #####  #  #  ##     
- ##       #         ##      
-  ##     #         ##       
-   ##   #         ##             以下变量可能会有用:
-    ## #         ##                 最近一次错误
-     ############           
+   ##          # ##              欢迎使用防沉迷终结者
+  ##          #    ##            ~快乐没有年龄之分~
+ ##          #      ##       Copyright (C) 2022 dsy4567
+##  ### ### #     #  ##     
+##  #   #  ###   ##  ##     
+##  ### # # # # # #  ##     
+##  #   ### #  #  #  ##     
+ ##     #           ##            防沉迷终结者 popup 界面
+  ##   #           ##       
+   ## #           ##        
+    ##############          
 `);

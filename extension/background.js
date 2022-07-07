@@ -6,6 +6,7 @@
 
 /* global chrome */
 
+
 function 通用规则破解() {
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
         chrome.tabs.sendMessage(tabs[0].id, { 操作: "1" }, function (回复) {
@@ -47,6 +48,8 @@ chrome.commands.onCommand.addListener((命令) => {
     }
 });
 
+
+
 // chrome.runtime.onMessage.addListener(function (请求, 发送者, 发送回复) {
 //     if (typeof 请求 == "object") {
 //         console.log(请求, 发送者);
@@ -66,16 +69,15 @@ chrome.commands.onCommand.addListener((命令) => {
 
 console.log(`
     #############           
-   ##            ##              欢迎使用防沉迷终结者
-  ##            #  ##            ~快乐没有年龄之分~
- ##            #    ##       Copyright (C) 2022 dsy4567
-##  ### ### # #   #  ##     
-##  #   #   ##   ##  ##     
-##  ### #   # # # #  ##     
-##  #   #####  #  #  ##     
- ##       #         ##            防沉迷终结者 后台
-  ##     #         ##       
-   ##   #         ##        
-    ## #         ##         
-     ############           
+   ##          # ##              欢迎使用防沉迷终结者
+  ##          #    ##            ~快乐没有年龄之分~
+ ##          #      ##       Copyright (C) 2022 dsy4567
+##  ### ### #     #  ##     
+##  #   #  ###   ##  ##     
+##  ### # # # # # #  ##     
+##  #   ### #  #  #  ##     
+ ##     #           ##            防沉迷终结者 后台
+  ##   #           ##       
+   ## #           ##        
+    ##############          
 `);

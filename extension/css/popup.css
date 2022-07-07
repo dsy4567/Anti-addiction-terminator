@@ -130,6 +130,13 @@ p {
 .关闭横幅 {
     width: 24px;
     margin: 8px;
+}.关闭横幅{
+    border: none;
+    border-radius: 8px;
+    width: 24px;
+    height: 24px;
+    background-color: rgba(0,0,0,0);
+    background-image: url(/icon/close.svg);
 }
 
 #返回 {
