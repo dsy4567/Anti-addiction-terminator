@@ -1,5 +1,5 @@
 /**
- * 此代码在 GPL-3.0 下获得许可, 请查看 LICENSE.txt 或 <https://www.gnu.org/licenses/gpl-3.0.txt>
+ * 此代码在 GPL-3.0 下获得许可, 请查看 COPYING.txt 或 <https://www.gnu.org/licenses/gpl-3.0.txt>
  * Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
  * 您还可以在这里找到源码 <https://github.com/dsy4567/Anti-addiction-terminator>
  */
@@ -155,30 +155,11 @@ function 大人来了() {
     document.body.appendChild(遮罩);
 }
 // eslint-disable-next-line
-function 创建警告(警告) {
-    // if (self == top)
-    //     chrome.storage.local.set(
-    //         {
-    //             警告内容: 警告,
-    //             发出警告: Math.random(),
-    //         },
-    //         () => {}
-    //     );
-}
+function 创建警告(警告) {}
 function 错误(e) {
     console.error(e);
     创建警告("错误: " + e.stack);
 }
-// function get(url, 回调) {
-//     let xhr = new XMLHttpRequest();
-//     let res = "";
-//     xhr.open("get", url);
-//     xhr.send(null);
-//     xhr.onload = () => {
-//         res = xhr.responseText;
-//         回调(res);
-//     };
-// }
 
 try {
     var $script = document.createElement("script");
@@ -190,27 +171,6 @@ try {
 }
 
 try {
-    // chrome.storage.onChanged.addListener(function (变化, 名称空间) {
-    //     try {
-    //         // eslint-disable-next-line
-    //         for (let [值, { 旧值, 新值 }] of Object.entries(变化)) {
-    //             switch (值) {
-    //                 case "通用规则破解":
-    //                     使用通用规则破解();
-    //                     break;
-    //                 case "大人来了":
-    //                     大人来了();
-    //                     break;
-    //                 default:
-    //                     break;
-    //             }
-    //         }
-    //     } catch (e) {
-    //         错误(e);
-    //     }
-    // });
-
-    // eslint-disable-next-line
     chrome.runtime.onMessage.addListener(function (请求, 发送者, 发送回复) {
         if (typeof 请求 == "object" && !document.hidden) {
             console.log(请求);
@@ -237,7 +197,7 @@ try {
 try {
     if (location.host == "www.7k7k.com") {
         try {
-            document.querySelector("div.login_no").title = chrome.i18n.getMessage("5");
+            document.querySelector("div.login_no").title = chrome.i18n.getMessage("msg2");
         } catch (e) {}
 
         if (location.href.includes("aat-doLogin"))

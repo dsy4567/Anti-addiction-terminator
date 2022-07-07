@@ -1,5 +1,5 @@
 <!--
-此代码在 GPL-3.0 下获得许可, 请查看 LICENSE.txt 或 <https://www.gnu.org/licenses/gpl-3.0.txt>
+此代码在 GPL-3.0 下获得许可, 请查看 COPYING.txt 或 <https://www.gnu.org/licenses/gpl-3.0.txt>
 Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
 您还可以在这里找到源码 <https://github.com/dsy4567/Anti-addiction-terminator>
 -->
@@ -29,19 +29,17 @@ Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
                 <small id="版本"></small>
             </div>
             <div class="右">
-                <button class="图标按钮">
-                    <img
-                        class="图标"
-                        src="/icon/setting.svg"
-                        alt="设置"
-                        title="设置"
-                        id="打开设置"
-                    /></button
-                ><button class="图标按钮">
-                    <img class="图标" src="/icon/info.svg" alt="关于" title="关于" id="打开关于" />
+                <button class="图标按钮" id="打开通知">
+                    <img class="图标" src="/icon/notification.svg" alt="通知" title="通知" />
                 </button>
-                <button class="图标按钮">
-                    <img class="图标" src="/icon/back.svg" alt="返回" title="返回" id="返回" />
+                <button class="图标按钮" id="打开设置">
+                    <img class="图标" src="/icon/setting.svg" alt="设置" title="设置" /></button
+                ><button class="图标按钮" id="打开关于">
+                    <img class="图标" src="/icon/info.svg" alt="关于" title="关于" />
+                </button>
+
+                <button class="图标按钮" id="返回">
+                    <img class="图标" src="/icon/back.svg" alt="返回" title="返回" />
                 </button>
             </div>
         </div>
@@ -60,7 +58,7 @@ Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
                 <a target="_blank" href="https://github.com/dsy4567">GitHub</a>
                 |
                 <a target="_self" href="mailto:dsy4567@outlook.com">邮箱</a> ) <br /><br />
-                此扩展使用 <a target="_blank" href="/LICENSE.txt">GPL-3.0</a> 许可, 源代码位于
+                此扩展使用 <a target="_blank" href="/COPYING.txt">GPL-3.0</a> 许可, 源代码位于
                 <a href="https://github.com/dsy4567/Anti-addiction-terminator/">GitHub</a>
             </p>
             <p>
@@ -99,14 +97,25 @@ Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
             </button>
 
             <img title="飞机" class="飞机 装饰品 图标 不点击" src="/icon/plane.svg" alt="飞机" />
-            <img title="游戏手柄" class="游戏手柄 装饰品 图标 不点击" src="/icon/gamehandle.svg" alt="飞机" />
+            <img
+                title="游戏手柄"
+                class="游戏手柄 装饰品 图标 不点击"
+                src="/icon/gamehandle.svg"
+                alt="飞机"
+            />
         </div>
 
         <div id="设置">
             <button class="选项" title="快捷键" id="快捷键">
-                <span><img class="图标" src="/icon/kbd.svg" alt="快捷键" /></span
-                ><span>配置快捷键</span>
+                <img class="图标" src="/icon/kbd.svg" alt="快捷键" /><span>配置快捷键</span>
             </button>
+            <button class="选项" title="重启" id="重启">
+                <img class="图标" src="/icon/reload.svg" alt="重启" /><span>重启</span>
+            </button>
+        </div>
+
+        <div id="通知">
+            <span>ggggg</span>
         </div>
 
         <script src="/js/popup.js"></script>

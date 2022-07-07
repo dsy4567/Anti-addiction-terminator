@@ -1,12 +1,8 @@
 /**
- * 此代码在 GPL-3.0 下获得许可, 请查看 LICENSE.txt 或 <https://www.gnu.org/licenses/gpl-3.0.txt>
+ * 此代码在 GPL-3.0 下获得许可, 请查看 COPYING.txt 或 <https://www.gnu.org/licenses/gpl-3.0.txt>
  * Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
  * 您还可以在这里找到源码 <https://github.com/dsy4567/Anti-addiction-terminator>
  */
-
-/* body {
-    padding-bottom: 25%;
-} */
 
 @keyframes 齿轮 {
     from {
@@ -97,13 +93,11 @@ p {
     user-select: text;
 }
 #关于,
-#设置 {
-    background-color: var(--theme-color1);
+#设置,#通知 {
     display: none;
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
-    z-index: 9;
 }
 
 #工具 {
@@ -116,7 +110,6 @@ p {
 }
 
 .横幅 {
-    /* background-color: rgba(255, 0, 0, 0.3); */
     display: flex;
     align-items: center;
     justify-content: space-evenly;

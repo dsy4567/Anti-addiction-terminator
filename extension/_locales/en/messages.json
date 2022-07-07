@@ -5,25 +5,55 @@
     "dec": {
         "message": "Play the game you want to play, regardless of age restriction"
     },
-    "0": {
-        "message": "about"
+    "about": {
+        "message": "<p>✨This extension can crack the anti-addiction of some game platforms and help you realize game freedom✨</p><p>⚠️Indulging in games is not conducive to physical and mental health. Please arrange the game time reasonably and play appropriately⚠️</p> <p> ~~Happiness is not divided into age~~<br /><br /> Copyright (C) 2022 dsy4567 ( <a target=\"_blank\" href=\"https://github.com/dsy4567\">GitHub</a> | <a target=\"_self\" href=\"mailto:dsy4567@outlook.com\">Email</a> ) <br /><br /> Licensed under the <a target=\"_blank\" href=\"/COPYING.txt\">GPL-3.0</a> , The source code is located in <a target=\"_blank\" href=\"https://github.com/dsy4567/Anti-addiction-terminator/\">GitHub</a> </p> <p> Thanks to icons provided by <a target=\"_blank\" href=\"https://iconpark.bytedance.com\">IconPark</a> </p> <p> <a id=\"给个好评\" target=\"_blank\" href=\"https://microsoftedge.microsoft.com/addons/detail/%E9%98%B2%E6%B2%89%E8%BF%B7%E7%BB%88%E7%BB%93%E8%80%85/chpenmljpdpkebnohfbbdpfelabcnlnp\">👍 Give a positive review</a> | <a target=\"_blank\" href=\"https://github.com/dsy4567/Anti-addiction-terminator/issues\" >🐛Report bugs</a> | <a target=\"_blank\" href=\"https://github.com/dsy4567/Anti-addiction-terminator/blob/master/privacy.md\">🙈Privacy Policy</a></p>"
     },
-    "1": {
+    "msg0": {
         "message": "Indulging in games is not conducive to physical and mental health. Please arrange the game time reasonably and play appropriately."
     },
-    "2": {
-        "message": "Hide game"
+    "msg1": {
+        "message": "___错误太多, 请单击右键 > 检查 > 控制台(console), 然后查看更多错误信息"
     },
-    "3": {
-        "message": "Use / cancel general rule cracking"
-    },
-    "4": {
-        "message": "Forced login to 7k7k account"
-    },
-    "5": {
+    "msg2": {
         "message": "✨ Anti-Addiction Terminator supports forced login 7k7k account, which can be logged in in the extended menu"
     },
-    "about": {
-        "message": "<p>✨This extension can crack the anti addiction of some game platforms and help you realize game freedom✨</p><p>⚠️Indulging in games is not conducive to physical and mental health. Please arrange the game time reasonably and play appropriately⚠️</p>        <p>            ~~Happiness is not divided into age~~<br /><br />            Copyright (C) 2022 dsy4567 (            <a target=\"_blank\" href=\"https://github.com/dsy4567\">GitHub</a>            |            <a target=\"_self\" href=\"mailto:dsy4567@outlook.com\">Email</a> ) <br /><br />            This extension uses the <a target=\"_blank\" href=\"/LICENSE.txt\">GPL-3.0</a> license, The source code is located in        <a target=\"_blank\" href=\"https://github.com/dsy4567/Anti-addiction-terminator/\">GitHub</a>        </p>        <p>            Thanks to icons provided by            <a target=\"_blank\" href=\"https://iconpark.bytedance.com\">IconPark</a>        </p>        <p>            <a id=\"给个好评\"               target=\"_blank\"                href=\"https://microsoftedge.microsoft.com/addons/detail/%E9%98%B2%E6%B2%89%E8%BF%B7%E7%BB%88%E7%BB%93%E8%80%85/chpenmljpdpkebnohfbbdpfelabcnlnp\"                >👍 Give a positive review</a            >            |            <a                target=\"_blank\"                href=\"https://github.com/dsy4567/Anti-addiction-terminator/issues\"                >🐛Report bugs</a            > | <a                target=\"_blank\"                href=\"https://github.com/dsy4567/Anti-addiction-terminator/blob/master/privacy.md\"                >🙈Privacy Policy</a            ></p>"
+    "msg3": {
+        "message": "___操作失败, 请检查您是否正在访问受支持的游戏网站, 或刷新网页, 然后再试一次"
+    },
+    "msg4": {
+        "message": "___无法创建新标签页"
+    },
+    "msg5": {
+        "message": "___请在浏览器设置中配置快捷键"
+    },
+    "alt0": {
+        "message": "about"
+    },
+    "alt1": {
+        "message": "settings"
+    },
+    "alt2": {
+        "message": "Shortcuts"
+    },
+    "alt3": {
+        "message": "Back"
+    },
+    "alt4": {
+        "message": "notifications"
+    },
+    "alt5": {
+        "message": "reload"
+    },
+    "btn0": {
+        "message": "Use / cancel general rule cracking"
+    },
+    "btn1": {
+        "message": "Hide game"
+    },
+    "btn2": {
+        "message": "Forced login to 7k7k account"
+    },
+    "btn3": {
+        "message": "___配置快捷键"
     }
 }

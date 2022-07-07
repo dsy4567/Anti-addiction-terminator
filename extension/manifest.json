@@ -12,10 +12,10 @@
     "default_locale": "zh_CN",
     "commands": {
         "1": {
-            "description": "__MSG_3__"
+            "description": "__MSG_btn0__"
         },
         "2": {
-            "description": "__MSG_2__"
+            "description": "__MSG_btn1__"
         }
     },
     "content_scripts": [

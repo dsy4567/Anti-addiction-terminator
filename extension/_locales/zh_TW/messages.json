@@ -5,25 +5,55 @@
     "dec": {
         "message": "玩您想玩的遊戲，不受年齡限制"
     },
-    "0": {
-        "message": "關於"
+    "about": {
+        "message": "<p>✨該擴展可以破解一些遊戲平臺的防沉迷， 幫您實現遊戲自由✨</p><p>⚠️沉迷於遊戲不利於身心健康， 請合理安排遊戲時間， 適度遊戲⚠️</p> <p> ~~快樂沒有年齡之分~~<br /><br /> Copyright (C) 2022 dsy4567 ( <a target=\"_blank\" href=\"https://github.com/dsy4567\">GitHub</a> | <a target=\"_self\" href=\"mailto:dsy4567@outlook.com\">郵箱</a> ) <br /><br /> 在 <a target=\"_blank\" href=\"/COPYING.txt\">GPL-3.0</a> 下获得许可, 原始程式碼位於 <a target=\"_blank\" href=\"https://github.com/dsy4567/Anti-addiction-terminator/\">GitHub</a> </p> <p> 感謝 <a target=\"_blank\" href=\"https://iconpark.bytedance.com\">IconPark</a> 提供的圖示 </p> <p> <a id=\"给个好评\" target=\"_blank\" href=\"https://microsoftedge.microsoft.com/addons/detail/%E9%98%B2%E6%B2%89%E8%BF%B7%E7%BB%88%E7%BB%93%E8%80%85/chpenmljpdpkebnohfbbdpfelabcnlnp\" >👍 給個好評</a > | <a target=\"_blank\" href=\"https://github.com/dsy4567/Anti-addiction-terminator/issues\" >🐛 報告bug</a > | <a target=\"_blank\" href=\"https://github.com/dsy4567/Anti-addiction-terminator/blob/master/privacy.md\" >🙈隐私策略</a > </p>"
     },
-    "1": {
+    "msg0": {
         "message": "沉迷於遊戲不利於身心健康，請合理安排遊戲時間，適度遊戲"
     },
-    "2": {
-        "message": "隱藏遊戲"
+    "msg1": {
+        "message": "___错误太多, 请单击右键 > 检查 > 控制台(console), 然后查看更多错误信息"
     },
-    "3": {
-        "message": "使用 / 取消通用規則破解"
-    },
-    "4": {
-        "message": "強制登入7k7k帳號"
-    },
-    "5": {
+    "msg2": {
         "message": "✨防沉迷終結者支持強制登入7k7k帳號，可在擴展選單中登入"
     },
-    "about": {
-        "message": "<p>✨該擴展可以破解一些遊戲平臺的防沉迷， 幫您實現遊戲自由✨</p><p>⚠️沉迷於遊戲不利於身心健康， 請合理安排遊戲時間， 適度遊戲⚠️</p>        <p>            ~~快樂沒有年齡之分~~<br /><br />            Copyright (C) 2022 dsy4567 (            <a target=\"_blank\" href=\"https://github.com/dsy4567\">GitHub</a>            |            <a target=\"_self\" href=\"mailto:dsy4567@outlook.com\">郵箱</a> ) <br /><br />            此擴展使用 <a target=\"_blank\" href=\"/LICENSE.txt\">GPL-3.0</a> 許可, 原始程式碼位於        <a target=\"_blank\" href=\"https://github.com/dsy4567/Anti-addiction-terminator/\">GitHub</a>        </p>        <p>            感謝            <a target=\"_blank\" href=\"https://iconpark.bytedance.com\">IconPark</a> 提供的圖示        </p>        <p>            <a id=\"给个好评\"               target=\"_blank\"                href=\"https://microsoftedge.microsoft.com/addons/detail/%E9%98%B2%E6%B2%89%E8%BF%B7%E7%BB%88%E7%BB%93%E8%80%85/chpenmljpdpkebnohfbbdpfelabcnlnp\"                >👍 給個好評</a            >            |            <a                target=\"_blank\"                href=\"https://github.com/dsy4567/Anti-addiction-terminator/issues\"                >🐛 報告bug</a            > | <a                target=\"_blank\"                href=\"https://github.com/dsy4567/Anti-addiction-terminator/blob/master/privacy.md\"                >🙈隱私政策</a            >        </p>"
+    "msg3": {
+        "message": "___操作失败, 请检查您是否正在访问受支持的游戏网站, 或刷新网页, 然后再试一次"
+    },
+    "msg4": {
+        "message": "___无法创建新标签页"
+    },
+    "msg5": {
+        "message": "___请在浏览器设置中配置快捷键"
+    },
+    "alt0": {
+        "message": "關於"
+    },
+    "alt1": {
+        "message": "___设置"
+    },
+    "alt2": {
+        "message": "___快捷键"
+    },
+    "alt3": {
+        "message": "___返回"
+    },
+    "alt4": {
+        "message": "___通知"
+    },
+    "alt5": {
+        "message": "___重启"
+    },
+    "btn0": {
+        "message": "使用 / 取消通用規則破解"
+    },
+    "btn1": {
+        "message": "隱藏遊戲"
+    },
+    "btn2": {
+        "message": "強制登入7k7k帳號"
+    },
+    "btn3": {
+        "message": "___配置快捷键"
     }
 }
