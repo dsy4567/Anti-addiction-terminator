@@ -1,10 +1,10 @@
-> 再傻逼的防沉迷也不能阻止牛逼程序猿对快乐的追求
+> 再傻逼的防沉迷也抵不住一个傻逼程序猿对快乐傻逼似的追求
 
 > _该扩展基于 https://github.com/dsy4567/Fucking-Anti-Indulgence/ 改造而来_
 
 > 镜像 https://notabug.org/dsy4567/Anti-addiction-terminator
 
-> edge: https://microsoftedge.crxsoso.com/addons/detail/chpenmljpdpkebnohfbbdpfelabcnlnp
+> edge: https://microsoftedge.microsoft.com/addons/detail/chpenmljpdpkebnohfbbdpfelabcnlnp
 
 > firefox: https://addons.mozilla.org/zh-CN/firefox/addon/anti-addiction-terminator/ (更新慢, 服务器太辣鸡)
 

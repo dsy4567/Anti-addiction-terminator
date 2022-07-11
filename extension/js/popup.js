@@ -238,7 +238,7 @@ $(function () {
         创建横幅(chrome.i18n.getMessage("msg6"), 1, () => {
             localStorage.setItem("隐私策略最后修改日期", 隐私策略最后修改日期);
         });
-    }
+    }-
 
     $("html").show();
 });
