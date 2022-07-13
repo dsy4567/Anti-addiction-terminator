@@ -45,7 +45,7 @@ button.大按钮:focus,
 button.大按钮,
 .选项,
 .图标按钮 {
-    background-color: rgba(0, 0, 0,0) !important;
+    background-color: rgba(0, 0, 0, 0) !important;
 }
 .横幅 {
     border: 2px solid;

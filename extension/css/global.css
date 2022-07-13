@@ -12,11 +12,6 @@
         --green: rgb(0, 200, 0);
         --red: rgb(200, 0, 0);
     }
-button.大按钮:active,
-.选项:active,
-.图标按钮:active {
-    filter: brightness(0.8) !important;
-}
 }
 @media (prefers-color-scheme: dark) {
     :root {
@@ -30,18 +25,8 @@ button.大按钮:active,
     .图标 {
         filter: invert(1) !important;
     }
-    button.大按钮:active,
-    .选项:active,
-    .图标按钮:active {
+    .关闭横幅.图标.图标按钮:active {
         filter: brightness(0.8) invert(1) !important;
-    }
-    button.大按钮:hover,
-    .选项:hover,
-    .图标按钮:hover,
-    button.大按钮:focus,
-    .选项:focus,
-    .图标按钮:focus {
-        filter: brightness(1.2) invert(1);
     }
 }
 @media (forced-colors: active) {
@@ -92,14 +77,6 @@ button.大按钮:active,
     .图标按钮 {
         background-color: black;
     }
-button.大按钮:hover,
-.选项:hover,
-.图标按钮:hover,
-button.大按钮:focus,
-.选项:focus,
-.图标按钮:focus {
-    filter: brightness(1.2);
-}
     .横幅 {
         border: 2px solid;
         background-color: black !important;
@@ -147,6 +124,19 @@ button.大按钮 {
     font-size: 16px;
     margin: 4px;
     padding: 12px;
+}
+button.大按钮:active,
+.选项:active,
+.图标按钮:active {
+    filter: brightness(0.8) !important;
+}
+button.大按钮:hover,
+.选项:hover,
+.图标按钮:hover,
+button.大按钮:focus,
+.选项:focus,
+.图标按钮:focus {
+    filter: brightness(1.2);
 }
 
 .图标按钮 {
