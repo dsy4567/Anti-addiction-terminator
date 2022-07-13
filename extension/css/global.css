@@ -8,10 +8,15 @@
     :root {
         --theme-color1: white;
         --theme-color2: rgb(36, 36, 36);
-        --theme-color3: rgba(200, 200, 200, 0.7);
+        --theme-color3: rgba(150, 150, 150, 0.7);
         --green: rgb(0, 200, 0);
         --red: rgb(200, 0, 0);
     }
+button.大按钮:active,
+.选项:active,
+.图标按钮:active {
+    filter: brightness(0.8) !important;
+}
 }
 @media (prefers-color-scheme: dark) {
     :root {
@@ -23,16 +28,107 @@
     }
 
     .图标 {
-        filter: invert(1);
+        filter: invert(1) !important;
+    }
+    button.大按钮:active,
+    .选项:active,
+    .图标按钮:active {
+        filter: brightness(0.8) invert(1) !important;
+    }
+    button.大按钮:hover,
+    .选项:hover,
+    .图标按钮:hover,
+    button.大按钮:focus,
+    .选项:focus,
+    .图标按钮:focus {
+        filter: brightness(1.2) invert(1);
+    }
+}
+@media (forced-colors: active) {
+    :root {
+        --theme-color1: black;
+        --theme-color2: white;
+        --theme-color4: rgb(0, 255, 255);
+        --green: rgb(0, 255, 0);
+        --red: rgb(255, 0, 0);
+    }
+    ::selection {
+        background-color: white !important;
+        color: black;
+    }
+    body,
+    html {
+        background-color: black !important;
+        color: white !important;
+    }
+    a {
+        color: yellow !important;
+    }
+    a:hover {
+        text-decoration: 1px underline white !important;
+    }
+    .图标按钮 {
+        filter: invert(1) !important;
+    }
+    .图标按钮 .图标,
+    button.图标,
+    button.大按钮,
+    .选项 {
+        border: 2px solid var(--theme-color4) !important;
+        color: white;
+    }
+    .图标按钮 .图标:hover,
+    .图标按钮 .图标:focus,
+    button.图标:hover,
+    button.图标:focus,
+    button.大按钮:hover,
+    button.大按钮:focus,
+    .选项:hover,
+    .选项:focus {
+        border: 2px dashed var(--theme-color4) !important;
+    }
+    button.大按钮,
+    .选项,
+    .图标按钮 {
+        background-color: black;
+    }
+button.大按钮:hover,
+.选项:hover,
+.图标按钮:hover,
+button.大按钮:focus,
+.选项:focus,
+.图标按钮:focus {
+    filter: brightness(1.2);
+}
+    .横幅 {
+        border: 2px solid;
+        background-color: black !important;
+    }
+    .横幅:hover {
+        border-style: dashed;
+    }
+    .图标.不点击 {
+        border: 2px solid black;
+    }
+
+    input[type="checkbox"] {
+        accent-color: var(--theme-color4);
     }
 }
 
+:root {
+    --theme-color4: rgb(0, 200, 200);
+}
 ::selection {
     background-color: var(--theme-color3);
 }
 * {
     transition: all 0.2s;
     -webkit-user-drag: none;
+}
+
+input[type="checkbox"][checked] {
+    accent-color: beige;
 }
 
 a {
@@ -45,39 +141,38 @@ a:hover {
 }
 
 button.大按钮 {
-    background-color: rgb(70, 200, 200);
+    background-color: var(--theme-color4);
     border: none;
     border-radius: 8px;
     font-size: 16px;
     margin: 4px;
     padding: 12px;
 }
-button.大按钮:active,
-.选项:active {
-    filter: brightness(0.8) !important;
-}
-button.大按钮:hover,
-.选项:hover {
-    filter: brightness(1.2);
-}
-button.大按钮 * {
-    text-decoration: none;
-    cursor: default;
+
+.图标按钮 {
+    cursor: pointer;
 }
 
-.图标 {
-    cursor: pointer;
+.图标:hover {
+    /* background-color: var(--theme-color3); */
 }
 .图标.不点击 {
     cursor: default;
 }
 
 .图标按钮 {
-    background-color: var(--theme-color-1);
     border: none;
-    border-radius: 8px;
-    padding: 2px;
-    margin: 0;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 50%;
+    padding: 8px;
+    /* padding-top: 8px; */
+    /* padding-bottom: 8px; */
+    padding-left: 9.5px;
+    padding-right: 9.5px;
+}
+.图标按钮:hover,
+.图标按钮:focus {
+    background-color: var(--theme-color3);
 }
 .选项 {
     border: none;
@@ -90,7 +185,8 @@ button.大按钮 * {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
+    margin-top: 4px;
 }
 .选项 * {
     cursor: default;
@@ -101,4 +197,8 @@ button.大按钮 * {
     background-color: var(--theme-color3);
     border: none;
     margin-top: 6px;
+}
+
+input[type="checkbox"] {
+    accent-color: var(--theme-color4);
 }

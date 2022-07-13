@@ -71,13 +71,14 @@ p {
 }
 #顶部 .左 *,
 #顶部 .右 * {
-    margin-left: 4px;
-    margin-right: 4px;
+    margin: 4px;
+    /* margin-left: 4px; */
+    /* margin-right: 4px; */
 }
 #logo {
     border-radius: 50%;
 }
-#打开设置:active {
+#打开设置:active img {
     animation-name: 齿轮;
     animation-duration: 0.5s;
     animation-iteration-count: infinite;
@@ -110,11 +111,12 @@ p {
 }
 
 .横幅 {
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     font-size: large;
-    width: 100%;
+    /* width: 100%; */
     min-height: 50px;
     margin-bottom: 4px;
     text-align: center;
@@ -129,10 +131,8 @@ p {
 .横幅图标,
 .关闭横幅 {
     width: 24px;
-    margin: 8px;
 }.关闭横幅{
     border: none;
-    border-radius: 8px;
     width: 24px;
     height: 24px;
     background-color: rgba(0,0,0,0);
@@ -150,7 +150,7 @@ p {
     position: absolute;
     width: 5vw;
     height: auto;
-    z-index: -1;
+    z-index: 0;
 }
 .飞机 {
     animation-name: 飞机;
