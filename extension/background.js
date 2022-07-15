@@ -1,11 +1,10 @@
-/**
- * 此代码在 GPL-3.0 下获得许可, 请查看 COPYING.txt 或 <https://www.gnu.org/licenses/gpl-3.0.txt>
- * Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
- * 您还可以在这里找到源码 <https://github.com/dsy4567/Anti-addiction-terminator>
- */
+/*
+此代码在 GPL-3.0 下获得许可, 请查看 COPYING.txt 或 <https://www.gnu.org/licenses/gpl-3.0.txt>
+Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
+您可以在这里找到源码 <https://github.com/dsy4567/Anti-addiction-terminator>
+*/
 
 /* global chrome */
-
 
 function 通用规则破解() {
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
@@ -47,8 +46,6 @@ chrome.commands.onCommand.addListener((命令) => {
             break;
     }
 });
-
-
 
 // chrome.runtime.onMessage.addListener(function (请求, 发送者, 发送回复) {
 //     if (typeof 请求 == "object") {

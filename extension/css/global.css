@@ -1,16 +1,20 @@
-/**
- * 此代码在 GPL-3.0 下获得许可, 请查看 COPYING.txt 或 <https://www.gnu.org/licenses/gpl-3.0.txt>
- * Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
- * 您还可以在这里找到源码 <https://github.com/dsy4567/Anti-addiction-terminator>
- */
+/*
+此代码在 GPL-3.0 下获得许可, 请查看 COPYING.txt 或 <https://www.gnu.org/licenses/gpl-3.0.txt>
+Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
+您可以在这里找到源码 <https://github.com/dsy4567/Anti-addiction-terminator>
+*/
 
 @media (prefers-color-scheme: light) {
     :root {
         --theme-color1: white;
-        --theme-color2: rgb(36, 36, 36);
-        --theme-color3: rgba(150, 150, 150, 0.7);
-        --green: rgb(0, 200, 0);
-        --red: rgb(200, 0, 0);
+        --theme-color2:
+        rgb(36, 36, 36);
+        --theme-color3:
+        rgba(175, 175, 175, 0.7);
+        --green:
+        rgb(0, 200, 0);
+        --red:
+        rgb(200, 0, 0);
     }
 }
 @media (prefers-color-scheme: dark) {
@@ -30,6 +34,11 @@
     }
 }
 @media (forced-colors: active) {
+    @media (prefers-color-scheme: light) {
+        .图标 {
+            filter: invert(1) !important;
+        }
+    }
     :root {
         --theme-color1: black;
         --theme-color2: white;
@@ -52,14 +61,11 @@
     a:hover {
         text-decoration: 1px underline white !important;
     }
-    .图标按钮 {
-        filter: invert(1) !important;
-    }
     .图标按钮 .图标,
     button.图标,
     button.大按钮,
     .选项 {
-        border: 2px solid var(--theme-color4) !important;
+        border: 2px solid black !important;
         color: white;
     }
     .图标按钮 .图标:hover,
@@ -75,7 +81,7 @@
     button.大按钮,
     .选项,
     .图标按钮 {
-        background-color: black;
+        background-color: rgba(0, 0, 0, 0) !important;
     }
     .横幅 {
         border: 2px solid;
@@ -86,10 +92,6 @@
     }
     .图标.不点击 {
         border: 2px solid black;
-    }
-
-    input[type="checkbox"] {
-        accent-color: var(--theme-color4);
     }
 }
 
@@ -104,8 +106,8 @@
     -webkit-user-drag: none;
 }
 
-input[type="checkbox"][checked] {
-    accent-color: beige;
+input[type="checkbox"] {
+    accent-color: var(--theme-color4);
 }
 
 a {
@@ -187,8 +189,4 @@ button.大按钮:focus,
     background-color: var(--theme-color3);
     border: none;
     margin-top: 6px;
-}
-
-input[type="checkbox"] {
-    accent-color: var(--theme-color4);
 }
