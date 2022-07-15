@@ -92,6 +92,7 @@
     "permissions": [
         "declarativeNetRequest",
         "notifications",
+        "storage",
         "*://*.4399.com/*",
         "*://*.7k7k.com/*",
         "*://*.aiwan4399.com/*",

@@ -71,7 +71,8 @@
     "minimum_chrome_version": "64.0.0.0",
     "name": "__MSG_name__",
     "permissions": [
-        "notifications"
+        "notifications",
+        "storage"
     ],
     "version": "1.3"
 }
