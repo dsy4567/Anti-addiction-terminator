@@ -21,7 +21,8 @@
 
 ## 与此扩展相关的第三方及其隐私策略
 
--   防沉迷终结者 使用了 [jQuery](https://jquery.com) 库，请在 [这里](https://privacy-policy.openjsf.org/) 查看它的隐私策略。
+-   此扩展使用了 [jQuery](https://jquery.com) 库，请在 [这里](https://privacy-policy.openjsf.org/) 查看它的隐私策略。
+- 此扩展的作者使用 [Microsoft 合作伙伴中心](https://partner.microsoft.com/) 统计此扩展的安装和使用情况, 请在 [这里](https://privacy.microsoft.com/zh-cn/privacystatement) 了解更多
 
 ## 此扩展的作者如何保证您的隐私
 
