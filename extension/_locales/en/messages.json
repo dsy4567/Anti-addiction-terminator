@@ -12,22 +12,22 @@
         "message": "Indulging in games is not conducive to physical and mental health. Please arrange the game time reasonably and play appropriately."
     },
     "msg1": {
-        "message": "___错误太多, 请单击右键 > 检查 > 控制台(console), 然后查看更多错误信息"
+        "message": "Too many errors, please right-click > inspect > console, then see more error messages"
     },
     "msg2": {
         "message": "✨ Anti-Addiction Terminator supports forced login 7k7k account, which can be logged in in the extended menu"
     },
     "msg3": {
-        "message": "___操作失败, 请检查您是否正在访问受支持的游戏网站, 或刷新网页, 然后再试一次"
+        "message": "The operation failed, please check if you are visiting a supported game website, or refresh the web page, and try again"
     },
     "msg4": {
-        "message": "___无法创建新标签页"
+        "message": "Unable to create a new tab"
     },
     "msg5": {
-        "message": "___请在浏览器设置中配置快捷键"
+        "message": "Please configure shortcut keys in your browser settings"
     },
     "msg6": {
-        "message": "___作者更新了隐私策略, 请在关于界面查看"
+        "message": "The author has updated the privacy policy, please check the about interface"
     },
     "alt0": {
         "message": "about"
@@ -57,9 +57,9 @@
         "message": "Forced login to 7k7k account"
     },
     "btn3": {
-        "message": "___配置快捷键"
+        "message": "Configure shortcut keys"
     },
     "btn4": {
-        "message": "___启用高对比度主题"
+        "message": "Enable high-contrast themes"
     }
 }
