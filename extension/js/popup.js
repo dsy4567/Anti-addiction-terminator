@@ -97,7 +97,9 @@ function 通用规则破解() {
                 .then((回复) => {
                     console.log("收到回复: " + 回复);
                 })
-                .catch((e) => 处理错误(new Error(e), chrome.i18n.getMessage("msg3")));
+                .catch((e) =>
+                    处理错误(new Error(e), chrome.i18n.getMessage("msg3"))
+                );
         })
         .catch((e) => 处理错误(new Error(e), chrome.i18n.getMessage("msg3")));
 }
@@ -110,7 +112,9 @@ function 大人来了() {
                 .then((回复) => {
                     console.log("收到回复: " + 回复);
                 })
-                .catch((e) => 处理错误(new Error(e), chrome.i18n.getMessage("msg3")));
+                .catch((e) =>
+                    处理错误(new Error(e), chrome.i18n.getMessage("msg3"))
+                );
         })
         .catch((e) => 处理错误(new Error(e), chrome.i18n.getMessage("msg3")));
 }
@@ -140,24 +144,22 @@ var 版本 = $("#版本"),
     返回 = $("#返回"),
     // 打开通知 = $("#打开通知"),
     // 通知 = $("#通知"),
+
     重启 = $("#重启"),
     重启文本 = $("#重启 span"),
     重启图标 = $("#重启 img"),
     高对比度主题 = $("#高对比度主题"),
     高对比度 = $("#高对比度"),
-    高对比度文本 = $("#高对比度 span"),
+    高对比度_文本 = $("#高对比度 span"),
     高对比度_复选框 = $("#高对比度 input"),
+    自动获取游戏真实地址 = $("#自动获取游戏真实地址"),
+    自动获取游戏真实地址_文本 = $("#自动获取游戏真实地址 span"),
+    自动获取游戏真实地址_复选框 = $("#自动获取游戏真实地址 input"),
+    接收通知 = $("#接收通知"),
+    接收通知_文本 = $("#接收通知 span"),
+    接收通知_复选框 = $("#接收通知 input"),
     isFF = navigator.userAgent.includes("Firefox");
 
-if (localStorage.getItem("启用高对比度主题") === "0") {
-    高对比度_复选框[0].checked = false;
-} else if (localStorage.getItem("启用高对比度主题") === "1") {
-    高对比度_复选框[0].checked = true;
-    高对比度主题[0].rel = "stylesheet";
-} else {
-    localStorage.setItem("启用高对比度主题", "0");
-    高对比度_复选框[0].checked = false;
-}
 $(function () {
     返回.on("click", () => {
         关于.hide();
@@ -199,7 +201,10 @@ $(function () {
                 url: "http://www.7k7k.com/swf/204220.htm#aat-doLogin",
                 active: true,
             })
-            .catch((e) => 处理错误(new Error(e)), chrome.i18n.getMessage("msg4"));
+            .catch(
+                (e) => 处理错误(new Error(e)),
+                chrome.i18n.getMessage("msg4")
+            );
     });
     快捷键.on("click", () => {
         if (isFF) {
@@ -210,7 +215,9 @@ $(function () {
                 url: "chrome://extensions/shortcuts",
                 active: true,
             })
-            .catch((e) => 处理错误(new Error(e), chrome.i18n.getMessage("msg4")));
+            .catch((e) =>
+                处理错误(new Error(e), chrome.i18n.getMessage("msg4"))
+            );
     });
     重启.on("click", () => {
         chrome.runtime.reload();
@@ -227,6 +234,32 @@ $(function () {
         }
     });
     高对比度_复选框.on("click", () => {
+        return false;
+    });
+
+    接收通知.on("click", () => {
+        if (接收通知_复选框[0].checked) {
+            接收通知_复选框[0].checked = false;
+            chrome.storage.local.set({ 接收通知: false });
+        } else {
+            接收通知_复选框[0].checked = true;
+            chrome.storage.local.set({ 接收通知: true });
+        }
+    });
+    接收通知_复选框.on("click", () => {
+        return false;
+    });
+
+    自动获取游戏真实地址.on("click", () => {
+        if (自动获取游戏真实地址_复选框[0].checked) {
+            自动获取游戏真实地址_复选框[0].checked = false;
+            chrome.storage.local.set({ 自动获取游戏真实地址: false });
+        } else {
+            自动获取游戏真实地址_复选框[0].checked = true;
+            chrome.storage.local.set({ 自动获取游戏真实地址: true });
+        }
+    });
+    自动获取游戏真实地址_复选框.on("click", () => {
         return false;
     });
 
@@ -253,7 +286,7 @@ $(function () {
     登录7k7k.text(chrome.i18n.getMessage("btn2"));
     快捷键文本.text(chrome.i18n.getMessage("btn3"));
     重启文本.text(chrome.i18n.getMessage("alt5"));
-    高对比度文本.text(chrome.i18n.getMessage("btn4"));
+    高对比度_文本.text(chrome.i18n.getMessage("btn4"));
 
     if (isFF) {
         给个好评.setAttribute(
@@ -264,6 +297,36 @@ $(function () {
 
     创建横幅(chrome.i18n.getMessage("msg0"));
 
+    if (localStorage.getItem("启用高对比度主题") === "0") {
+        高对比度_复选框[0].checked = false;
+    } else if (localStorage.getItem("启用高对比度主题") === "1") {
+        高对比度_复选框[0].checked = true;
+        高对比度主题[0].rel = "stylesheet";
+    } else {
+        localStorage.setItem("启用高对比度主题", "0");
+        高对比度_复选框[0].checked = false;
+    }
+    chrome.storage.local
+        .get(["接收通知", "自动获取游戏真实地址"])
+        .then((数据) => {
+            if (typeof 数据.接收通知 === "undefined") {
+                chrome.storage.local.set({ 接收通知: true });
+                接收通知_复选框[0].checked = true;
+            } else if (数据.接收通知) {
+                接收通知_复选框[0].checked = true;
+            } else if (!数据.接收通知) {
+                接收通知_复选框[0].checked = false;
+            }
+
+            if (typeof 数据.自动获取游戏真实地址 === "undefined") {
+                chrome.storage.local.set({ 自动获取游戏真实地址: true });
+                自动获取游戏真实地址_复选框[0].checked = true;
+            } else if (数据.自动获取游戏真实地址) {
+                自动获取游戏真实地址_复选框[0].checked = true;
+            } else if (!数据.自动获取游戏真实地址) {
+                自动获取游戏真实地址_复选框[0].checked = false;
+            }
+        });
     if (localStorage.getItem("隐私策略最后修改日期") != 隐私策略最后修改日期) {
         创建横幅(chrome.i18n.getMessage("msg6"), 1, () => {
             localStorage.setItem("隐私策略最后修改日期", 隐私策略最后修改日期);
