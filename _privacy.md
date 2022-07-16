@@ -1,3 +1,4 @@
+<!-- 备忘: popup.js 有一行要改 -->
 # 防沉迷终结者 隐私策略（草案）
 
 > 正式版位于 \<https://github.com/dsy4567/Anti-addiction-terminator/blob/master/privacy.md\>
