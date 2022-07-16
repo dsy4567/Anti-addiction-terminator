@@ -29,6 +29,9 @@
     "msg6": {
         "message": "The author has updated the privacy policy, please check the about interface"
     },
+    "msg7": {
+        "message": "The update is ready, please restart your browser to complete the Anti-Addiction Terminator update"
+    },
     "alt0": {
         "message": "about"
     },
