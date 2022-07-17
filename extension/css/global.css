@@ -7,14 +7,10 @@ Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
 @media (prefers-color-scheme: light) {
     :root {
         --theme-color1: white;
-        --theme-color2:
-        rgb(36, 36, 36);
-        --theme-color3:
-        rgba(175, 175, 175, 0.7);
-        --green:
-        rgb(0, 200, 0);
-        --red:
-        rgb(200, 0, 0);
+        --theme-color2: rgb(36, 36, 36);
+        --theme-color3: rgba(175, 175, 175, 0.7);
+        --green: rgb(0, 200, 0);
+        --red: rgb(200, 0, 0);
     }
 }
 @media (prefers-color-scheme: dark) {
@@ -61,15 +57,15 @@ Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
     a:hover {
         text-decoration: 1px underline white !important;
     }
-    .图标按钮 .图标,
+    .图标按钮,
     button.图标,
     button.大按钮,
     .选项 {
-        border: 2px solid black !important;
+        border: 2px solid var(--theme-color4) !important;
         color: white;
     }
-    .图标按钮 .图标:hover,
-    .图标按钮 .图标:focus,
+    .图标按钮:hover,
+    .图标按钮:focus,
     button.图标:hover,
     button.图标:focus,
     button.大按钮:hover,
@@ -145,9 +141,6 @@ button.大按钮:focus,
     cursor: pointer;
 }
 
-.图标:hover {
-    /* background-color: var(--theme-color3); */
-}
 .图标.不点击 {
     cursor: default;
 }

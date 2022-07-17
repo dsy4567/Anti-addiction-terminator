@@ -77,7 +77,8 @@ function 创建横幅(内容, 类型 = 1, 关闭时回调 = () => {}) {
         $横幅内容.innerText = 内容;
         // $关闭横幅.src = "/icon/close.svg";
         $关闭横幅.className = "关闭横幅 图标 图标按钮";
-        $关闭横幅.title = "关闭";
+        $关闭横幅.title = chrome.i18n.getMessage("btn7");
+        $关闭横幅.type = "button";
         $关闭横幅.onclick = () => {
             关闭时回调();
             $横幅.remove();
@@ -276,6 +277,10 @@ $(function () {
     快捷键.attr("title", chrome.i18n.getMessage("btn3"));
     重启.attr("title", chrome.i18n.getMessage("alt5"));
     返回.attr("title", chrome.i18n.getMessage("alt3"));
+    高对比度.attr("title", chrome.i18n.getMessage("btn4"));
+    自动获取游戏真实地址.attr("title", chrome.i18n.getMessage("msg8"));
+    接收通知.attr("title", chrome.i18n.getMessage("btn5"));
+    $("input[type='checkbox']").attr("title", chrome.i18n.getMessage("msg9"));
 
     document.title = chrome.i18n.getMessage("name");
     名字.text(chrome.i18n.getMessage("name"));
@@ -287,6 +292,8 @@ $(function () {
     快捷键文本.text(chrome.i18n.getMessage("btn3"));
     重启文本.text(chrome.i18n.getMessage("alt5"));
     高对比度_文本.text(chrome.i18n.getMessage("btn4"));
+    自动获取游戏真实地址_文本.text(chrome.i18n.getMessage("btn6"));
+    接收通知_文本.text(chrome.i18n.getMessage("btn5"));
 
     if (isFF) {
         给个好评.setAttribute(
