@@ -12,11 +12,14 @@ var 一个弹窗 = { remove: () => {} };
 var 遮罩 = { remove: () => {} };
 
 function guid() {
-    return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
-        var r = (Math.random() * 16) | 0,
-            v = c == "x" ? r : (r & 0x3) | 0x8;
-        return v.toString(16);
-    });
+    return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(
+        /[xy]/g,
+        function (c) {
+            var r = (Math.random() * 16) | 0,
+                v = c == "x" ? r : (r & 0x3) | 0x8;
+            return v.toString(16);
+        }
+    );
 }
 function 首字母大写(str) {
     str = str[0].toUpperCase() + str.substring(1, str.length);
@@ -32,7 +35,9 @@ function 添加样式(css, 类型) {
     $style.innerHTML = css;
     $style.setAttribute("AAT-style-guid", guid());
     $style.setAttribute("AAT-style-type", 类型);
-    (document.body || document.head || document.documentElement).appendChild($style);
+    (document.body || document.head || document.documentElement).appendChild(
+        $style
+    );
     return true;
 }
 /**
@@ -40,7 +45,9 @@ function 添加样式(css, 类型) {
  * @param {String} 类型
  */
 function 移除样式(类型) {
-    document.querySelectorAll("style[AAT-style-type='" + 类型 + "']").forEach((el) => el.remove());
+    document
+        .querySelectorAll("style[AAT-style-type='" + 类型 + "']")
+        .forEach((el) => el.remove());
     return false;
 }
 function 使用通用规则破解() {
@@ -150,22 +157,37 @@ function 大人来了() {
     遮罩 = document.createElement("div");
     遮罩.className = "mycmMask";
     遮罩.style.cssText =
-        "height: " + document.documentElement.offsetHeight + "px; z-index: 99998; display: block";
+        "height: " +
+        document.documentElement.offsetHeight +
+        "px; z-index: 99998; display: block";
     遮罩.innerHTML = "";
     document.body.appendChild(遮罩);
 }
-// eslint-disable-next-line
-function 创建警告(警告) {}
+// function 创建警告(警告) {}
 function 错误(e) {
     console.error(e);
-    创建警告("错误: " + e.stack);
+    // 创建警告("错误: " + e.stack);
+}
+function 注入脚本() {
+    let $script = document.createElement("script");
+    $script.charset = "utf-8";
+    $script.src = chrome.runtime.getURL("/js/no-fcm.js");
+    (document.body || document.head || document.documentElement).appendChild(
+        $script
+    );
 }
 
 try {
-    var $script = document.createElement("script");
-    $script.charset = "utf-8";
-    $script.src = chrome.runtime.getURL("/js/no-fcm.js");
-    (document.body || document.head || document.documentElement).appendChild($script);
+    chrome.storage.local.get(["自动获取游戏真实地址"], (数据) => {
+        if (typeof 数据.自动获取游戏真实地址 === "undefined") {
+            chrome.storage.local.set({ 自动获取游戏真实地址: true });
+            注入脚本();
+        } else if (数据.自动获取游戏真实地址) {
+            注入脚本();
+        } else if (!数据.自动获取游戏真实地址) {
+            console.log("[防沉迷终结者] 用户已禁用自动获取游戏真实地址");
+        }
+    });
 } catch (e) {
     错误(e);
 }
@@ -193,15 +215,17 @@ try {
     错误(e);
 }
 
-/*eslint-enable */
 try {
     if (location.host == "www.7k7k.com") {
         try {
-            document.querySelector("div.login_no").title = chrome.i18n.getMessage("msg2");
+            document.querySelector("div.login_no").title =
+                chrome.i18n.getMessage("msg2");
         } catch (e) {}
 
         if (location.href.includes("aat-doLogin"))
-            document.querySelector("div.login_no > div.h_login.login_btn > span").click();
+            document
+                .querySelector("div.login_no > div.h_login.login_btn > span")
+                .click();
     }
 } catch (e) {
     错误(e);

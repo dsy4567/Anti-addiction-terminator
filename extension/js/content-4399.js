@@ -6,19 +6,19 @@ Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
 
 /* global chrome:false */
 
-function 创建警告(警告) {
-    // if (self == top)
-    //     chrome.storage.local.set(
-    //         {
-    //             警告内容: 警告,
-    //             发出警告: Math.random(),
-    //         },
-    //         () => {}
-    //     );
-}
+// function 创建警告(警告) {
+//     if (self == top)
+//         chrome.storage.local.set(
+//             {
+//                 警告内容: 警告,
+//                 发出警告: Math.random(),
+//             },
+//             () => {}
+//         );
+// }
 function 错误(e) {
     console.error(e);
-    创建警告(e.stack);
+    // 创建警告(e.stack);
 }
 try {
     var $script = document.createElement("script");

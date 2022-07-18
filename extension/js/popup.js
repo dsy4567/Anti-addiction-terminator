@@ -126,7 +126,7 @@ function 显示返回按钮() {
     返回.toggle();
 }
 
-const 隐私策略最后修改日期 = "2022.7.7";
+const 隐私策略最后修改日期 = "2022.7.18";
 // var 一些横幅 = $("#一些横幅");
 var 版本 = $("#版本"),
     打开关于 = $("#打开关于"),
@@ -335,9 +335,16 @@ $(function () {
             }
         });
     if (localStorage.getItem("隐私策略最后修改日期") != 隐私策略最后修改日期) {
-        创建横幅(chrome.i18n.getMessage("msg6"), 1, () => {
-            localStorage.setItem("隐私策略最后修改日期", 隐私策略最后修改日期);
-        });
+        创建横幅(
+            chrome.i18n.getMessage("msg6") + `(${隐私策略最后修改日期})`,
+            1,
+            () => {
+                localStorage.setItem(
+                    "隐私策略最后修改日期",
+                    隐私策略最后修改日期
+                );
+            }
+        );
     }
 
     $("html").show();

@@ -118,7 +118,7 @@ function 破解() {
     if (window.play22 && 网址.includes("7k7k.com")) {
         // 7k7k获取游戏直链1
         try {
-            console.log("[防沉迷减点料] 尝试7k7k防沉迷减料");
+            console.log("[防沉迷终结者] 尝试7k7k防沉迷破解");
             // window.Play24.prototype.playLoading();
             window.play22.playLoading();
             if (!_playLoading) {
@@ -134,7 +134,7 @@ function 破解() {
         if ($ifm.src != location.href && $ifm.src) {
             // 7k7k获取游戏直链2
             try {
-                console.log("[防沉迷减点料] 尝试7k7k手机端防沉迷减料");
+                console.log("[防沉迷终结者] 尝试7k7k手机端防沉迷破解");
                 成功 = 1;
                 location.href = $ifm.src;
             } catch (err) {
@@ -144,7 +144,7 @@ function 破解() {
     } else if (网址.includes("h5.7k7k.com/web/H5GAMES.html")) {
         // 7k7k获取游戏直链3
         try {
-            console.log("[防沉迷减点料] 尝试7k7k h5页游防沉迷减料");
+            console.log("[防沉迷终结者] 尝试7k7k h5页游防沉迷破解");
 
             $.get(
                 "http://h5.7k7k.com/api_redirect/game/start/?client=0&account=" +
@@ -166,7 +166,7 @@ function 破解() {
     } else if ($app_canvas_frame) {
         try {
             if ($app_canvas_frame.src && $app_canvas_frame.src != 网址) {
-                console.log("[防沉迷减点料] 尝试阻止QQ空间自动跳转1");
+                console.log("[防沉迷终结者] 尝试阻止QQ空间自动跳转1");
                 成功 = 1;
                 location.href = $app_canvas_frame.src;
             }
@@ -176,7 +176,7 @@ function 破解() {
     } else if ($full_screen_frame) {
         try {
             if ($full_screen_frame.src && $full_screen_frame.src != 网址) {
-                console.log("[防沉迷减点料] 尝试阻止QQ空间自动跳转2");
+                console.log("[防沉迷终结者] 尝试阻止QQ空间自动跳转2");
                 成功 = 1;
                 location.href = $full_screen_frame.src;
             }
@@ -185,7 +185,7 @@ function 破解() {
         }
     } else if (网址.includes("//i.7724.com/user/danjilogin?url=")) {
         try {
-            console.log("[防沉迷减点料] 尝试7724防沉迷减料");
+            console.log("[防沉迷终结者] 尝试7724防沉迷破解");
             // var url = 网址.substring(网址.indexOf("danjilogin?url=") + "danjilogin?url=".length);
             // if (
             //     url.substring(0, 2) == "//" ||
@@ -199,7 +199,7 @@ function 破解() {
         } catch (err) {}
     } else if (网址.includes("wvw.9377.com/game_login.php")) {
         try {
-            console.log("[防沉迷减点料] 尝试9377防沉迷减料");
+            console.log("[防沉迷终结者] 尝试9377防沉迷破解");
             $.get(网址, (html) => {
                 // var url = html.substring(
                 //     html.indexOf('id="iframe" src="') + 'id="iframe" src="'.length,
@@ -217,7 +217,7 @@ function 破解() {
         } catch (err) {}
     } else if (网址.includes("game.37.com/play.php")) {
         try {
-            console.log("[防沉迷减点料] 尝试37防沉迷减料");
+            console.log("[防沉迷终结者] 尝试37防沉迷破解");
             $.get(网址, (html) => {
                 // var url = html.substring(
                 //     html.indexOf('src="//gameapp.37.com/controller/enter_game.php') +
@@ -237,7 +237,7 @@ function 破解() {
         } catch (err) {}
     } else if (网址.includes("wvw.4366.com/game_login.php")) {
         try {
-            console.log("[防沉迷减点料] 尝试4366防沉迷减料");
+            console.log("[防沉迷终结者] 尝试4366防沉迷破解");
             $.get(网址, (html) => {
                 // var url = html.substring(
                 //     html.indexOf('align="left" id="iframe" src="') +
@@ -343,6 +343,7 @@ try {
     $.get;
 } catch (e) {
     window.$ = {
+        ajax: () => {},
         get: (url, call) => {
             let xhr = new XMLHttpRequest();
             let response = "";

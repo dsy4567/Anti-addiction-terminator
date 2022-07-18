@@ -27,34 +27,10 @@ function 大人来了() {
  * @param { { id: String, date?:string, t? :String, u?: String, n?:[ { l: String, t: String, m: String } ] } } 通知
  */
 function 发通知(通知) {
-    if (!发通知次数 > 5) {
+    if (发通知次数 < 5) {
         发通知次数++;
 
-        if (通知.t == "privacy") {
-            chrome.notifications.create(
-                "privacy",
-                {
-                    type: "basic",
-                    iconUrl: "/icon/128.png",
-                    title: chrome.i18n.getMessage("name"),
-                    message: chrome.i18n.getMessage("msg6") + `(${通知.date})`,
-                },
-                (_id) => {
-                    chrome.notifications.onClicked.addListener((id) => {
-                        if (id == _id) {
-                            通知.u
-                                ? (() => {
-                                      chrome.tabs.create({
-                                          url: 通知.u,
-                                          active: true,
-                                      });
-                                  })()
-                                : undefined;
-                        }
-                    });
-                }
-            );
-        } else if (通知.n) {
+        if (通知.n) {
             for (let 索引 = 0; 索引 < 通知.n.length; 索引++) {
                 const 多语言通知 = 通知.n[索引];
 
@@ -91,78 +67,64 @@ function 发通知(通知) {
         console.log("发通知次数过多", 发通知次数);
     }
 }
+/**
+ *            版本        隐私策略更新日期 通知   id          类型         链接        多语言通知 语言(如: zh-CN) 标题 内容
+ * @param { { v: String, date?:string, n: [ { id: String, t? :String, u?: String, n?:[ { l: String, t: String, m: String } ] } ] } } json
+ */
+function 处理通知(json) {
+    console.log(json);
+    chrome.storage.local.get(["已读通知id"], (数据) => {
+        /**
+         * @type { string[] | undefined }
+         */
+        let 已读通知id = 数据.已读通知id;
+
+        if (json.v == chrome.runtime.getManifest().version) {
+            if (!已读通知id) {
+                已读通知id = [];
+                json.n.forEach((通知) => {
+                    已读通知id.push(通知.id);
+                    chrome.storage.local.set({
+                        已读通知id: 已读通知id,
+                    });
+                    发通知(通知);
+                });
+            } else {
+                json.n.forEach((通知) => {
+                    if (!已读通知id.includes(通知.id)) {
+                        已读通知id.push(通知.id);
+                        chrome.storage.local.set({
+                            已读通知id: 已读通知id,
+                        });
+                        发通知(通知);
+                    }
+                });
+            }
+        } else {
+            console.log("版本不一致, 无法处理通知");
+            chrome.storage.local.remove(["已读通知id"]);
+        }
+    });
+}
 function 接收通知() {
     chrome.storage.local.get(["接收通知"], (数据) => {
         if (typeof 数据.接收通知 === "undefined") {
             chrome.storage.local.set({ 接收通知: true });
-        } else if (数据.接收通知) {
+            数据.接收通知 = true;
+        }
+        if (数据.接收通知) {
             fetch("https://fcmsb250.github.io/api/n.json?r=" + Math.random(), {
                 method: "get",
             })
                 .then((响应) => {
                     return 响应.json();
                 })
-                .then(
-                    /**
-                     *            版本        隐私策略更新日期 通知   id          类型         链接        多语言通知 语言(如: zh-CN) 标题 内容
-                     * @param { { v: String, date?:string, n: [ { id: String, t? :String, u?: String, n?:[ { l: String, t: String, m: String } ] } ] } } json
-                     */
-                    (json) => {
-                        console.log(json);
-                        chrome.storage.local.get(["已读通知id"], (数据) => {
-                            /**
-                             * @type { string[] | undefined }
-                             */
-                            let 已读通知id = 数据.已读通知id;
-
-                            if (
-                                json.v == chrome.runtime.getManifest().version
-                            ) {
-                                if (!已读通知id) {
-                                    已读通知id = [];
-                                    json.n.forEach((通知) => {
-                                        已读通知id.push(通知.id);
-                                        chrome.storage.local.set({
-                                            已读通知id: 已读通知id,
-                                        });
-                                        发通知(通知);
-                                    });
-                                } else {
-                                    json.n.forEach((通知) => {
-                                        if (!已读通知id.includes(通知.id)) {
-                                            已读通知id.push(通知.id);
-                                            chrome.storage.local.set({
-                                                已读通知id: 已读通知id,
-                                            });
-                                            发通知(通知);
-                                        }
-                                    });
-                                }
-                            } else {
-                                chrome.storage.local.remove(["已读通知id"]);
-                            }
-                        });
-                    }
-                );
+                .then(处理通知);
+        } else if (!数据.接收通知) {
+            console.log("用户已禁用接收通知");
         }
     });
 }
-
-chrome.runtime.onInstalled.addListener(() => {
-    chrome.storage.local.set(
-        {
-            接收通知: true,
-            已读通知id: [],
-            自动获取游戏真实地址: true,
-        },
-        () => {
-            if (!已接收通知) {
-                接收通知();
-                已接收通知 = true;
-            }
-        }
-    );
-});
 
 chrome.runtime.onUpdateAvailable.addListener(() => {
     chrome.notifications.create(null, {
@@ -190,29 +152,13 @@ chrome.commands.onCommand.addListener((命令) => {
     }
 });
 
-// chrome.runtime.onMessage.addListener(function (请求, 发送者, 发送回复) {
-//     if (typeof 请求 == "object") {
-//         console.log(请求, 发送者);
-//         switch (请求.操作) {
-//             case "0":
-//                 chrome.tabs.create({
-//                     url: chrome.runtime.getURL("/report.html"),
-//                     active: true,
-//                 });
-//                 chrome.tabs.remove(发送者.tab.id, () => {});
-//             default:
-//                 break;
-//         }
-//         发送回复("ok");
-//     }
-// });
-
 setTimeout(() => {
     if (!已接收通知) {
-        接收通知();
         已接收通知 = true;
+        接收通知();
     }
-}, 5000);
+}, 3000);
+chrome.permissions;
 
 console.log(`
     #############           
