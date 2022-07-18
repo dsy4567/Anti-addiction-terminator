@@ -4,9 +4,7 @@
 
 > 镜像 https://notabug.org/dsy4567/Anti-addiction-terminator
 
-> edge: https://microsoftedge.microsoft.com/addons/detail/chpenmljpdpkebnohfbbdpfelabcnlnp
 
-> firefox: https://addons.mozilla.org/zh-CN/firefox/addon/anti-addiction-terminator/ (更新慢, 服务器太辣鸡)
 
 ---
 
@@ -70,7 +68,7 @@
 >
 > > -   wvw.4366.com/game_login.php
 
-# 💪 更新日志 / 安装
+# 💪 更新日志 / 下载
 
 > https://github.com/dsy4567/Anti-addiction-terminator/releases
 
