@@ -11,13 +11,13 @@ del            aat-dev\mv3\manifest-v2.json
 del            aat-dev\mv3\manifest-ff.json
 
 robocopy /mir  extension                     aat-dev\mv2\
-@REM rmdir /s /q    aat-dev\mv2\rule
+@REM rmdir /s /q    aat-dev\mv2\rules
 del            aat-dev\mv2\manifest.json
 del            aat-dev\mv2\manifest-ff.json
 rename         aat-dev\mv2\manifest-v2.json  manifest.json
 
 robocopy /mir  extension                     aat-dev\ff\
-rmdir /s /q    aat-dev\ff\rule
+rmdir /s /q    aat-dev\ff\rules
 del            aat-dev\ff\manifest.json
 del            aat-dev\ff\manifest-v2.json
 rename         aat-dev\ff\manifest-ff.json   manifest.json

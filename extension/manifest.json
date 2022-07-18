@@ -59,27 +59,8 @@
             "run_at": "document_start"
         }
     ],
-    "declarative_net_request": {
-        "rule_resources": [
-            {
-                "id": "4399",
-                "enabled": true,
-                "path": "/rule/4399.json"
-            },
-            {
-                "id": "7k7k",
-                "enabled": true,
-                "path": "/rule/7k7k.json"
-            },
-            {
-                "id": "report",
-                "enabled": true,
-                "path": "/rule/report.json"
-            }
-        ]
-    },
     "description": "__MSG_dec__",
-    "homepage_url": "http://github.com/dsy4567/Anti-addiction-terminator",
+    "homepage_url": "https://fcmsb250.github.io/",
     "icons": {
         "128": "/icon/128.png"
     },
@@ -87,7 +68,6 @@
     "minimum_chrome_version": "88.0.0.0",
     "name": "__MSG_name__",
     "permissions": [
-        "declarativeNetRequest",
         "notifications",
         "storage"
     ],

@@ -44,6 +44,19 @@ var 游戏真实地址_17yy = "";
 var 正在玩17yy = 0;
 var 已全屏 = 0;
 var _playLoading;
+var _$ = {
+    ajax: () => {},
+    get: (url, call) => {
+        let xhr = new XMLHttpRequest();
+        let response = "";
+        xhr.open("get", url);
+        xhr.send(null);
+        xhr.onload = () => {
+            response = xhr.responseText;
+            call(response);
+        };
+    },
+};
 
 /**
  *
@@ -136,7 +149,8 @@ function 破解() {
             try {
                 console.log("[防沉迷终结者] 尝试7k7k手机端防沉迷破解");
                 成功 = 1;
-                location.href = $ifm.src;
+                let url = $ifm.src;
+                if (url) location.href = url;
             } catch (err) {
                 console.error(err);
             }
@@ -146,7 +160,7 @@ function 破解() {
         try {
             console.log("[防沉迷终结者] 尝试7k7k h5页游防沉迷破解");
 
-            $.get(
+            _$.get(
                 "http://h5.7k7k.com/api_redirect/game/start/?client=0&account=" +
                     获取中间("userid=", ";", document.cookie, "2") +
                     "&appkey=" +
@@ -156,7 +170,33 @@ function 破解() {
                     "&tid=" +
                     获取中间("tid=", "&", 网址, "2"),
                 (json) => {
-                    location.href = JSON.parse(json).url;
+                    let url = JSON.parse(json).url;
+                    if (url) location.href = url;
+                }
+            );
+            成功 = 1;
+        } catch (err) {
+            console.error(err);
+        }
+    } else if (网址.includes("h5.7k7k.com/game/")) {
+        // 7k7k获取游戏直链3
+        try {
+            console.log("[防沉迷终结者] 尝试7k7k h5页游(手机端)防沉迷破解");
+
+            _$.get(
+                "http://h5.7k7k.com/api_redirect/game/start/?client=0&account=" +
+                    获取中间("userid=", ";", document.cookie, "2") +
+                    "&appkey=" +
+                    // eslint-disable-next-line no-undef
+                    gid[0] +
+                    "&uid=" +
+                    获取中间("userid=", ";", document.cookie, "2") +
+                    "&tid=" +
+                    // eslint-disable-next-line no-undef
+                    tid,
+                (json) => {
+                    let url = JSON.parse(json).url;
+                    if (url) location.href = url;
                 }
             );
             成功 = 1;
@@ -168,7 +208,8 @@ function 破解() {
             if ($app_canvas_frame.src && $app_canvas_frame.src != 网址) {
                 console.log("[防沉迷终结者] 尝试阻止QQ空间自动跳转1");
                 成功 = 1;
-                location.href = $app_canvas_frame.src;
+                let url = $app_canvas_frame.src;
+                if (url) location.href = url;
             }
         } catch (err) {
             console.error(err);
@@ -178,7 +219,8 @@ function 破解() {
             if ($full_screen_frame.src && $full_screen_frame.src != 网址) {
                 console.log("[防沉迷终结者] 尝试阻止QQ空间自动跳转2");
                 成功 = 1;
-                location.href = $full_screen_frame.src;
+                let url = $full_screen_frame.src;
+                if (url) location.href = url;
             }
         } catch (err) {
             console.error(err);
@@ -194,13 +236,13 @@ function 破解() {
             // ) {
             // }
             let url = 获取中间("danjilogin?url=", undefined, 网址, "1");
-            location.href = url;
+            if (url) location.href = url;
             成功 = 1;
         } catch (err) {}
     } else if (网址.includes("wvw.9377.com/game_login.php")) {
         try {
             console.log("[防沉迷终结者] 尝试9377防沉迷破解");
-            $.get(网址, (html) => {
+            _$.get(网址, (html) => {
                 // var url = html.substring(
                 //     html.indexOf('id="iframe" src="') + 'id="iframe" src="'.length,
                 //     html.indexOf('" name="mainFrame" scrolling="auto"')
@@ -211,14 +253,14 @@ function 破解() {
                     html,
                     "1"
                 );
-                location.href = url;
+                if (url) location.href = url;
             });
             成功 = 1;
         } catch (err) {}
     } else if (网址.includes("game.37.com/play.php")) {
         try {
             console.log("[防沉迷终结者] 尝试37防沉迷破解");
-            $.get(网址, (html) => {
+            _$.get(网址, (html) => {
                 // var url = html.substring(
                 //     html.indexOf('src="//gameapp.37.com/controller/enter_game.php') +
                 //         'src="'.length,
@@ -231,14 +273,14 @@ function 破解() {
                     "1",
                     "//gameapp.37.com/controller/enter_game.php"
                 );
-                location.href = url;
+                if (url) location.href = url;
             });
             成功 = 1;
         } catch (err) {}
     } else if (网址.includes("wvw.4366.com/game_login.php")) {
         try {
             console.log("[防沉迷终结者] 尝试4366防沉迷破解");
-            $.get(网址, (html) => {
+            _$.get(网址, (html) => {
                 // var url = html.substring(
                 //     html.indexOf('align="left" id="iframe" src="') +
                 //         'align="left" id="iframe" src="'.length,
@@ -257,7 +299,7 @@ function 破解() {
                     html,
                     "1"
                 );
-                location.href = url;
+                if (url) location.href = url;
             });
             成功 = 1;
         } catch (err) {}
@@ -271,7 +313,7 @@ function 破解() {
                 if (_qs("#flash_frame").src == 游戏真实地址_17yy) return;
             } catch (e) {}
 
-            $.ajax({
+            _$.ajax({
                 url: "http://www.17yy.com/e/payapi/vip_ajax.php",
                 data: {
                     action: "getStatus",
@@ -311,7 +353,6 @@ function 破解() {
 
 function load() {
     破解();
-    setTimeout(破解, 3000);
     if (网址.includes("ptlogin.4399.com")) {
         setTimeout(() => {
             if (_qs(".ptlogin_btn")) {
@@ -324,7 +365,16 @@ function load() {
     console.log("[防沉迷终结者] 开始执行");
 }
 
-load();
+setTimeout(() => {
+    try {
+        $.get;
+        $.ajax;
+        $("html");
+        _$ = $;
+    } catch (e) {}
+
+    load();
+}, 3000);
 
 document.body.addEventListener("mousedown", () => {
     if (已全屏 == 0 && 正在玩17yy == 1) {
@@ -338,21 +388,3 @@ document.body.addEventListener("mousedown", () => {
     }
     已全屏 = 1;
 });
-
-try {
-    $.get;
-} catch (e) {
-    window.$ = {
-        ajax: () => {},
-        get: (url, call) => {
-            let xhr = new XMLHttpRequest();
-            let response = "";
-            xhr.open("get", url);
-            xhr.send(null);
-            xhr.onload = () => {
-                response = xhr.responseText;
-                call(response);
-            };
-        },
-    };
-}
