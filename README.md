@@ -1,11 +1,9 @@
-> 再傻逼的防沉迷也抵不住一个傻逼程序猿对快乐傻逼似的追求
+> 📢 防沉迷终结者将停止对仅支持 MV2 扩展的浏览器和 Firefox 浏览器的更新, 推荐这些浏览器的用户改用 [防沉迷减点料](https://greasyfork.org/zh-CN/scripts/437233)
 
-> _该扩展基于 https://github.com/dsy4567/Fucking-Anti-Indulgence/ 改造而来_
+> _该扩展基于 https://github.com/dsy4567/Fucking-Anti-Indulgence/ 改造而来, 并添加了一些新功能_
 
 > 镜像 https://notabug.org/dsy4567/Anti-addiction-terminator
 
-
- 
 ---
 
 <center>
