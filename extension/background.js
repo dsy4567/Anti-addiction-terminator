@@ -107,12 +107,19 @@ function 处理通知(json) {
     });
 }
 function 接收通知() {
-    chrome.storage.local.get(["接收通知"], (数据) => {
+    chrome.storage.local.get(["接收通知", "上次接收通知时间"], (数据) => {
         if (typeof 数据.接收通知 === "undefined") {
             chrome.storage.local.set({ 接收通知: true });
             数据.接收通知 = true;
         }
-        if (数据.接收通知) {
+
+        let 本次接收通知时间 = String(
+            Math.floor(new Date().getTime() / 1000 / 60 / 60 / 24)
+        );
+        if (数据.接收通知 && 本次接收通知时间 != 数据.上次接收通知时间) {
+            chrome.storage.local.set({
+                上次接收通知时间: 本次接收通知时间,
+            });
             fetch("https://fcmsb250.github.io/api/n.json?r=" + Math.random(), {
                 method: "get",
             })
@@ -122,6 +129,8 @@ function 接收通知() {
                 .then(处理通知);
         } else if (!数据.接收通知) {
             console.log("用户已禁用接收通知");
+        } else if (本次接收通知时间 == 数据.上次接收通知时间) {
+            console.log("今日已接收通知");
         }
     });
 }
