@@ -87,7 +87,6 @@
     "minimum_chrome_version": "88.0.0.0",
     "name": "__MSG_name__",
     "permissions": [
-        "declarativeNetRequest",
         "notifications",
         "storage"
     ],
