@@ -11,13 +11,9 @@
 -   格式化代码用 vscode 扩展 Prettier
 -   其他的您自己看着弄
 
-## 测试
-
--   `cd` 到 `tools` 目录, 然后执行 `dev.bat`, 再在浏览器里加载已解压的扩展程序(对于最新的 chrome/edge, 请加载 extension 目录)
-
 ## 打包
 
--   `cd` 到 `tools` 目录, 然后先执行 `dev.bat`, 再执行 `make.bat`
+-   `cd` 到 `tools` 目录, 然后执行 `make.bat`
 
 ## 新建 PR
 
