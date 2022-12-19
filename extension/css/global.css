@@ -92,7 +92,7 @@ Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
 }
 
 :root {
-    --theme-color4: rgb(0, 200, 200);
+    --theme-color4: #66ccff;
 }
 ::selection {
     background-color: var(--theme-color3);
