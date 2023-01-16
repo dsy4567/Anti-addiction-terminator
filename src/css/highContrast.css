@@ -1,8 +1,3 @@
-@media (prefers-color-scheme: light) {
-    .图标 {
-        filter: invert(1) !important;
-    }
-}
 :root {
     --theme-color1: black;
     --theme-color2: white;
@@ -25,11 +20,21 @@ a {
 a:hover {
     text-decoration: 1px underline white !important;
 }
-.图标按钮, button.图标, button.大按钮, .选项 {
+.图标按钮,
+button.图标,
+button.大按钮,
+.选项 {
     border: 2px solid var(--theme-color4) !important;
     color: white;
 }
-.图标按钮:hover, .图标按钮:focus, button.图标:hover, button.图标:focus, button.大按钮:hover, button.大按钮:focus, .选项:hover, .选项:focus {
+.图标按钮:hover,
+.图标按钮:focus,
+button.图标:hover,
+button.图标:focus,
+button.大按钮:hover,
+button.大按钮:focus,
+.选项:hover,
+.选项:focus {
     border: 2px dashed var(--theme-color4) !important;
 }
 button.大按钮,

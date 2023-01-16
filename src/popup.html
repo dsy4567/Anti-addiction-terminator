@@ -1,109 +1,365 @@
 <!--
-此代码在 GPL-3.0 下获得许可, 请查看 COPYING.txt 或 <https://www.gnu.org/licenses/gpl-3.0.txt>
 Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
-您可以在这里找到源码 <https://github.com/dsy4567/Anti-addiction-terminator>
+View License at <https://www.gnu.org/licenses/gpl-3.0.html>
+Source code: <https://github.com/dsy4567/Anti-addiction-terminator>
 -->
 
 <!DOCTYPE html>
 <html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="防沉迷终结者的 popup 界面, 用来使用防沉迷终结者的一些功能"
+        />
+        <title>防沉迷终结者</title>
+        <script src="/lib/jquery-3.6.0.min.js"></script>
+        <link rel="stylesheet" href="/css/global.css" />
+        <link rel="stylesheet" href="/css/popup.css" />
+        <link rel="" href="/css/highContrast.css" id="高对比度主题" />
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="防沉迷终结者的 popup 界面, 用来使用防沉迷终结者的一些功能">
-    <title>防沉迷终结者</title>
-    <script src="/lib/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="/css/global.css" />
-    <link rel="stylesheet" href="/css/popup.css" />
-    <link rel="" href="/css/highContrast.css" id="高对比度主题">
-</head>
+    <body>
+        <div id="顶部">
+            <div class="左">
+                <img
+                    width="32"
+                    height="32"
+                    src="/icon/logo.svg"
+                    alt="logo"
+                    id="logo"
+                    title="logo"
+                />
+                <h1 id="名字">防沉迷终结者</h1>
+                <small id="版本"></small>
+            </div>
+            <div class="右">
+                <button
+                    type="button"
+                    class="图标按钮 stroke"
+                    id="打开设置"
+                    title="设置"
+                >
+                    <svg
+                        class="图标"
+                        viewBox="0 0 48 48"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M36.686 15.171C37.9364 16.9643 38.8163 19.0352 39.2147 21.2727H44V26.7273H39.2147C38.8163 28.9648 37.9364 31.0357 36.686 32.829L40.0706 36.2137L36.2137 40.0706L32.829 36.686C31.0357 37.9364 28.9648 38.8163 26.7273 39.2147V44H21.2727V39.2147C19.0352 38.8163 16.9643 37.9364 15.171 36.686L11.7863 40.0706L7.92939 36.2137L11.314 32.829C10.0636 31.0357 9.18372 28.9648 8.78533 26.7273H4V21.2727H8.78533C9.18372 19.0352 10.0636 16.9643 11.314 15.171L7.92939 11.7863L11.7863 7.92939L15.171 11.314C16.9643 10.0636 19.0352 9.18372 21.2727 8.78533V4H26.7273V8.78533C28.9648 9.18372 31.0357 10.0636 32.829 11.314L36.2137 7.92939L40.0706 11.7863L36.686 15.171Z"
+                            fill="none"
+                            stroke-width="4"
+                            stroke-linejoin="round"
+                        />
+                        <path
+                            d="M24 29C26.7614 29 29 26.7614 29 24C29 21.2386 26.7614 19 24 19C21.2386 19 19 21.2386 19 24C19 26.7614 21.2386 29 24 29Z"
+                            fill="none"
+                            stroke-width="4"
+                            stroke-linejoin="round"
+                        />
+                    </svg>
+                </button>
+                <button
+                    type="button"
+                    class="图标按钮"
+                    id="打开关于"
+                    title="关于"
+                >
+                    <svg
+                        class="图标"
+                        viewBox="0 0 48 48"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            class="stroke"
+                            d="M24 44C29.5228 44 34.5228 41.7614 38.1421 38.1421C41.7614 34.5228 44 29.5228 44 24C44 18.4772 41.7614 13.4772 38.1421 9.85786C34.5228 6.23858 29.5228 4 24 4C18.4772 4 13.4772 6.23858 9.85786 9.85786C6.23858 13.4772 4 18.4772 4 24C4 29.5228 6.23858 34.5228 9.85786 38.1421C13.4772 41.7614 18.4772 44 24 44Z"
+                            fill="none"
+                            stroke-width="4"
+                            stroke-linejoin="round"
+                        />
+                        <path
+                            class="fill"
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M24 11C25.3807 11 26.5 12.1193 26.5 13.5C26.5 14.8807 25.3807 16 24 16C22.6193 16 21.5 14.8807 21.5 13.5C21.5 12.1193 22.6193 11 24 11Z"
+                        />
+                        <path
+                            class="stroke"
+                            d="M24.5 34V20H23.5H22.5"
+                            stroke-width="4"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+                        <path
+                            class="stroke"
+                            d="M21 34H28"
+                            stroke-width="4"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+                    </svg>
+                </button>
 
-<body>
-    <div id="顶部">
-        <div class="左">
-            <img width="32" height="32" src="/icon/logo.svg" alt="logo" id="logo" title="logo" />
-            <h1 id="名字">防沉迷终结者</h1>
-            <small id="版本"></small>
+                <button type="button" class="图标按钮" id="返回" title="返回">
+                    <svg
+                        class="图标 stroke"
+                        viewBox="0 0 48 48"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M44 40.8361C39.1069 34.8632 34.7617 31.4739 30.9644 30.6682C27.1671 29.8625 23.5517 29.7408 20.1182 30.303V41L4 23.5453L20.1182 7V17.167C26.4667 17.2172 31.8638 19.4948 36.3095 24C40.7553 28.5052 43.3187 34.1172 44 40.8361Z"
+                            fill="none"
+                            stroke-width="4"
+                            stroke-linejoin="round"
+                        />
+                    </svg>
+                </button>
+            </div>
         </div>
-        <div class="右">
-            <!-- <button type="button" class="图标按钮" id="打开通知">
-                    <img class="图标" src="/icon/notification.svg" alt="通知" title="通知" />
-                </button> -->
-            <button type="button" class="图标按钮" id="打开设置" title="设置">
-                <img class="图标" src="/icon/setting.svg" alt="设置" /></button>
-            <button type="button" class="图标按钮" id="打开关于" title="关于">
-                <img class="图标" src="/icon/info.svg" alt="关于" />
+
+        <hr />
+
+        <div id="一些横幅"></div>
+
+        <div id="关于">
+            <p>✨该扩展可以破解一些游戏平台的防沉迷, 帮您实现游戏自由✨</p>
+            <p>⚠️沉迷于游戏不利于身心健康, 请合理安排游戏时间, 适度游戏⚠️</p>
+
+            <p>
+                ~~快乐没有年龄之分~~<br /><br />
+                Copyright (C) 2022 dsy4567 (
+                <a target="_blank" href="https://github.com/dsy4567">GitHub</a>
+                |
+                <a target="_self" href="mailto:dsy4567@outlook.com">邮箱</a> )
+                <br /><br />
+                此扩展使用
+                <a target="_blank" href="/COPYING.txt">GPL-3.0</a> 许可,
+                源代码位于
+                <a href="https://github.com/dsy4567/Anti-addiction-terminator/"
+                    >GitHub</a
+                >
+            </p>
+            <p>
+                感谢
+                <a target="_blank" href="https://iconpark.bytedance.com"
+                    >IconPark</a
+                >
+                提供的图标
+            </p>
+            <p>
+                <a
+                    id="给个好评"
+                    target="_blank"
+                    href="https://microsoftedge.microsoft.com/addons/detail/%E9%98%B2%E6%B2%89%E8%BF%B7%E7%BB%88%E7%BB%93%E8%80%85/chpenmljpdpkebnohfbbdpfelabcnlnp"
+                    >👍给个好评</a
+                >
+                |
+                <a
+                    target="_blank"
+                    href="https://github.com/dsy4567/Anti-addiction-terminator/issues"
+                    >🐛报告bug</a
+                >
+                |
+                <a
+                    target="_blank"
+                    href="https://github.com/dsy4567/Anti-addiction-terminator/blob/master/privacy.md"
+                    >🙈隐私政策</a
+                >
+            </p>
+        </div>
+
+        <div id="工具">
+            <button type="button" class="大按钮" id="使用通用规则破解">
+                <span>使用 / 取消通用规则破解</span>
+            </button>
+            <button type="button" class="大按钮" id="大人来了按钮">
+                <span>隐藏游戏</span>
+            </button>
+            <button type="button" class="大按钮" id="登录7k7k">
+                <span>登录7k7k账号(无限制)</span>
             </button>
 
-            <button type="button" class="图标按钮" id="返回" title="返回">
-                <img class="图标" src="/icon/back.svg" alt="返回" />
+            <svg
+                class="飞机 装饰品 图标 不点击 stroke"
+                title="飞机"
+                viewBox="0 0 48 48"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    d="M22 29L13.7763 33.1118C12.6994 33.6503 11.4049 33.4927 10.4886 32.7117L4 27.1808L7.56226 25.8157C8.19869 25.5718 8.8992 25.5519 9.54846 25.7592L12.8273 26.8063C13.5787 27.0463 14.3944 26.9807 15.0977 26.6237L37.36 15.3248C37.7807 15.1113 38.2459 15 38.7177 15H44L42.4472 18.1056C42.1569 18.6862 41.6862 19.1569 41.1056 19.4472L32 24"
+                    stroke-width="4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                />
+                <path
+                    d="M22.0007 29L18.0003 31L23.0003 41L32.0003 24"
+                    stroke-width="4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                />
+                <path
+                    d="M17 25L12 16L28 20"
+                    stroke-width="4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                />
+            </svg>
+            <svg
+                title="游戏手柄"
+                class="游戏手柄 装饰品 图标 不点击 stroke"
+                viewBox="0 0 48 48"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <g>
+                    <rect
+                        width="48"
+                        height="48"
+                        fill="none"
+                        fill-opacity="0.01"
+                        stroke-linejoin="round"
+                        stroke-width="4"
+                        stroke="none"
+                        fill-rule="evenodd"
+                    />
+                    <g transform="translate(4.000000, 4.000000)">
+                        <rect
+                            fill="none"
+                            fill-rule="nonzero"
+                            x="0"
+                            y="14"
+                            width="40"
+                            height="24"
+                            rx="12"
+                            stroke-linejoin="round"
+                            stroke-width="4"
+                        />
+                        <path
+                            d="M12,22 L12,30"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="4"
+                            fill="none"
+                            fill-rule="evenodd"
+                        />
+                        <path
+                            d="M8,26 L16,26"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="4"
+                            fill="none"
+                            fill-rule="evenodd"
+                        />
+                        <polyline
+                            stroke-linecap="round"
+                            points="20 12 20 5.71428571 28 5.71428571 28 2.84272605e-13"
+                            stroke-linejoin="round"
+                            stroke-width="4"
+                            fill="none"
+                            fill-rule="evenodd"
+                        />
+                        <circle
+                            fill="none"
+                            fill-rule="nonzero"
+                            cx="28"
+                            cy="26"
+                            r="4"
+                            stroke-linejoin="round"
+                            stroke-width="4"
+                        />
+                    </g>
+                </g>
+            </svg>
+        </div>
+
+        <div id="设置">
+            <button type="button" class="选项" title="快捷键" id="快捷键">
+                <svg
+                    class="图标 stroke"
+                    viewBox="0 0 48 48"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M42 7.00012H6C4.89543 7.00012 4 7.89555 4 9.00012V37.0001C4 38.1047 4.89543 39.0001 6 39.0001H42C43.1046 39.0001 44 38.1047 44 37.0001V9.00012C44 7.89555 43.1046 7.00012 42 7.00012Z"
+                        fill="none"
+                        stroke-width="4"
+                        stroke-linejoin="round"
+                    />
+                    <path
+                        d="M12 19.0001H14"
+                        stroke-width="4"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    />
+                    <path
+                        d="M21 19.0001H23"
+                        stroke-width="4"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    />
+                    <path
+                        d="M29 19.0001H36"
+                        stroke-width="4"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    />
+                    <path
+                        d="M12 28.0001H36"
+                        stroke-width="4"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    />
+                </svg>
+                <span>配置快捷键</span>
+            </button>
+            <button type="button" class="选项" title="重启" id="重启">
+                <svg
+                    class="图标 stroke"
+                    viewBox="0 0 48 48"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M36.7279 36.7279C33.4706 39.9853 28.9706 42 24 42C14.0589 42 6 33.9411 6 24C6 14.0589 14.0589 6 24 6C28.9706 6 33.4706 8.01472 36.7279 11.2721C38.3859 12.9301 42 17 42 17"
+                        stroke-width="4"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    />
+                    <path
+                        d="M42 8V17H33"
+                        stroke-width="4"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    />
+                </svg>
+                <span>重启</span>
+            </button>
+            <button
+                type="button"
+                class="选项"
+                title="该功能需要向正在玩的游戏平台发送游戏信息和 您的 uid, 这些信息不会发送给除此以外的第三方"
+                id="自动获取游戏真实地址"
+            >
+                <input title="点击此复选框的外面来将其选中" type="checkbox" />
+                <span>自动获取游戏真实地址</span>
+            </button>
+            <button
+                type="button"
+                class="选项"
+                title="启用高对比度主题"
+                id="高对比度"
+            >
+                <input title="点击此复选框的外面来将其选中" type="checkbox" />
+                <span>启用高对比度主题</span>
             </button>
         </div>
-    </div>
-
-    <hr />
-
-    <div id="一些横幅"></div>
-
-    <div id="关于">
-        <p>✨该扩展可以破解一些游戏平台的防沉迷, 帮您实现游戏自由✨</p>
-        <p>⚠️沉迷于游戏不利于身心健康, 请合理安排游戏时间, 适度游戏⚠️</p>
-
-        <p>
-            ~~快乐没有年龄之分~~<br /><br />
-            Copyright (C) 2022 dsy4567 (
-            <a target="_blank" href="https://github.com/dsy4567">GitHub</a>
-            |
-            <a target="_self" href="mailto:dsy4567@outlook.com">邮箱</a> ) <br /><br />
-            此扩展使用 <a target="_blank" href="/COPYING.txt">GPL-3.0</a> 许可, 源代码位于
-            <a href="https://github.com/dsy4567/Anti-addiction-terminator/">GitHub</a>
-        </p>
-        <p>
-            感谢
-            <a target="_blank" href="https://iconpark.bytedance.com">IconPark</a> 提供的图标
-        </p>
-        <p>
-            <a id="给个好评" target="_blank"
-                href="https://microsoftedge.microsoft.com/addons/detail/%E9%98%B2%E6%B2%89%E8%BF%B7%E7%BB%88%E7%BB%93%E8%80%85/chpenmljpdpkebnohfbbdpfelabcnlnp">👍给个好评</a>
-            |
-            <a target="_blank" href="https://github.com/dsy4567/Anti-addiction-terminator/issues">🐛报告bug</a>
-            |
-            <a target="_blank"
-                href="https://github.com/dsy4567/Anti-addiction-terminator/blob/master/privacy.md">🙈隐私政策</a>
-        </p>
-    </div>
-
-    <div id="工具">
-        <button type="button" class="大按钮" id="使用通用规则破解">
-            <span>使用 / 取消通用规则破解</span>
-        </button>
-        <button type="button" class="大按钮" id="大人来了按钮"><span>隐藏游戏</span></button>
-        <button type="button" class="大按钮" id="登录7k7k">
-            <span>登录7k7k账号(无限制)</span>
-        </button>
-
-        <img title="飞机" class="飞机 装饰品 图标 不点击" src="/icon/plane.svg" alt="飞机" />
-        <img title="游戏手柄" class="游戏手柄 装饰品 图标 不点击" src="/icon/gamehandle.svg" alt="游戏手柄" />
-    </div>
-
-    <div id="设置">
-        <button type="button" class="选项" title="快捷键" id="快捷键">
-            <img class="图标" src="/icon/kbd.svg" alt="快捷键" /><span>配置快捷键</span>
-        </button>
-        <button type="button" class="选项" title="重启" id="重启">
-            <img class="图标" src="/icon/reload.svg" alt="重启" /><span>重启</span>
-        </button>
-        <button type="button" class="选项" title="该功能需要向正在玩的游戏平台发送游戏信息和 您的 uid, 这些信息不会发送给除此以外的第三方" id="自动获取游戏真实地址">
-            <input title="点击此复选框的外面来将其选中" type="checkbox"><span>自动获取游戏真实地址</span>
-        </button>
-        <button type="button" class="选项" title="接收通知" id="接收通知">
-            <input title="点击此复选框的外面来将其选中" type="checkbox"><span>接收通知</span>
-        </button>
-        <button type="button" class="选项" title="启用高对比度主题" id="高对比度">
-            <input title="点击此复选框的外面来将其选中" type="checkbox"><span>启用高对比度主题</span>
-        </button>
-    </div>
-    <script src="/js/popup.js"></script>
-</body>
-
+        <script src="/js/popup.js"></script>
+    </body>
 </html>

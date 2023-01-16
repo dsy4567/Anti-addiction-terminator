@@ -1,56 +1,40 @@
 /*
-此代码在 GPL-3.0 下获得许可, 请查看 COPYING.txt 或 <https://www.gnu.org/licenses/gpl-3.0.txt>
 Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
-您可以在这里找到源码 <https://github.com/dsy4567/Anti-addiction-terminator>
+View License at <https://www.gnu.org/licenses/gpl-3.0.html>
+Source code: <https://github.com/dsy4567/Anti-addiction-terminator>
 */
-
 /* global chrome $ */
-
 var 提示错误次数 = 0;
 var 已提示错误太多 = 0;
-// eslint-disable-next-line no-unused-vars
 var 最近一次错误;
-
-/**
- * @param {string | Event} 事件
- * @param {string | undefined} 源
- * @param {number | undefined} 行
- * @param {number | undefined} c
- * @param {Error | undefined} 错误
- */
-window.onerror = (事件, 源, 行, c, 错误) => {
+window.onerror = function (事件, 源, 行, c, 错误) {
     if (错误) {
         处理错误(错误);
-    } else {
+    }
+    else {
         处理错误(String(事件));
     }
 };
-/**
- * @param {string} e
- * @param {string} 友好错误信息
- */
 function 处理错误(e, 友好错误信息) {
-    if (
-        !e ||
+    if (!e ||
         e.toString().includes("Possible side-effect in debug-evaluate") ||
-        e.toString().includes("SyntaxError")
-    )
+        e.toString().includes("SyntaxError"))
         return;
-
     console.error(e);
     最近一次错误 = e;
     提示错误次数++;
     if (提示错误次数 <= 10) {
         if (友好错误信息) {
             创建横幅(友好错误信息, 0);
-        } else {
-            创建横幅(e, 0);
         }
-    } else if (已提示错误太多 == 0) {
+        else {
+            创建横幅("" + e, 0);
+        }
+    }
+    else if (已提示错误太多 == 0) {
         已提示错误太多 = 1;
         创建横幅(chrome.i18n.getMessage("msg1"), 0);
     }
-
     document.documentElement.style.display = "block";
 }
 /**
@@ -58,309 +42,193 @@ function 处理错误(e, 友好错误信息) {
  * @param {string} 内容
  * @param {number} 类型 0: 警告 1: 提示(默认)
  */
-function 创建横幅(内容, 类型 = 1, 关闭时回调 = () => {}) {
+function 创建横幅(内容, 类型, 关闭时回调) {
+    if (类型 === void 0) { 类型 = 1; }
+    if (关闭时回调 === void 0) { 关闭时回调 = function () { }; }
     if (内容) {
-        let 图标 = ["/icon/warn.svg", "/icon/smile.svg"];
-        let 颜色 = ["var(--red)", "var(--green)"];
-        let 描述 = ["警告", "提示"];
-
-        let $横幅 = document.createElement("div");
-        let $横幅图标 = document.createElement("img");
-        let $横幅内容 = document.createElement("span");
-        let $关闭横幅 = document.createElement("button");
-        $横幅.className = "横幅";
-        $横幅.style.backgroundColor = 颜色[类型];
-        $横幅.style.borderColor = 颜色[类型];
+        var 图标 = ["/icon/warn.svg", "/icon/smile.svg"];
+        var 颜色 = ["var(--red)", "var(--green)"];
+        var 描述 = ["警告", "提示"];
+        var $横幅_1 = document.createElement("div");
+        var $横幅图标 = document.createElement("img");
+        var $横幅内容 = document.createElement("span");
+        var $关闭横幅 = document.createElement("button");
+        $横幅_1.className = "横幅";
+        $横幅_1.style.backgroundColor = 颜色[类型];
+        $横幅_1.style.borderColor = 颜色[类型];
         $横幅图标.className = "横幅图标 图标 不点击";
         $横幅图标.src = 图标[类型];
         $横幅图标.title = 描述[类型];
         $横幅内容.innerText = 内容;
-        // $关闭横幅.src = "/icon/close.svg";
         $关闭横幅.className = "关闭横幅 图标 图标按钮";
         $关闭横幅.title = chrome.i18n.getMessage("btn7");
         $关闭横幅.type = "button";
-        $关闭横幅.onclick = () => {
+        $关闭横幅.onclick = function () {
             关闭时回调();
-            $横幅.remove();
+            $横幅_1.remove();
         };
-        $横幅.append($横幅图标);
-        $横幅.append($横幅内容);
-        $横幅.append($关闭横幅);
-        document.querySelector("#一些横幅").append($横幅);
+        $横幅_1.append($横幅图标);
+        $横幅_1.append($横幅内容);
+        $横幅_1.append($关闭横幅);
+        document.querySelector("#一些横幅").append($横幅_1);
     }
 }
 function 通用规则破解() {
     chrome.tabs
         .query({ active: true, currentWindow: true })
-        .then((tabs) => {
-            chrome.tabs
-                .sendMessage(tabs[0].id, { 操作: "1" })
-                .then((回复) => {
-                    console.log("收到回复: " + 回复);
-                })
-                .catch((e) =>
-                    处理错误(new Error(e), chrome.i18n.getMessage("msg3"))
-                );
-        })
-        .catch((e) => 处理错误(new Error(e), chrome.i18n.getMessage("msg3")));
+        .then(function (tabs) {
+        try {
+            chrome.tabs.sendMessage(tabs[0].id, { 操作: "1" }, function (回复) {
+                console.log("收到回复: " + 回复);
+            });
+        }
+        catch (e) {
+            处理错误(new Error(e), chrome.i18n.getMessage("msg3"));
+        }
+    })["catch"](function (e) { return 处理错误(new Error(e), chrome.i18n.getMessage("msg3")); });
 }
-function 大人来了() {
+function 大人来了被按下() {
     chrome.tabs
         .query({ active: true, currentWindow: true })
-        .then((tabs) => {
-            chrome.tabs
-                .sendMessage(tabs[0].id, { 操作: "2" })
-                .then((回复) => {
-                    console.log("收到回复: " + 回复);
-                })
-                .catch((e) =>
-                    处理错误(new Error(e), chrome.i18n.getMessage("msg3"))
-                );
-        })
-        .catch((e) => 处理错误(new Error(e), chrome.i18n.getMessage("msg3")));
+        .then(function (tabs) {
+        try {
+            chrome.tabs.sendMessage(tabs[0].id, { 操作: "2" }, function (回复) {
+                console.log("收到回复: " + 回复);
+            });
+        }
+        catch (e) {
+            处理错误(new Error(e), chrome.i18n.getMessage("msg3"));
+        }
+    })["catch"](function (e) { return 处理错误(new Error(e), chrome.i18n.getMessage("msg3")); });
 }
 function 显示返回按钮() {
     打开设置.toggle();
     打开关于.toggle();
-    // (打开通知).toggle();
     返回.toggle();
 }
-
-const 隐私策略最后修改日期 = "2022.7.18";
-// var 一些横幅 = $("#一些横幅");
-var 版本 = $("#版本"),
-    打开关于 = $("#打开关于"),
-    工具 = $("#工具"),
-    关于 = $("#关于"),
-    名字 = $("#名字"),
-    使用通用规则破解 = $("#使用通用规则破解"),
-    大人来了按钮 = $("#大人来了按钮"),
-    给个好评 = $("#给个好评"),
-    登录7k7k = $("#登录7k7k"),
-    快捷键 = $("#快捷键"),
-    快捷键文本 = $("#快捷键 span"),
-    快捷键图标 = $("#快捷键 img"),
-    设置 = $("#设置"),
-    打开设置 = $("#打开设置"),
-    返回 = $("#返回"),
-    // 打开通知 = $("#打开通知"),
-    // 通知 = $("#通知"),
-
-    重启 = $("#重启"),
-    重启文本 = $("#重启 span"),
-    重启图标 = $("#重启 img"),
-    高对比度主题 = $("#高对比度主题"),
-    高对比度 = $("#高对比度"),
-    高对比度_文本 = $("#高对比度 span"),
-    高对比度_复选框 = $("#高对比度 input"),
-    自动获取游戏真实地址 = $("#自动获取游戏真实地址"),
-    自动获取游戏真实地址_文本 = $("#自动获取游戏真实地址 span"),
-    自动获取游戏真实地址_复选框 = $("#自动获取游戏真实地址 input"),
-    接收通知 = $("#接收通知"),
-    接收通知_文本 = $("#接收通知 span"),
-    接收通知_复选框 = $("#接收通知 input"),
-    isFF = navigator.userAgent.includes("Firefox");
-
+var 隐私策略最后修改日期 = "2022.7.18";
+var 版本 = $("#版本"), 打开关于 = $("#打开关于"), 工具 = $("#工具"), 关于 = $("#关于"), 名字 = $("#名字"), 使用通用规则破解按钮 = $("#使用通用规则破解"), 大人来了按钮 = $("#大人来了按钮"), 给个好评 = $("#给个好评"), 登录7k7k = $("#登录7k7k"), 快捷键 = $("#快捷键"), 快捷键文本 = $("#快捷键 span"), 快捷键图标 = $("#快捷键 img"), 设置 = $("#设置"), 打开设置 = $("#打开设置"), 返回 = $("#返回"), 重启 = $("#重启"), 重启文本 = $("#重启 span"), 重启图标 = $("#重启 img"), 高对比度主题 = $("#高对比度主题"), 高对比度 = $("#高对比度"), 高对比度_文本 = $("#高对比度 span"), 高对比度_复选框 = $("#高对比度 input"), 自动获取游戏真实地址 = $("#自动获取游戏真实地址"), 自动获取游戏真实地址_文本 = $("#自动获取游戏真实地址 span"), 自动获取游戏真实地址_复选框 = $("#自动获取游戏真实地址 input");
 $(function () {
-    返回.on("click", () => {
+    返回.on("click", function () {
         关于.hide();
         设置.hide();
-        // (通知).hide();
         显示返回按钮();
         工具.show();
     });
-    打开关于.on("click", () => {
+    打开关于.on("click", function () {
         工具.hide();
         设置.hide();
-        // (通知).hide();
         显示返回按钮();
         关于.css("display", "flex");
     });
-    打开设置.on("click", () => {
+    打开设置.on("click", function () {
         工具.hide();
         关于.hide();
-        // (通知).hide();
         显示返回按钮();
         设置.css("display", "flex");
     });
-    // (打开通知).on("click", () => {
-    //     (工具).hide();
-    //     (关于).hide();
-    //     (设置).hide();
-    //     显示返回按钮();
-    //     // (通知).css("display", "flex");
-    // });
-    使用通用规则破解.on("click", () => {
+    使用通用规则破解按钮.on("click", function () {
         通用规则破解();
     });
-    大人来了按钮.on("click", () => {
-        大人来了();
-    });
-    登录7k7k.on("click", () => {
+    大人来了按钮.on("click", 大人来了被按下);
+    登录7k7k.on("click", function () {
         chrome.tabs
             .create({
-                url: "http://www.7k7k.com/swf/204220.htm#aat-doLogin",
-                active: true,
-            })
-            .catch(
-                (e) => 处理错误(new Error(e)),
-                chrome.i18n.getMessage("msg4")
-            );
+            url: "http://www.7k7k.com/swf/204220.htm#aat-doLogin",
+            active: true
+        })["catch"](function (e) { return 处理错误(new Error(e), chrome.i18n.getMessage("msg4")); });
     });
-    快捷键.on("click", () => {
-        if (isFF) {
-            return alert("请在设置中配置快捷键");
-        }
+    快捷键.on("click", function () {
         chrome.tabs
             .create({
-                url: "chrome://extensions/shortcuts",
-                active: true,
-            })
-            .catch((e) =>
-                处理错误(new Error(e), chrome.i18n.getMessage("msg4"))
-            );
+            url: "chrome://extensions/shortcuts",
+            active: true
+        })["catch"](function (e) { return 处理错误(new Error(e), chrome.i18n.getMessage("msg4")); });
     });
-    重启.on("click", () => {
+    重启.on("click", function () {
         chrome.runtime.reload();
     });
-    高对比度.on("click", () => {
+    高对比度.on("click", function () {
         if (高对比度_复选框[0].checked) {
             高对比度_复选框[0].checked = false;
             localStorage.setItem("启用高对比度主题", "0");
             高对比度主题[0].rel = "";
-        } else {
+        }
+        else {
             高对比度_复选框[0].checked = true;
             localStorage.setItem("启用高对比度主题", "1");
             高对比度主题[0].rel = "stylesheet";
         }
     });
-    高对比度_复选框.on("click", () => {
+    高对比度_复选框.on("click", function () {
         return false;
     });
-
-    接收通知.on("click", () => {
-        if (接收通知_复选框[0].checked) {
-            接收通知_复选框[0].checked = false;
-            chrome.storage.local.set({ 接收通知: false });
-        } else {
-            接收通知_复选框[0].checked = true;
-            chrome.storage.local.set({ 接收通知: true });
-        }
-    });
-    接收通知_复选框.on("click", () => {
-        return false;
-    });
-
-    自动获取游戏真实地址.on("click", () => {
+    自动获取游戏真实地址.on("click", function () {
         if (自动获取游戏真实地址_复选框[0].checked) {
             自动获取游戏真实地址_复选框[0].checked = false;
             chrome.storage.local.set({ 自动获取游戏真实地址: false });
-        } else {
+        }
+        else {
             自动获取游戏真实地址_复选框[0].checked = true;
             chrome.storage.local.set({ 自动获取游戏真实地址: true });
         }
     });
-    自动获取游戏真实地址_复选框.on("click", () => {
+    自动获取游戏真实地址_复选框.on("click", function () {
         return false;
     });
-
     打开关于.children().attr("alt", chrome.i18n.getMessage("alt0"));
     打开设置.children().attr("alt", chrome.i18n.getMessage("alt1"));
-    // (打开通知).children().attr("alt", chrome.i18n.getMessage("alt4"));
     快捷键图标.attr("alt", chrome.i18n.getMessage("btn3"));
     重启图标.attr("alt", chrome.i18n.getMessage("alt5"));
     返回.children().attr("alt", chrome.i18n.getMessage("alt3"));
-
     打开关于.attr("title", chrome.i18n.getMessage("alt0"));
     打开设置.attr("title", chrome.i18n.getMessage("alt1"));
-    // (打开通知).attr("title", chrome.i18n.getMessage("alt4"));
     快捷键.attr("title", chrome.i18n.getMessage("btn3"));
     重启.attr("title", chrome.i18n.getMessage("alt5"));
     返回.attr("title", chrome.i18n.getMessage("alt3"));
     高对比度.attr("title", chrome.i18n.getMessage("btn4"));
     自动获取游戏真实地址.attr("title", chrome.i18n.getMessage("msg8"));
-    接收通知.attr("title", chrome.i18n.getMessage("btn5"));
     $("input[type='checkbox']").attr("title", chrome.i18n.getMessage("msg9"));
-
     document.title = chrome.i18n.getMessage("name");
     名字.text(chrome.i18n.getMessage("name"));
     版本.text(chrome.runtime.getManifest().version);
     关于.html(chrome.i18n.getMessage("about"));
-    使用通用规则破解.text(chrome.i18n.getMessage("btn0"));
+    使用通用规则破解按钮.text(chrome.i18n.getMessage("btn0"));
     大人来了按钮.text(chrome.i18n.getMessage("btn1"));
     登录7k7k.text(chrome.i18n.getMessage("btn2"));
     快捷键文本.text(chrome.i18n.getMessage("btn3"));
     重启文本.text(chrome.i18n.getMessage("alt5"));
     高对比度_文本.text(chrome.i18n.getMessage("btn4"));
     自动获取游戏真实地址_文本.text(chrome.i18n.getMessage("btn6"));
-    接收通知_文本.text(chrome.i18n.getMessage("btn5"));
-
-    if (isFF) {
-        给个好评.setAttribute(
-            "href",
-            "https://addons.mozilla.org/zh-CN/firefox/addon/anti-addiction-terminator/"
-        );
-    }
-
     创建横幅(chrome.i18n.getMessage("msg0"));
-
     if (localStorage.getItem("启用高对比度主题") === "0") {
         高对比度_复选框[0].checked = false;
-    } else if (localStorage.getItem("启用高对比度主题") === "1") {
+    }
+    else if (localStorage.getItem("启用高对比度主题") === "1") {
         高对比度_复选框[0].checked = true;
         高对比度主题[0].rel = "stylesheet";
-    } else {
+    }
+    else {
         localStorage.setItem("启用高对比度主题", "0");
         高对比度_复选框[0].checked = false;
     }
-    chrome.storage.local
-        .get(["接收通知", "自动获取游戏真实地址"])
-        .then((数据) => {
-            if (typeof 数据.接收通知 === "undefined") {
-                chrome.storage.local.set({ 接收通知: true });
-                接收通知_复选框[0].checked = true;
-            } else if (数据.接收通知) {
-                接收通知_复选框[0].checked = true;
-            } else if (!数据.接收通知) {
-                接收通知_复选框[0].checked = false;
-            }
-
-            if (typeof 数据.自动获取游戏真实地址 === "undefined") {
-                chrome.storage.local.set({ 自动获取游戏真实地址: true });
-                自动获取游戏真实地址_复选框[0].checked = true;
-            } else if (数据.自动获取游戏真实地址) {
-                自动获取游戏真实地址_复选框[0].checked = true;
-            } else if (!数据.自动获取游戏真实地址) {
-                自动获取游戏真实地址_复选框[0].checked = false;
-            }
-        });
+    chrome.storage.local.get(["自动获取游戏真实地址"]).then(function (数据) {
+        if (typeof 数据.自动获取游戏真实地址 === "undefined") {
+            chrome.storage.local.set({ 自动获取游戏真实地址: true });
+            自动获取游戏真实地址_复选框[0].checked = true;
+        }
+        else if (数据.自动获取游戏真实地址) {
+            自动获取游戏真实地址_复选框[0].checked = true;
+        }
+        else if (!数据.自动获取游戏真实地址) {
+            自动获取游戏真实地址_复选框[0].checked = false;
+        }
+    });
     if (localStorage.getItem("隐私策略最后修改日期") != 隐私策略最后修改日期) {
-        创建横幅(
-            chrome.i18n.getMessage("msg6") + `(${隐私策略最后修改日期})`,
-            1,
-            () => {
-                localStorage.setItem(
-                    "隐私策略最后修改日期",
-                    隐私策略最后修改日期
-                );
-            }
-        );
+        创建横幅(chrome.i18n.getMessage("msg6") + "(".concat(隐私策略最后修改日期, ")"), 1, function () {
+            localStorage.setItem("隐私策略最后修改日期", 隐私策略最后修改日期);
+        });
     }
-
     $("html").show();
 });
-
-console.log(`
-    #############           
-   ##          # ##              欢迎使用防沉迷终结者
-  ##          #    ##            ~快乐没有年龄之分~
- ##          #      ##       Copyright (C) 2022 dsy4567
-##  ### ### #     #  ##     
-##  #   #  ###   ##  ##     
-##  ### # # # # # #  ##     
-##  #   ### #  #  #  ##     
- ##     #           ##            防沉迷终结者 popup 界面
-  ##   #           ##       
-   ## #           ##        
-    ##############          
-`);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicG9wdXAuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJwb3B1cC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7OztFQUlFO0FBRUYscUJBQXFCO0FBRXJCLElBQUksTUFBTSxHQUFHLENBQUMsQ0FBQztBQUNmLElBQUksT0FBTyxHQUFHLENBQUMsQ0FBQztBQUNoQixJQUFJLE1BQU0sQ0FBQztBQUVYLE1BQU0sQ0FBQyxPQUFPLEdBQUcsVUFBQyxFQUFFLEVBQUUsQ0FBQyxFQUFFLENBQUMsRUFBRSxDQUFDLEVBQUUsRUFBRTtJQUM3QixJQUFJLEVBQUUsRUFBRTtRQUNKLElBQUksQ0FBQyxFQUFFLENBQUMsQ0FBQztLQUNaO1NBQU07UUFDSCxJQUFJLENBQUMsTUFBTSxDQUFDLEVBQUUsQ0FBQyxDQUFDLENBQUM7S0FDcEI7QUFDTCxDQUFDLENBQUM7QUFDRixTQUFTLElBQUksQ0FBQyxDQUFpQixFQUFFLE1BQWU7SUFDNUMsSUFDSSxDQUFDLENBQUM7UUFDRixDQUFDLENBQUMsUUFBUSxFQUFFLENBQUMsUUFBUSxDQUFDLHdDQUF3QyxDQUFDO1FBQy9ELENBQUMsQ0FBQyxRQUFRLEVBQUUsQ0FBQyxRQUFRLENBQUMsYUFBYSxDQUFDO1FBRXBDLE9BQU87SUFFWCxPQUFPLENBQUMsS0FBSyxDQUFDLENBQUMsQ0FBQyxDQUFDO0lBQ2pCLE1BQU0sR0FBRyxDQUFDLENBQUM7SUFDWCxNQUFNLEVBQUUsQ0FBQztJQUNULElBQUksTUFBTSxJQUFJLEVBQUUsRUFBRTtRQUNkLElBQUksTUFBTSxFQUFFO1lBQ1IsSUFBSSxDQUFDLE1BQU0sRUFBRSxDQUFDLENBQUMsQ0FBQztTQUNuQjthQUFNO1lBQ0gsSUFBSSxDQUFDLEVBQUUsR0FBRyxDQUFDLEVBQUUsQ0FBQyxDQUFDLENBQUM7U0FDbkI7S0FDSjtTQUFNLElBQUksT0FBTyxJQUFJLENBQUMsRUFBRTtRQUNyQixPQUFPLEdBQUcsQ0FBQyxDQUFDO1FBQ1osSUFBSSxDQUFDLE1BQU0sQ0FB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RCxJQUFJLENBQUMsSUFBSSxDQUFDLEtBQUssRUFBRSxNQUFNLENBQUMsSUFBSSxDQUFDLFVBQVUsQ0FBQyxNQUFNLENBQUMsQ0FBQyxDQUFDO0lBQ2pELEVBQUUsQ0FBQyxRQUFRLEVBQUUsQ0FBQyxJQUFJLENBQUMsS0FBSyxFQUFFLE1BQU0sQ0FBQyxJQUFJLENBQUMsVUFBVSxDQUFDLE1BQU0sQ0FBQyxDQUFDLENBQUM7SUFFMUQsSUFBSSxDQUFDLElBQUksQ0FBQyxPQUFPLEVBQUUsTUFBTSxDQUFDLElBQUksQ0FBQyxVQUFVLENBQUMsTUFBTSxDQUFDLENBQUMsQ0FBQztJQUNuRCxJQUFJLENBQUMsSUFBSSxDQUFDLE9BQU8sRUFBRSxNQUFNLENBQUMsSUFBSSxDQUFDLFVBQVUsQ0FBQyxNQUFNLENBQUMsQ0FBQyxDQUFDO0lBQ25ELEdBQUcsQ0FBQyxJQUFJLENBQUMsT0FBTyxFQUFFLE1BQU0sQ0FBQyxJQUFJLENBQUMsVUFBVSxDQUFDLE1BQU0sQ0FBQyxDQUFDLENBQUM7SUFDbEQsRUFBRSxDQUFDLElBQUksQ0FBQyxPQUFPLEVBQUUsTUFBTSxDQUFDLElBQUksQ0FBQyxVQUFVLENBQUMsTUFBTSxDQUFDLENBQUMsQ0FBQztJQUNqRCxFQUFFLENBQUMsSUFBSSxDQUFDLE9BQU8sRUFBRSxNQUFNLENBQUMsSUFBSSxDQUFDLFVBQVUsQ0FBQyxNQUFNLENBQUMsQ0FBQyxDQUFDO0lBQ2pELElBQUksQ0FBQyxJQUFJLENBQUMsT0FBTyxFQUFFLE1BQU0sQ0FBQyxJQUFJLENBQUMsVUFBVSxDQUFDLE1BQU0sQ0FBQyxDQUFDLENBQUM7SUFDbkQsVUFBVSxDQUFDLElBQUksQ0FBQyxPQUFPLEVBQUUsTUFBTSxDQUFDLElBQUksQ0FBQyxVQUFVLENBQUMsTUFBTSxDQUFDLENBQUMsQ0FBQztJQUN6RCxDQUFDLENBQUMsd0JBQXdCLENBQUMsQ0FBQyxJQUFJLENBQUMsT0FBTyxFQUFFLE1BQU0sQ0FBQyxJQUFJLENBQUMsVUFBVSxDQUFDLE1BQU0sQ0FBQyxDQUFDLENBQUM7SUFFMUUsUUFBUSxDQUFDLEtBQUssR0FBRyxNQUFNLENBQUMsSUFBSSxDQUFDLFVBQVUsQ0FBQyxNQUFNLENBQUMsQ0FBQztJQUNoRCxFQUFFLENBQUMsSUFBSSxDQUFDLE1BQU0sQ0FBQyxJQUFJLENBQUMsVUFBVSxDQUFDLE1BQU0sQ0FBQyxDQUFDLENBQUM7SUFDeEMsRUFBRSxDQUFDLElBQUksQ0FBQyxNQUFNLENBQUMsT0FBTyxDQUFDLFdBQVcsRUFBRSxDQUFDLE9BQU8sQ0FBQyxDQUFDO0lBQzlDLEVBQUUsQ0FBQyxJQUFJLENBQUMsTUFBTSxDQUFDLElBQUksQ0FBQyxVQUFVLENBQUMsT0FBTyxDQUFDLENBQUMsQ0FBQztJQUN6QyxVQUFVLENBQUMsSUFBSSxDQUFDLE1BQU0sQ0FBQyxJQUFJLENBQUMsVUFBVSxDQUFDLE1BQU0sQ0FBQyxDQUFDLENBQUM7SUFDaEQsTUFBTSxDQUFDLElBQUksQ0FBQyxNQUFNLENBQUMsSUFBSSxDQUFDLFVBQVUsQ0FBQyxNQUFNLENBQUMsQ0FBQyxDQUFDO0lBQzVDLE1BQU0sQ0FBQyxJQUFJLENBQUMsTUFBTSxDQUFDLElBQUksQ0FBQyxVQUFVLENBQUMsTUFBTSxDQUFDLENBQUMsQ0FBQztJQUM1QyxLQUFLLENBQUMsSUFBSSxDQUFDLE1BQU0sQ0FBQyxJQUFJLENBQUMsVUFBVSxDQUFDLE1BQU0sQ0FBQyxDQUFDLENBQUM7SUFDM0MsSUFBSSxDQUFDLElBQUksQ0FBQyxNQUFNLENBQUMsSUFBSSxDQUFDLFVBQVUsQ0FBQyxNQUFNLENBQUMsQ0FBQyxDQUFDO0lBQzFDLE9BQU8sQ0FBQyxJQUFJLENBQUMsTUFBTSxDQUFDLElBQUksQ0FBQyxVQUFVLENBQUMsTUFBTSxDQUFDLENBQUMsQ0FBQztJQUM3QyxhQUFhLENBQUMsSUFBSSxDQUFDLE1BQU0sQ0FBQyxJQUFJLENBQUMsVUFBVSxDQUFDLE1BQU0sQ0FBQyxDQUFDLENBQUM7SUFFbkQsSUFBSSxDQUFDLE1BQU0sQ0FBQyxJQUFJLENBQUMsVUFBVSxDQUFDLE1BQU0sQ0FBQyxDQUFDLENBQUM7SUFFckMsSUFBSSxZQUFZLENBQUMsT0FBTyxDQUFDLFVBQVUsQ0FBQyxLQUFLLEdBQUcsRUFBRTtRQUMxQyxRQUFRLENBQUMsQ0FBQyxDQUFDLENBQUMsT0FBTyxHQUFHLEtBQUssQ0FBQztLQUMvQjtTQUFNLElBQUksWUFBWSxDQUFDLE9BQU8sQ0FBQyxVQUFVLENBQUMsS0FBSyxHQUFHLEVBQUU7UUFDakQsUUFBUSxDQUFDLENBQUMsQ0FBQyxDQUFDLE9BQU8sR0FBRyxJQUFJLENBQUM7UUFDM0IsTUFBTSxDQUFDLENBQUMsQ0FBQyxDQUFDLEdBQUcsR0FBRyxZQUFZLENBQUM7S0FDaEM7U0FBTTtRQUNILFlBQVksQ0FBQyxPQUFPLENBQUMsVUFBVSxFQUFFLEdBQUcsQ0FBQyxDQUFDO1FBQ3RDLFFBQVEsQ0FBQyxDQUFDLENBQUMsQ0FBQyxPQUFPLEdBQUcsS0FBSyxDQUFDO0tBQy9CO0lBQ0QsTUFBTSxDQUFDLE9BQU8sQ0FBQyxLQUFLLENBQUMsR0FBRyxDQUFDLENBQUMsWUFBWSxDQUFDLENBQUMsQ0FBQyxJQUFJLENBQUMsVUFBQSxFQUFFO1FBQzVDLElBQUksT0FBTyxFQUFFLENBQUMsVUFBVSxLQUFLLFdBQVcsRUFBRTtZQUN0QyxNQUFNLENBQUMsT0FBTyxDQUFDLEtBQUssQ0FBQyxHQUFHLENBQUMsRUFBRSxVQUFVLEVBQUUsSUFBSSxFQUFFLENBQUMsQ0FBQztZQUMvQyxjQUFjLENBQUMsQ0FBQyxDQUFDLENBQUMsT0FBTyxHQUFHLElBQUksQ0FBQztTQUNwQzthQUFNLElBQUksRUFBRSxDQUFDLFVBQVUsRUFBRTtZQUN0QixjQUFjLENBQUMsQ0FBQyxDQUFDLENBQUMsT0FBTyxHQUFHLElBQUksQ0FBQztTQUNwQzthQUFNLElBQUksQ0FBQyxFQUFFLENBQUMsVUFBVSxFQUFFO1lBQ3ZCLGNBQWMsQ0FBQyxDQUFDLENBQUMsQ0FBQyxPQUFPLEdBQUcsS0FBSyxDQUFDO1NBQ3JDO0lBQ0wsQ0FBQyxDQUFDLENBQUM7SUFDSCxJQUFJLFlBQVksQ0FBQyxPQUFPLENBQUMsWUFBWSxDQUFDLElBQUksVUFBVSxFQUFFO1FBQ2xELElBQUksQ0FDQSxNQUFNLENBQUMsSUFBSSxDQUFDLFVBQVUsQ0FBQyxNQUFNLENBQUMsR0FBRyxXQUFJLFVBQVUsTUFBRyxFQUNsRCxDQUFDLEVBQ0Q7WUFDSSxZQUFZLENBQUMsT0FBTyxDQUNoQixZQUFZLEVBQ1osVUFBVSxDQUNiLENBQUM7UUFDTixDQUFDLENBQ0osQ0FBQztLQUNMO0lBRUQsQ0FBQyxDQUFDLE1BQU0sQ0FBQyxDQUFDLElBQUksRUFBRSxDQUFDO0FBQ3JCLENBQUMsQ0FBQyxDQUFDIn0=

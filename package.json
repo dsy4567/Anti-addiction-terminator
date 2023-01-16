@@ -1,6 +1,33 @@
 {
-  "devDependencies": {
-    "@types/chrome": "^0.0.193",
-    "@types/jquery": "^3.5.14"
-  }
+    "name": "anti-addiction-terminator",
+    "description": "> 📢 防沉迷终结者将停止对仅支持 MV2 扩展的浏览器和 Firefox 浏览器的更新, 推荐这些浏览器的用户改用 [防沉迷减点料](https://greasyfork.org/zh-CN/scripts/437233)",
+    "version": "1.3.3",
+    "main": "",
+    "types": "src/index.d.ts",
+    "scripts": {
+        "build": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/dsy4567/Anti-addiction-terminator.git"
+    },
+    "keywords": [
+        "fcm",
+        "4399",
+        "aat",
+        "chrome"
+    ],
+    "author": "dsy4567",
+    "license": "GPL-3.0",
+    "bugs": {
+        "url": "https://github.com/dsy4567/Anti-addiction-terminator/issues"
+    },
+    "homepage": "https://github.com/dsy4567/Anti-addiction-terminator#readme",
+    "devDependencies": {
+        "@types/chrome": "^0.0.193",
+        "@types/jquery": "^3.5.14"
+    },
+    "dependencies": {
+        "typescript": "^4.9.4"
+    }
 }

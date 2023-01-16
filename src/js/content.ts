@@ -1,15 +1,13 @@
 /*
-此代码在 GPL-3.0 下获得许可, 请查看 COPYING.txt 或 <https://www.gnu.org/licenses/gpl-3.0.txt>
 Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
-您可以在这里找到源码 <https://github.com/dsy4567/Anti-addiction-terminator>
+View License at <https://www.gnu.org/licenses/gpl-3.0.html>
+Source code: <https://github.com/dsy4567/Anti-addiction-terminator>
 */
-
-/* global chrome:false */
 
 var 已有通用规则破解样式 = false;
 var 已有一个弹窗的样式 = false;
-var 一个弹窗 = { remove: () => {} };
-var 遮罩 = { remove: () => {} };
+var 一个弹窗: HTMLDivElement;
+var 遮罩: HTMLDivElement;
 
 function guid() {
     return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(
@@ -21,16 +19,14 @@ function guid() {
         }
     );
 }
-function 首字母大写(str) {
+function 首字母大写(str: string) {
     str = str[0].toUpperCase() + str.substring(1, str.length);
     return str;
 }
 /**
  * 类型: "1"(通用规则破解) | "2"(大人来了)
- * @param {String} css
- * @param {String} 类型
  */
-function 添加样式(css, 类型) {
+function 添加样式(css: string, 类型: "1" | "2") {
     let $style = document.createElement("style");
     $style.innerHTML = css;
     $style.setAttribute("AAT-style-guid", guid());
@@ -42,12 +38,11 @@ function 添加样式(css, 类型) {
 }
 /**
  * 类型: "1"(通用规则破解) | "2"(大人来了)
- * @param {String} 类型
  */
-function 移除样式(类型) {
+function 移除样式(类型: "1" | "2") {
     document
         .querySelectorAll("style[AAT-style-type='" + 类型 + "']")
-        .forEach((el) => el.remove());
+        .forEach(el => el.remove());
     return false;
 }
 function 使用通用规则破解() {
@@ -77,7 +72,7 @@ function 使用通用规则破解() {
     let 临时数组 = [];
     let 样式表 = "";
 
-    游戏元素id或class.forEach((str) => {
+    游戏元素id或class.forEach(str => {
         临时数组.push(
             "iframe[id*='" + str + "'],",
             "iframe[class*='" + str + "'],",
@@ -87,7 +82,7 @@ function 使用通用规则破解() {
             "iframe[class*='" + 首字母大写(str) + "'],"
         );
     });
-    临时数组.forEach((str) => {
+    临时数组.forEach(str => {
         样式表 += str;
     });
     样式表 += `#ctmdfcm
@@ -100,7 +95,7 @@ function 使用通用规则破解() {
             }`;
     临时数组 = [];
 
-    防沉迷元素id或class.forEach((str) => {
+    防沉迷元素id或class.forEach(str => {
         临时数组.push(
             "[id*='" + str + "'],",
             "[class*='" + str + "'],",
@@ -110,7 +105,7 @@ function 使用通用规则破解() {
             "[class*='" + 首字母大写(str) + "'],"
         );
     });
-    临时数组.forEach((str) => {
+    临时数组.forEach(str => {
         样式表 += str;
     });
     样式表 += `#ctmdfcm
@@ -163,10 +158,8 @@ function 大人来了() {
     遮罩.innerHTML = "";
     document.body.appendChild(遮罩);
 }
-// function 创建警告(警告) {}
-function 错误(e) {
+function 错误(e: any) {
     console.error(e);
-    // 创建警告("错误: " + e.stack);
 }
 function 注入脚本() {
     let $script = document.createElement("script");
@@ -178,7 +171,7 @@ function 注入脚本() {
 }
 
 try {
-    chrome.storage.local.get(["自动获取游戏真实地址"], (数据) => {
+    chrome.storage.local.get(["自动获取游戏真实地址"], 数据 => {
         if (typeof 数据.自动获取游戏真实地址 === "undefined") {
             chrome.storage.local.set({ 自动获取游戏真实地址: true });
             注入脚本();
@@ -218,14 +211,16 @@ try {
 try {
     if (location.host == "www.7k7k.com") {
         try {
-            document.querySelector("div.login_no").title =
+            (document.querySelector("div.login_no") as HTMLDivElement).title =
                 chrome.i18n.getMessage("msg2");
         } catch (e) {}
 
         if (location.href.includes("aat-doLogin"))
-            document
-                .querySelector("div.login_no > div.h_login.login_btn > span")
-                .click();
+            (
+                document.querySelector(
+                    "div.login_no > div.h_login.login_btn > span"
+                ) as HTMLSpanElement
+            )?.click();
     }
 } catch (e) {
     错误(e);

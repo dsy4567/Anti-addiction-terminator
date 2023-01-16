@@ -1,9 +1,3 @@
-/*
-此代码在 GPL-3.0 下获得许可, 请查看 COPYING.txt 或 <https://www.gnu.org/licenses/gpl-3.0.txt>
-Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
-您可以在这里找到源码 <https://github.com/dsy4567/Anti-addiction-terminator>
-*/
-
 #addiv,
 #anti-indulge,
 #anti-indulge-prompt,
@@ -19,7 +13,13 @@ Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
 #loginCertify,
 #messageBox,
 #overlay,
-#page_wallpaper > div.xiaowei.xiaowei-orange > div.xw-left > div.xw-game > div.xw-top > div > div,
+#page_wallpaper
+    > div.xiaowei.xiaowei-orange
+    > div.xw-left
+    > div.xw-game
+    > div.xw-top
+    > div
+    > div,
 #pop2,
 #pusher,
 #shadow,

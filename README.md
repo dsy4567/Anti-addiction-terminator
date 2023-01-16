@@ -1,11 +1,3 @@
-> 📢 防沉迷终结者将停止对仅支持 MV2 扩展的浏览器和 Firefox 浏览器的更新, 推荐这些浏览器的用户改用 [防沉迷减点料](https://greasyfork.org/zh-CN/scripts/437233)
-
-> _该扩展基于 https://github.com/dsy4567/Fucking-Anti-Indulgence/ 改造而来, 并添加了一些新功能_
-
-> 镜像 https://notabug.org/dsy4567/Anti-addiction-terminator
-
----
-
 <center>
 <p align="center" style="text-align:center;">
 <img style="text-align:center;" alt="logo" title="logo" src="https://dsy4567.github.io/logo.svg" />
@@ -19,8 +11,8 @@
 
 # ✅ 已支持的游戏
 
-> _**如果游戏地址以它们开头, 那么该脚本完全支持该游戏**_  
-> _**提示 💡: 该脚本对 QQ 空间游戏支持不佳**_  
+> _**如果游戏地址以它们开头, 那么该脚本完全支持该游戏**_
+> _**提示 💡: 该脚本对 QQ 空间游戏支持不佳**_
 > _**提示 💡: 该脚本无法支持少数自带防沉迷的页游(或防沉迷弹窗界面风格与游戏一模一样)**_
 >
 > ## 4399:
@@ -76,7 +68,7 @@
 
 # ⚖️ 许可证
 
-> Copyright (C) 2022 dsy4567  
+> Copyright (C) 2022 dsy4567
 > 此项目在 [GPL-3.0](COPYING.txt) 下获得许可, 使用此存储库的代码请注明出处
 
 # 💦 引流大法
