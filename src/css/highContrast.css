@@ -1,9 +1,8 @@
-:root {
-    --theme-color1: black;
-    --theme-color2: white;
-    --theme-color4: rgb(0, 255, 255);
-    --green: rgb(0, 255, 0);
-    --red: rgb(255, 0, 0);
+html {
+    --theme-color1: black !important;
+    --theme-color2: white !important;
+    --green: rgb(0, 255, 0) !important;
+    --red: rgb(255, 0, 0) !important;
 }
 ::selection {
     background-color: white !important;
@@ -28,13 +27,13 @@ button.大按钮,
     color: white;
 }
 .图标按钮:hover,
-.图标按钮:focus,
+.图标按钮:focus-visible,
 button.图标:hover,
-button.图标:focus,
+button.图标:focus-visible,
 button.大按钮:hover,
-button.大按钮:focus,
+button.大按钮:focus-visible,
 .选项:hover,
-.选项:focus {
+.选项:focus-visible {
     border: 2px dashed var(--theme-color4) !important;
 }
 button.大按钮,

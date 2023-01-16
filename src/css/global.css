@@ -1,5 +1,5 @@
 @media (prefers-color-scheme: light) {
-    :root {
+    html {
         --theme-color1: white;
         --theme-color2: rgb(36, 36, 36);
         --theme-color3: rgba(175, 175, 175, 0.7);
@@ -8,7 +8,7 @@
     }
 }
 @media (prefers-color-scheme: dark) {
-    :root {
+    html {
         --theme-color1: rgb(36, 36, 36);
         --theme-color2: white;
         --theme-color3: rgba(128, 128, 128, 0.7);
@@ -17,10 +17,9 @@
     }
 }
 @media (forced-colors: active) {
-    :root {
+    html {
         --theme-color1: black;
         --theme-color2: white;
-        --theme-color4: #66ccff;
         --green: rgb(0, 255, 0);
         --red: rgb(255, 0, 0);
     }
@@ -47,13 +46,13 @@
         color: white;
     }
     .图标按钮:hover,
-    .图标按钮:focus,
+    .图标按钮:focus-visible-visible,
     button.图标:hover,
-    button.图标:focus,
+    button.图标:focus-visible,
     button.大按钮:hover,
-    button.大按钮:focus,
+    button.大按钮:focus-visible,
     .选项:hover,
-    .选项:focus {
+    .选项:focus-visible {
         border: 2px dashed var(--theme-color4) !important;
     }
     button.大按钮,
@@ -73,7 +72,7 @@
     }
 }
 
-:root {
+html {
     --theme-color4: #66ccff;
 }
 ::selection {
@@ -120,9 +119,9 @@ button.大按钮:active,
 button.大按钮:hover,
 .选项:hover,
 .图标按钮:hover,
-button.大按钮:focus,
-.选项:focus,
-.图标按钮:focus {
+button.大按钮:focus-visible,
+.选项:focus-visible,
+.图标按钮:focus-visible {
     filter: brightness(1.2);
 }
 
@@ -144,7 +143,7 @@ button.大按钮:focus,
     padding-right: 9.5px;
 }
 .图标按钮:hover,
-.图标按钮:focus {
+.图标按钮:focus-visible {
     background-color: var(--theme-color3);
 }
 .选项 {
