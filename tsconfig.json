@@ -1,7 +1,0 @@
-{
-    "files": ["src/background.ts", "src/js/popup.ts", "src/js/content.ts"],
-    "compilerOptions": {
-        "inlineSourceMap": true,
-        "lib": ["ES2022", "DOM"]
-    }
-}
