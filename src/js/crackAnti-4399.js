@@ -1,12 +1,12 @@
 /*
 Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
 View License at <https://www.gnu.org/licenses/gpl-3.0.html>
-Source code: <https://github.com/dsy4567/Anti-addiction-terminator>
+Based on: <https://github.com/dsy4567/Fucking-Anti-Indulgence/blob/main/Fucking-Anti-Indulgence-4399.user.js>
 */
 
 try {
     Object.defineProperty(window, "smevent", {
-        value: null, // 原来是Function, 这样做可以使防沉迷报错
+        value: null,
         writable: false,
     });
 } catch (e) {}

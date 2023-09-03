@@ -12,21 +12,17 @@
     "default_locale": "zh_CN",
     "commands": {
         "1": {
-            "description": "__MSG_btn0__"
+            "description": "__MSG_useGeneralRules__"
         },
         "2": {
-            "description": "__MSG_btn1__"
+            "description": "__MSG_hideGame__"
         }
     },
     "content_scripts": [
         {
             "all_frames": true,
-            "css": [
-                "/css/content.css"
-            ],
-            "js": [
-                "/js/content.js"
-            ],
+            "css": ["/css/content.css"],
+            "js": ["/js/content.js"],
             "matches": [
                 "*://*.17yy.com/*",
                 "*://*.4399.com/*",
@@ -48,14 +44,8 @@
         },
         {
             "all_frames": true,
-            "js": [
-                "/js/content-4399.js"
-            ],
-            "matches": [
-                "*://*.4399.com/*",
-                "*://*.aiwan4399.com/*",
-                "*://*.iwan4399.com/*"
-            ],
+            "js": ["/js/content-4399.js"],
+            "matches": ["*://*.4399.com/*", "*://*.aiwan4399.com/*", "*://*.iwan4399.com/*"],
             "run_at": "document_start"
         }
     ],
@@ -67,10 +57,7 @@
     "manifest_version": 3,
     "minimum_chrome_version": "88.0.0.0",
     "name": "__MSG_name__",
-    "permissions": [
-        "notifications",
-        "storage"
-    ],
+    "permissions": ["notifications", "storage"],
     "version": "1.3.2",
     "web_accessible_resources": [
         {
@@ -91,11 +78,7 @@
                 "*://*.37.com/*",
                 "*://*.4366.com/*"
             ],
-            "resources": [
-                "/js/no-fcm.js",
-                "/js/no-fcm-4399.js",
-                "/css/content.css"
-            ]
+            "resources": ["/js/crackAnti.js", "/js/crackAnti-4399.js", "/css/content.css"]
         }
     ]
 }

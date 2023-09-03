@@ -56,10 +56,10 @@
     "alt5": {
         "message": "reload"
     },
-    "btn0": {
+    "useGeneralRules": {
         "message": "Use / cancel general rule cracking"
     },
-    "btn1": {
+    "hideGame": {
         "message": "Hide game"
     },
     "btn2": {

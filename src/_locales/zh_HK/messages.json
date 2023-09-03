@@ -56,10 +56,10 @@
     "alt5": {
         "message": "重啟"
     },
-    "btn0": {
+    "useGeneralRules": {
         "message": "使用 / 取消通用規則破解"
     },
-    "btn1": {
+    "hideGame": {
         "message": "隱藏遊戲"
     },
     "btn2": {
