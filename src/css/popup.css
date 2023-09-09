@@ -48,7 +48,7 @@ p {
     text-align: center;
 }
 
-#顶部 {
+#toolbar {
     display: flex;
     width: 100%;
     flex-direction: row;
@@ -56,15 +56,15 @@ p {
     justify-content: space-around;
     align-items: center;
 }
-#顶部 .左,
-#顶部 .右 {
+#toolbar .left,
+#toolbar .右 {
     display: flex;
     justify-content: center;
     align-items: center;
     align-content: center;
 }
-#顶部 .左 *,
-#顶部 .右 * {
+#toolbar .left *,
+#toolbar .右 * {
     margin: 4px;
     /* margin-left: 4px; */
     /* margin-right: 4px; */

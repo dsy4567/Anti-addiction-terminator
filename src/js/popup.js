@@ -61,7 +61,7 @@ function 创建横幅(内容: string, 类型 = 1, 关闭时回调 = () => {}) {
         $横幅图标.src = 图标[类型];
         $横幅图标.title = 描述[类型];
         $横幅内容.innerText = 内容;
-        $关闭横幅.className = "关闭横幅 图标 图标按钮";
+        $关闭横幅.className = "关闭横幅 图标 iconButton";
         $关闭横幅.title = chrome.i18n.getMessage("btn7");
         $关闭横幅.type = "button";
         $关闭横幅.onclick = () => {
@@ -71,7 +71,7 @@ function 创建横幅(内容: string, 类型 = 1, 关闭时回调 = () => {}) {
         $横幅.append($横幅图标);
         $横幅.append($横幅内容);
         $横幅.append($关闭横幅);
-        document.querySelector("#一些横幅").append($横幅);
+        document.querySelector("#notifications").append($横幅);
     }
 }
 function 通用规则破解() {
@@ -109,11 +109,11 @@ function 显示返回按钮() {
 }
 
 const 隐私策略最后修改日期 = "2022.7.18";
-var 版本 = $("#版本"),
+var appVersion = $("#appVersion"),
     打开关于 = $("#打开关于"),
     工具 = $("#工具"),
     关于 = $("#关于"),
-    名字 = $("#名字"),
+    appName = $("#appName"),
     使用通用规则破解按钮 = $("#使用通用规则破解"),
     大人来了按钮 = $("#大人来了按钮"),
     给个好评 = $("#给个好评"),
@@ -138,7 +138,8 @@ var 版本 = $("#版本"),
     高对比度_复选框: JQuery<HTMLInputElement> = $("#高对比度 input"),
     自动获取游戏真实地址 = $("#自动获取游戏真实地址"),
     自动获取游戏真实地址_文本 = $("#自动获取游戏真实地址 span"),
-    自动获取游戏真实地址_复选框: JQuery<HTMLInputElement> = $("#自动获取游戏真实地址 input");
+    自动获取游戏真实地址_复选框: JQuery<HTMLInputElement> =
+        $("#自动获取游戏真实地址 input");
 
 $(function () {
     返回.on("click", () => {
@@ -226,8 +227,8 @@ $(function () {
     $("input[type='checkbox']").attr("title", chrome.i18n.getMessage("msg9"));
 
     document.title = chrome.i18n.getMessage("name");
-    名字.text(chrome.i18n.getMessage("name"));
-    版本.text(chrome.runtime.getManifest().version);
+    appName.text(chrome.i18n.getMessage("name"));
+    appVersion.text(chrome.runtime.getManifest().version);
     关于.html(chrome.i18n.getMessage("about"));
     使用通用规则破解按钮.text(chrome.i18n.getMessage("useGeneralRules"));
     大人来了按钮.text(chrome.i18n.getMessage("btn1"));
@@ -259,9 +260,16 @@ $(function () {
         }
     });
     if (localStorage.getItem("隐私策略最后修改日期") != 隐私策略最后修改日期) {
-        创建横幅(chrome.i18n.getMessage("msg6") + `(${隐私策略最后修改日期})`, 1, () => {
-            localStorage.setItem("隐私策略最后修改日期", 隐私策略最后修改日期);
-        });
+        创建横幅(
+            chrome.i18n.getMessage("msg6") + `(${隐私策略最后修改日期})`,
+            1,
+            () => {
+                localStorage.setItem(
+                    "隐私策略最后修改日期",
+                    隐私策略最后修改日期
+                );
+            }
+        );
     }
 
     $("html").show();

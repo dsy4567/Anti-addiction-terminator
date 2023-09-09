@@ -38,15 +38,15 @@
     a:hover {
         text-decoration: 1px underline white !important;
     }
-    .图标按钮,
+    .iconButton,
     button.图标,
     button.大按钮,
     .选项 {
         border: 2px solid var(--theme-color4) !important;
         color: white;
     }
-    .图标按钮:hover,
-    .图标按钮:focus-visible-visible,
+    .iconButton:hover,
+    .iconButton:focus-visible-visible,
     button.图标:hover,
     button.图标:focus-visible,
     button.大按钮:hover,
@@ -57,7 +57,7 @@
     }
     button.大按钮,
     .选项,
-    .图标按钮 {
+    .iconButton {
         background-color: rgba(0, 0, 0, 0) !important;
     }
     .横幅 {
@@ -113,15 +113,15 @@ button.大按钮 {
 }
 button.大按钮:active,
 .选项:active,
-.图标按钮:active {
+.iconButton:active {
     filter: brightness(0.8) !important;
 }
 button.大按钮:hover,
 .选项:hover,
-.图标按钮:hover,
+.iconButton:hover,
 button.大按钮:focus-visible,
 .选项:focus-visible,
-.图标按钮:focus-visible {
+.iconButton:focus-visible {
     filter: brightness(1.2);
 }
 
@@ -133,7 +133,7 @@ button.大按钮:focus-visible,
     cursor: default;
 }
 
-.图标按钮 {
+.iconButton {
     border: none;
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0);
@@ -142,8 +142,8 @@ button.大按钮:focus-visible,
     padding-left: 9.5px;
     padding-right: 9.5px;
 }
-.图标按钮:hover,
-.图标按钮:focus-visible {
+.iconButton:hover,
+.iconButton:focus-visible {
     background-color: var(--theme-color3);
 }
 .选项 {
