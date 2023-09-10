@@ -41,7 +41,7 @@
     .iconButton,
     button.图标,
     button.大按钮,
-    .选项 {
+    .settingItem {
         border: 2px solid var(--theme-color4) !important;
         color: white;
     }
@@ -51,12 +51,12 @@
     button.图标:focus-visible,
     button.大按钮:hover,
     button.大按钮:focus-visible,
-    .选项:hover,
-    .选项:focus-visible {
+    .settingItem:hover,
+    .settingItem:focus-visible {
         border: 2px dashed var(--theme-color4) !important;
     }
     button.大按钮,
-    .选项,
+    .settingItem,
     .iconButton {
         background-color: rgba(0, 0, 0, 0) !important;
     }
@@ -112,15 +112,15 @@ button.大按钮 {
     padding: 12px;
 }
 button.大按钮:active,
-.选项:active,
+.settingItem:active,
 .iconButton:active {
     filter: brightness(0.8) !important;
 }
 button.大按钮:hover,
-.选项:hover,
+.settingItem:hover,
 .iconButton:hover,
 button.大按钮:focus-visible,
-.选项:focus-visible,
+.settingItem:focus-visible,
 .iconButton:focus-visible {
     filter: brightness(1.2);
 }
@@ -146,7 +146,7 @@ button.大按钮:focus-visible,
 .iconButton:focus-visible {
     background-color: var(--theme-color3);
 }
-.选项 {
+.settingItem {
     border: none;
     font-size: 16px;
     height: 50px;
@@ -160,12 +160,12 @@ button.大按钮:focus-visible,
     margin-bottom: 4px;
     margin-top: 4px;
 }
-.选项 * {
+.settingItem * {
     cursor: default;
     margin-left: 8px;
     margin-right: 8px;
 }
-.选项 button {
+.settingItem button {
     background-color: var(--theme-color3);
     border: none;
     margin-top: 6px;

@@ -57,14 +57,14 @@ p {
     align-items: center;
 }
 #toolbar .left,
-#toolbar .右 {
+#toolbar .right {
     display: flex;
     justify-content: center;
     align-items: center;
     align-content: center;
 }
 #toolbar .left *,
-#toolbar .右 * {
+#toolbar .right * {
     margin: 4px;
     /* margin-left: 4px; */
     /* margin-right: 4px; */
@@ -72,7 +72,7 @@ p {
 #logo {
     border-radius: 50%;
 }
-#打开设置:active img {
+#b-settings:active img {
     animation-name: 齿轮;
     animation-duration: 0.5s;
     animation-iteration-count: infinite;
@@ -80,15 +80,15 @@ p {
     animation-delay: 1s;
 }
 
-.关于 * {
+.about * {
     margin: 4px;
 }
-#关于,
+#about,
 .横幅 {
     user-select: text;
 }
-#关于,
-#设置,
+#about,
+#settings,
 #通知 {
     display: none;
     flex-direction: column;
@@ -96,7 +96,7 @@ p {
     align-items: center;
 }
 
-#工具 {
+#tools {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;

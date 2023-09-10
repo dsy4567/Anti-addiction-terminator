@@ -111,7 +111,7 @@ function 显示返回按钮() {
 const 隐私策略最后修改日期 = "2022.7.18";
 var appVersion = $("#appVersion"),
     打开关于 = $("#打开关于"),
-    工具 = $("#工具"),
+    tools = $("#tools"),
     关于 = $("#关于"),
     appName = $("#appName"),
     使用通用规则破解按钮 = $("#使用通用规则破解"),
@@ -146,16 +146,16 @@ $(function () {
         关于.hide();
         设置.hide();
         显示返回按钮();
-        工具.show();
+        tools.show();
     });
     打开关于.on("click", () => {
-        工具.hide();
+        tools.hide();
         设置.hide();
         显示返回按钮();
         关于.css("display", "flex");
     });
     打开设置.on("click", () => {
-        工具.hide();
+        tools.hide();
         关于.hide();
         显示返回按钮();
         设置.css("display", "flex");

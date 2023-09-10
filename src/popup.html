@@ -29,14 +29,14 @@ Source code: <https://github.com/dsy4567/Anti-addiction-terminator>
                 <h1 id="appName">防沉迷终结者</h1>
                 <small id="appVersion"></small>
             </div>
-            <div class="右">
+            <div class="right">
                 <button
                     type="button"
                     class="iconButton stroke"
-                    id="b_setting"
-                    title="setting"
+                    id="b_settings"
+                    title="settings"
                 >
-                    <svg data-icon="setting"></svg>
+                    <svg data-icon="settings"></svg>
                 </button>
                 <button
                     type="button"
@@ -62,7 +62,7 @@ Source code: <https://github.com/dsy4567/Anti-addiction-terminator>
 
         <div id="notifications"></div>
 
-        <div id="工具">
+        <div id="tools">
             <button type="button" id="b_useGeneralRules">
                 <span>使用 / 取消通用规则破解</span>
             </button>
@@ -77,7 +77,7 @@ Source code: <https://github.com/dsy4567/Anti-addiction-terminator>
             <svg data-icon="gamehandle"></svg>
         </div>
 
-        <div id="关于">
+        <div id="about">
             <p>
                 © 2022 - 2023 dsy4567
                 <a target="_blank" href="https://github.com/dsy4567">dsy4567</a>
@@ -108,48 +108,17 @@ Source code: <https://github.com/dsy4567/Anti-addiction-terminator>
             </p>
         </div>
 
-        <div id="设置">
-            <button type="button" class="选项" title="快捷键" id="快捷键">
-                <svg
-                    class="图标 stroke"
-                    viewBox="0 0 48 48"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <path
-                        d="M42 7.00012H6C4.89543 7.00012 4 7.89555 4 9.00012V37.0001C4 38.1047 4.89543 39.0001 6 39.0001H42C43.1046 39.0001 44 38.1047 44 37.0001V9.00012C44 7.89555 43.1046 7.00012 42 7.00012Z"
-                        fill="none"
-                        stroke-width="4"
-                        stroke-linejoin="round"
-                    />
-                    <path
-                        d="M12 19.0001H14"
-                        stroke-width="4"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    />
-                    <path
-                        d="M21 19.0001H23"
-                        stroke-width="4"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    />
-                    <path
-                        d="M29 19.0001H36"
-                        stroke-width="4"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    />
-                    <path
-                        d="M12 28.0001H36"
-                        stroke-width="4"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    />
-                </svg>
+        <div id="settings">
+            <button
+                type="button"
+                class="settingItem"
+                title="快捷键"
+                id="shortcutKeys"
+            >
+                <svg data-icon="keyboard"></svg>
                 <span>配置快捷键</span>
             </button>
-            <button type="button" class="选项" title="重启" id="重启">
+            <button type="button" class="settingItem" title="重启" id="重启">
                 <svg
                     class="图标 stroke"
                     viewBox="0 0 48 48"
@@ -171,7 +140,7 @@ Source code: <https://github.com/dsy4567/Anti-addiction-terminator>
                 </svg>
                 <span>重启</span>
             </button>
-            <button type="button" class="选项" title="主题" id="主题">
+            <button type="button" class="settingItem" title="主题" id="主题">
                 <svg
                     class="图标 stroke"
                     viewBox="0 0 48 48"
@@ -193,21 +162,12 @@ Source code: <https://github.com/dsy4567/Anti-addiction-terminator>
             </button>
             <button
                 type="button"
-                class="选项"
+                class="settingItem"
                 title="该功能需要向正在玩的游戏平台发送游戏信息和 您的 uid, 这些信息不会发送给除此以外的第三方"
                 id="自动获取游戏真实地址"
             >
                 <input title="点击此复选框的外面来将其选中" type="checkbox" />
                 <span>自动获取游戏真实地址</span>
-            </button>
-            <button
-                type="button"
-                class="选项"
-                title="启用高对比度主题"
-                id="高对比度"
-            >
-                <input title="点击此复选框的外面来将其选中" type="checkbox" />
-                <span>启用高对比度主题</span>
             </button>
         </div>
         <script src="/js/popup.js"></script>
