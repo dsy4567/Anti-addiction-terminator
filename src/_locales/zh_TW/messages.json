@@ -5,79 +5,49 @@
     "dec": {
         "message": "玩您想玩的遊戲，不受年齡限制"
     },
-    "about": {
-        "message": "<p>✨該擴展可以破解一些遊戲平臺的防沉迷， 幫您實現遊戲自由✨</p><p>⚠️沉迷於遊戲不利於身心健康， 請合理安排遊戲時間， 適度遊戲⚠️</p> <p> ~~快樂沒有年齡之分~~<br /><br /> Copyright (C) 2022 dsy4567 ( <a target=\"_blank\" href=\"https://github.com/dsy4567\">GitHub</a> | <a target=\"_self\" href=\"mailto:dsy4567@outlook.com\">郵箱</a> ) <br /><br /> 在 <a target=\"_blank\" href=\"/COPYING.txt\">GPL-3.0</a> 下获得许可, 原始程式碼位於 <a target=\"_blank\" href=\"https://github.com/dsy4567/Anti-addiction-terminator/\">GitHub</a> </p> <p> 感謝 <a target=\"_blank\" href=\"https://iconpark.bytedance.com\">IconPark</a> 提供的圖示 </p> <p> <a id=\"给个好评\" target=\"_blank\" href=\"https://microsoftedge.microsoft.com/addons/detail/%E9%98%B2%E6%B2%89%E8%BF%B7%E7%BB%88%E7%BB%93%E8%80%85/chpenmljpdpkebnohfbbdpfelabcnlnp\" >👍 給個好評</a > | <a target=\"_blank\" href=\"https://github.com/dsy4567/Anti-addiction-terminator/issues\" >🐛 報告bug</a > | <a target=\"_blank\" href=\"https://github.com/dsy4567/Anti-addiction-terminator/blob/master/privacy.md\" >🙈隐私策略</a > </p>"
+    "aboutHtml": {
+        "message": "<p>© 2022 - 2023 <a target='_blank' href='https://github.com/dsy4567'>dsy4567</a> | 在 <a target='_blank' href='/COPYING.txt'>GPL-3.0</a> 下许可 | <a href='https://github.com/dsy4567/Anti-addiction-terminator/'>原始程式碼</a></p><p><a target='_blank' href='https://microsoftedge.microsoft.com/addons/detail/%E9%98%B2%E6%B2%89%E8%BF%B7%E7%BB%88%E7%BB%93%E8%80%85/chpenmljpdpkebnohfbbdpfelabcnlnp' >👍給個好評</a> | <a target='_blank' href='https://github.com/dsy4567/Anti-addiction-terminator/issues'>🐛報告bug</a> | <a target='_blank' href='https://github.com/dsy4567/Anti-addiction-terminator/blob/master/privacy.md' >🙈隱私政策</a></p>"
     },
-    "msg0": {
-        "message": "沉迷於遊戲不利於身心健康，請合理安排遊戲時間，適度遊戲"
-    },
-    "msg1": {
+    "tooManyErrors": {
         "message": "錯誤太多， 請按下右鍵 > 檢查 > 控制台（console）， 然後查看更多錯誤資訊"
     },
-    "msg2": {
+    "login7k7k": {
         "message": "✨防沉迷終結者支持強制登入7k7k帳號，可在擴展選單中登入"
     },
-    "msg3": {
+    "operationFailed": {
         "message": "操作失敗， 請檢查您是否正在存取受支援的遊戲網站， 或刷新網頁， 然後再試一次"
     },
-    "msg4": {
+    "tabError": {
         "message": "無法創建新標籤頁"
     },
-    "msg5": {
-        "message": "請在瀏覽器設定中設定快速鍵"
-    },
-    "msg6": {
+    "policyUpdated": {
         "message": "作者更新了隱私策略， 請在關於介面查看"
     },
-    "msg7": {
-        "message": "更新已準備好， 請重啟您的瀏覽器完成防沉迷終結者的更新"
-    },
-    "msg8": {
-        "message": "該功能需要向正在玩的遊戲平台發送遊戲資訊和 您的 uid， 這些資訊不會發送給除此以外的第三方, 关闭后防沉迷破解能力将减弱"
-    },
-    "msg9": {
-        "message": "點擊此複選框的外面來將其選中"
-    },
-    "alt0": {
-        "message": "關於"
-    },
-    "alt1": {
-        "message": "設置"
-    },
-    "alt2": {
-        "message": "快速鍵"
-    },
-    "alt3": {
-        "message": "返回"
-    },
-    "alt4": {
-        "message": "通知"
-    },
-    "alt5": {
-        "message": "重啟"
-    },
-    "useGeneralRules": {
+    "b_useGeneralRules": {
         "message": "使用 / 取消通用規則破解"
     },
-    "hideGame": {
+    "b_hideGame": {
         "message": "隱藏遊戲"
     },
-    "btn2": {
+    "b_login7k7k": {
         "message": "強制登入7k7k帳號"
     },
-    "btn3": {
+    "b_about": {
+        "message": "關於"
+    },
+    "b_settings": {
+        "message": "設置"
+    },
+    "b_goBack": {
+        "message": "返回"
+    },
+    "close": {
+        "message": "關閉"
+    },
+    "reload": {
+        "message": "重啟"
+    },
+    "shortcuts": {
         "message": "配置快速鍵"
-    },
-    "btn4": {
-        "message": "啟用高對比度主題"
-    },
-    "btn5": {
-        "message": "接收通知"
-    },
-    "btn6": {
-        "message": "自動獲取遊戲真實位址"
-    },
-    "btn7": {
-        "message": "关闭"
     }
 }

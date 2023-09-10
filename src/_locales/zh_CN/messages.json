@@ -5,79 +5,49 @@
     "dec": {
         "message": "玩您想玩的游戏, 不受年龄限制"
     },
-    "about": {
-        "message": "<p>✨该扩展可以破解一些游戏平台的防沉迷, 帮您实现游戏自由✨</p><p>⚠️沉迷于游戏不利于身心健康, 请合理安排游戏时间, 适度游戏⚠️</p> <p> ~~快乐没有年龄之分~~<br /><br /> Copyright (C) 2022 dsy4567 ( <a target=\"_blank\" href=\"https://github.com/dsy4567\">GitHub</a> | <a target=\"_self\" href=\"mailto:dsy4567@outlook.com\">邮箱</a> ) <br /><br /> 在 <a target=\"_blank\" href=\"/COPYING.txt\">GPL-3.0</a> 下获得许可, 源代码位于 <a target=\"_blank\" href=\"https://github.com/dsy4567/Anti-addiction-terminator/\">GitHub</a> </p> <p> 感谢 <a target=\"_blank\" href=\"https://iconpark.bytedance.com\">IconPark</a> 提供的图标 </p> <p> <a id=\"给个好评\" target=\"_blank\" href=\"https://microsoftedge.microsoft.com/addons/detail/%E9%98%B2%E6%B2%89%E8%BF%B7%E7%BB%88%E7%BB%93%E8%80%85/chpenmljpdpkebnohfbbdpfelabcnlnp\" >👍给个好评</a> | <a target=\"_blank\" href=\"https://github.com/dsy4567/Anti-addiction-terminator/issues\" >🐛报告bug</a > | <a target=\"_blank\" href=\"https://github.com/dsy4567/Anti-addiction-terminator/blob/master/privacy.md\" >🙈隐私策略</a > </p>"
+    "aboutHtml": {
+        "message": "<p>© 2022 - 2023 <a target='_blank' href='https://github.com/dsy4567'>dsy4567</a> | 在 <a target='_blank' href='/COPYING.txt'>GPL-3.0</a> 下许可 | <a href='https://github.com/dsy4567/Anti-addiction-terminator/'>源代码</a></p><p><a target='_blank' href='https://microsoftedge.microsoft.com/addons/detail/%E9%98%B2%E6%B2%89%E8%BF%B7%E7%BB%88%E7%BB%93%E8%80%85/chpenmljpdpkebnohfbbdpfelabcnlnp' >👍给个好评</a> | <a target='_blank' href='https://github.com/dsy4567/Anti-addiction-terminator/issues'>🐛报告bug</a> | <a target='_blank' href='https://github.com/dsy4567/Anti-addiction-terminator/blob/master/privacy.md' >🙈隐私政策</a></p>"
     },
-    "msg0": {
-        "message": "沉迷于游戏不利于身心健康, 请合理安排游戏时间, 适度游戏"
-    },
-    "msg1": {
+    "tooManyErrors": {
         "message": "错误太多, 请单击右键 > 检查 > 控制台(console), 然后查看更多错误信息"
     },
-    "msg2": {
+    "login7k7k": {
         "message": "✨防沉迷终结者支持强制登录7k7k账号, 可在扩展菜单中登录"
     },
-    "msg3": {
+    "operationFailed": {
         "message": "操作失败, 请检查您是否正在访问受支持的游戏网站, 或刷新网页, 然后再试一次"
     },
-    "msg4": {
+    "tabError": {
         "message": "无法创建新标签页"
     },
-    "msg5": {
-        "message": "请在浏览器设置中配置快捷键"
-    },
-    "msg6": {
+    "policyUpdated": {
         "message": "作者更新了隐私策略, 请在关于界面查看"
     },
-    "msg7": {
-        "message": "更新已准备好, 请重启您的浏览器完成防沉迷终结者的更新"
-    },
-    "msg8": {
-        "message": "该功能需要向正在玩的游戏平台发送游戏信息和 您的 uid, 这些信息不会发送给除此以外的第三方, 关闭后防沉迷破解能力将减弱"
-    },
-    "msg9": {
-        "message": "点击此复选框的外面来将其选中"
-    },
-    "alt0": {
-        "message": "关于"
-    },
-    "alt1": {
-        "message": "设置"
-    },
-    "alt2": {
-        "message": "快捷键"
-    },
-    "alt3": {
-        "message": "返回"
-    },
-    "alt4": {
-        "message": "通知"
-    },
-    "alt5": {
-        "message": "重启"
-    },
-    "useGeneralRules": {
+    "b_useGeneralRules": {
         "message": "使用 / 取消通用规则破解"
     },
-    "hideGame": {
+    "b_hideGame": {
         "message": "隐藏游戏"
     },
-    "btn2": {
+    "b_login7k7k": {
         "message": "强制登录7k7k账号"
     },
-    "btn3": {
-        "message": "配置快捷键"
+    "b_about": {
+        "message": "关于"
     },
-    "btn4": {
-        "message": "启用高对比度主题"
+    "b_settings": {
+        "message": "设置"
     },
-    "btn5": {
-        "message": "接收通知"
+    "b_goBack": {
+        "message": "返回"
     },
-    "btn6": {
-        "message": "自动获取游戏真实地址"
-    },
-    "btn7": {
+    "close": {
         "message": "关闭"
+    },
+    "reload": {
+        "message": "重启"
+    },
+    "shortcuts": {
+        "message": "配置快捷键"
     }
 }

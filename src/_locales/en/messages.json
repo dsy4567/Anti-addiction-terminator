@@ -5,79 +5,46 @@
     "dec": {
         "message": "Play the game you want to play, regardless of age restriction"
     },
-    "about": {
-        "message": "<p>✨This extension can crack the anti-addiction of some game platforms and help you realize game freedom✨</p><p>⚠️Indulging in games is not conducive to physical and mental health. Please arrange the game time reasonably and play appropriately⚠️</p> <p> ~~Happiness is not divided into age~~<br /><br /> Copyright (C) 2022 dsy4567 ( <a target=\"_blank\" href=\"https://github.com/dsy4567\">GitHub</a> | <a target=\"_self\" href=\"mailto:dsy4567@outlook.com\">Email</a> ) <br /><br /> Licensed under the <a target=\"_blank\" href=\"/COPYING.txt\">GPL-3.0</a> , The source code is located in <a target=\"_blank\" href=\"https://github.com/dsy4567/Anti-addiction-terminator/\">GitHub</a> </p> <p> Thanks to icons provided by <a target=\"_blank\" href=\"https://iconpark.bytedance.com\">IconPark</a> </p> <p> <a id=\"给个好评\" target=\"_blank\" href=\"https://microsoftedge.microsoft.com/addons/detail/%E9%98%B2%E6%B2%89%E8%BF%B7%E7%BB%88%E7%BB%93%E8%80%85/chpenmljpdpkebnohfbbdpfelabcnlnp\">👍 Give a positive review</a> | <a target=\"_blank\" href=\"https://github.com/dsy4567/Anti-addiction-terminator/issues\" >🐛Report bugs</a> | <a target=\"_blank\" href=\"https://github.com/dsy4567/Anti-addiction-terminator/blob/master/privacy.md\">🙈Privacy Policy</a></p>"
+    "aboutHtml": {
+        "message": "<p>© 2022 - 2023 <a target='_blank' href='https://github.com/dsy4567'>dsy4567</a> | Licensed under the <a target='_blank' href='/COPYING.txt'>GPL-3.0</a> | <a href='https://github.com/dsy4567/Anti-addiction-terminator/'>source code</a></p><p><a target='_blank' href='https://microsoftedge.microsoft.com/addons/detail/%E9%98%B2%E6%B2%89%E8%BF%B7%E7%BB%88%E7%BB%93%E8%80%85/chpenmljpdpkebnohfbbdpfelabcnlnp' >👍Write a review</a> | <a target='_blank' href='https://github.com/dsy4567/Anti-addiction-terminator/issues'>🐛Report bugs</a> | <a target='_blank' href='https://github.com/dsy4567/Anti-addiction-terminator/blob/master/privacy.md' >🙈Privacy Policy</a></p>"
     },
-    "msg0": {
-        "message": "Indulging in games is not conducive to physical and mental health. Please arrange the game time reasonably and play appropriately."
-    },
-    "msg1": {
+    "tooManyErrors": {
         "message": "Too many errors, please right-click > inspect > console, then see more error messages"
     },
-    "msg2": {
+    "login7k7k": {
         "message": "✨ Anti-Addiction Terminator supports forced login 7k7k account, which can be logged in in the extended menu"
     },
-    "msg3": {
+    "operationFailed": {
         "message": "The operation failed, please check if you are visiting a supported game website, or refresh the web page, and try again"
     },
-    "msg4": {
+    "tabError": {
         "message": "Unable to create a new tab"
     },
-    "msg5": {
-        "message": "Please configure shortcut keys in your browser settings"
-    },
-    "msg6": {
+    "policyUpdated": {
         "message": "The author has updated the privacy policy, please check the about interface"
     },
-    "msg7": {
-        "message": "The update is ready, please restart your browser to complete the Anti-Addiction Terminator update"
+    "b_useGeneralRules": {
+        "message": "Use general rule / restore"
     },
-    "msg8": {
-        "message": "The feature requires sending game information and your uid to the platform you're playing, This information will not be sent to third parties other than this, after closing, the anti-addiction cracking ability will be weakened"
-    },
-    "msg9": {
-        "message": "Click outside this checkbox to select it"
-    },
-    "alt0": {
-        "message": "about"
-    },
-    "alt1": {
-        "message": "settings"
-    },
-    "alt2": {
-        "message": "Shortcuts"
-    },
-    "alt3": {
-        "message": "Back"
-    },
-    "alt4": {
-        "message": "notifications"
-    },
-    "alt5": {
-        "message": "reload"
-    },
-    "useGeneralRules": {
-        "message": "Use / cancel general rule cracking"
-    },
-    "hideGame": {
+    "b_hideGame": {
         "message": "Hide game"
     },
-    "btn2": {
+    "b_login7k7k": {
         "message": "Forced login to 7k7k account"
     },
-    "btn3": {
-        "message": "Configure shortcut keys"
+    "b_settings": {
+        "message": "settings"
     },
-    "btn4": {
-        "message": "Enable high-contrast themes"
+    "b_goBack": {
+        "message": "Back"
     },
-    "btn5": {
-        "message": "Receive notifications"
-    },
-    "btn6": {
-        "message": "Automatically get the game's real address"
-    },
-    "btn7": {
+    "close": {
         "message": "close"
+    },
+    "reload": {
+        "message": "reload"
+    },
+    "shortcuts": {
+        "message": "Configure shortcut keys"
     }
 }

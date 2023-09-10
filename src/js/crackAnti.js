@@ -1,7 +1,7 @@
 /*
-Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
-View License at <https://www.gnu.org/licenses/gpl-3.0.html>
-Based on: <https://github.com/dsy4567/Fucking-Anti-Indulgence/blob/main/Fucking-Anti-Indulgence-2.user.js>
+    Copyright (C) 2022 - 2023 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
+    View License at <https://www.gnu.org/licenses/gpl-3.0.html>
+    Source code: <https://github.com/dsy4567/Anti-addiction-terminator>
 */
 
 "use strict";
@@ -97,15 +97,13 @@ const /** @type {Record<string, (() => void)[]>} */ rules = {
                         document.cookie
                     )}`,
                     headers: {
-                        "Content-Type":
-                            "application/x-www-form-urlencoded; charset=UTF-8",
+                        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
                     },
                 })
                     .then(res => res.json())
                     .then(resp => {
                         log([resp]);
-                        if (resp.data.game.gameUrl)
-                            location.href = resp.data.game.gameUrl;
+                        if (resp.data.game.gameUrl) location.href = resp.data.game.gameUrl;
                         else throw new Error("[防沉迷终结者] gameUrl 为空");
                     })
                     .catch(err => console.error(err));
@@ -136,21 +134,15 @@ const /** @type {Record<string, (() => void)[]>} */ rules = {
                         "4399_HTML5_PREVIEW_USERID=",
                         ";",
                         document.cookie
-                    )}&accessToken=${getMiddleString(
-                        "HTML5_ACCESS_TOKEN=",
-                        ";",
-                        document.cookie
-                    )}`,
+                    )}&accessToken=${getMiddleString("HTML5_ACCESS_TOKEN=", ";", document.cookie)}`,
                     headers: {
-                        "Content-Type":
-                            "application/x-www-form-urlencoded; charset=UTF-8",
+                        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
                     },
                 })
                     .then(res => res.json())
                     .then(resp => {
                         log([resp]);
-                        if (resp.data.game.gameUrl)
-                            location.href = resp.data.game.gameUrl;
+                        if (resp.data.game.gameUrl) location.href = resp.data.game.gameUrl;
                         else throw new Error("[防沉迷终结者] gameUrl 为空");
                     })
                     .catch(err => console.error(err));
@@ -187,19 +179,12 @@ const /** @type {Record<string, (() => void)[]>} */ rules = {
                 unsafeWindow.open = null;
                 const f = () => {
                     removeListeners("div.gameInfo_begin.jsbegin");
-                    qs("div.gameInfo_begin.jsbegin").addEventListener(
-                        "click",
-                        () =>
-                            fetch(unsafeWindow.gameInfo.gameUrl)
-                                .then(res => res.text())
-                                .then(html => {
-                                    location.href = getMiddleString(
-                                        'gameUrl: "',
-                                        '",',
-                                        html,
-                                        "1"
-                                    );
-                                })
+                    qs("div.gameInfo_begin.jsbegin").addEventListener("click", () =>
+                        fetch(unsafeWindow.gameInfo.gameUrl)
+                            .then(res => res.text())
+                            .then(html => {
+                                location.href = getMiddleString('gameUrl: "', '",', html, "1");
+                            })
                     );
                 };
                 pageLoaded ? f() : addEventListener("DOMContentLoaded", f);
@@ -209,8 +194,7 @@ const /** @type {Record<string, (() => void)[]>} */ rules = {
             () => {
                 if (
                     host !== "m.7k7k.com" ||
-                    (host === "m.7k7k.com" &&
-                        !pathname.includes("/web/H5GAMES.html"))
+                    (host === "m.7k7k.com" && !pathname.includes("/web/H5GAMES.html"))
                 )
                     return;
 
@@ -243,8 +227,7 @@ const /** @type {Record<string, (() => void)[]>} */ rules = {
             () => {
                 if (
                     !host.includes("h5.7k7k.com") ||
-                    (host.includes("h5.7k7k.com") &&
-                        !pathname.includes("/game/"))
+                    (host.includes("h5.7k7k.com") && !pathname.includes("/game/"))
                 )
                     return;
 
@@ -298,8 +281,7 @@ const /** @type {Record<string, (() => void)[]>} */ rules = {
                         "3"
                     )}`,
                     headers: {
-                        "Content-Type":
-                            "application/x-www-form-urlencoded; charset=UTF-8",
+                        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
                     },
                 })
                     .then(res => res.json())
@@ -335,19 +317,13 @@ const /** @type {Record<string, (() => void)[]>} */ rules = {
             () => {
                 if (
                     host !== "i.7724.com" ||
-                    (host === "i.7724.com" &&
-                        !locationHref.includes("/user/danjilogin?url="))
+                    (host === "i.7724.com" && !locationHref.includes("/user/danjilogin?url="))
                 )
                     return;
 
                 log(["7724防沉迷"]);
 
-                let url = getMiddleString(
-                    "danjilogin?url=",
-                    undefined,
-                    locationHref,
-                    "1"
-                );
+                let url = getMiddleString("danjilogin?url=", undefined, locationHref, "1");
                 location.href = url;
                 succeeded = 1;
             },
@@ -357,8 +333,7 @@ const /** @type {Record<string, (() => void)[]>} */ rules = {
             () => {
                 if (
                     !host.includes("wvw.4366.com") ||
-                    (host.includes("wvw.4366.com") &&
-                        !pathname.includes("/game_login.php"))
+                    (host.includes("wvw.4366.com") && !pathname.includes("/game_login.php"))
                 )
                     return;
 
@@ -383,8 +358,7 @@ const /** @type {Record<string, (() => void)[]>} */ rules = {
             () => {
                 if (
                     !host.includes("game.37.com") ||
-                    (host.includes("game.37.com") &&
-                        !pathname.includes("/play.php"))
+                    (host.includes("game.37.com") && !pathname.includes("/play.php"))
                 )
                     return;
 
@@ -410,8 +384,7 @@ const /** @type {Record<string, (() => void)[]>} */ rules = {
             () => {
                 if (
                     !host.includes("wvw.9377.com") ||
-                    (host.includes("wvw.9377.com") &&
-                        !pathname.includes("/game_login.php"))
+                    (host.includes("wvw.9377.com") && !pathname.includes("/game_login.php"))
                 )
                     return;
 

@@ -1,16 +1,14 @@
-<!--
-Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
-View License at <https://www.gnu.org/licenses/gpl-3.0.html>
-Source code: <https://github.com/dsy4567/Anti-addiction-terminator>
--->
-
 <!DOCTYPE html>
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8" />
+        <!--
+            Copyright (C) 2022 - 2023 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
+            View License at <https://www.gnu.org/licenses/gpl-3.0.html>
+            Source code: <https://github.com/dsy4567/Anti-addiction-terminator>
+        -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>防沉迷终结者</title>
-        <script src="/lib/jquery-3.6.0.min.js"></script>
         <link rel="stylesheet" href="/css/global.css" />
         <link rel="stylesheet" href="/css/popup.css" />
     </head>
@@ -30,29 +28,11 @@ Source code: <https://github.com/dsy4567/Anti-addiction-terminator>
                 <small id="appVersion"></small>
             </div>
             <div class="right">
-                <button
-                    type="button"
-                    class="iconButton stroke"
-                    id="b_settings"
-                    title="settings"
-                >
+                <button type="button" class="iconButton stroke" id="b_settings" title="settings">
                     <svg data-icon="settings"></svg>
                 </button>
-                <button
-                    type="button"
-                    class="iconButton"
-                    id="b_about"
-                    title="about"
-                >
-                    <svg data-icon="about"></svg>
-                </button>
 
-                <button
-                    type="button"
-                    class="iconButton"
-                    id="b_goback"
-                    title="goback"
-                >
+                <button type="button" class="iconButton" id="b_goBack" title="返回">
                     <svg data-icon="back"></svg>
                 </button>
             </div>
@@ -79,16 +59,13 @@ Source code: <https://github.com/dsy4567/Anti-addiction-terminator>
 
         <div id="about">
             <p>
-                © 2022 - 2023 dsy4567
+                © 2022 - 2023
                 <a target="_blank" href="https://github.com/dsy4567">dsy4567</a>
-                | 在<a target="_blank" href="/COPYING.txt">GPL-3.0</a>下许可 |
-                <a href="https://github.com/dsy4567/Anti-addiction-terminator/"
-                    >源代码</a
-                >
+                | 在 <a target="_blank" href="/COPYING.txt">GPL-3.0</a> 下许可 |
+                <a href="https://github.com/dsy4567/Anti-addiction-terminator/">源代码</a>
             </p>
             <p>
                 <a
-                    id="给个好评"
                     target="_blank"
                     href="https://microsoftedge.microsoft.com/addons/detail/%E9%98%B2%E6%B2%89%E8%BF%B7%E7%BB%88%E7%BB%93%E8%80%85/chpenmljpdpkebnohfbbdpfelabcnlnp"
                     >👍给个好评</a
@@ -109,67 +86,15 @@ Source code: <https://github.com/dsy4567/Anti-addiction-terminator>
         </div>
 
         <div id="settings">
-            <button
-                type="button"
-                class="settingItem"
-                title="快捷键"
-                id="shortcutKeys"
-            >
+            <button type="button" class="settingItem" title="快捷键" id="shortcuts">
                 <svg data-icon="keyboard"></svg>
                 <span>配置快捷键</span>
             </button>
-            <button type="button" class="settingItem" title="重启" id="重启">
-                <svg
-                    class="图标 stroke"
-                    viewBox="0 0 48 48"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <path
-                        d="M36.7279 36.7279C33.4706 39.9853 28.9706 42 24 42C14.0589 42 6 33.9411 6 24C6 14.0589 14.0589 6 24 6C28.9706 6 33.4706 8.01472 36.7279 11.2721C38.3859 12.9301 42 17 42 17"
-                        stroke-width="4"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    />
-                    <path
-                        d="M42 8V17H33"
-                        stroke-width="4"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    />
-                </svg>
+            <button type="button" class="settingItem" title="重启" id="reload">
+                <svg data-icon="reload"></svg>
                 <span>重启</span>
             </button>
-            <button type="button" class="settingItem" title="主题" id="主题">
-                <svg
-                    class="图标 stroke"
-                    viewBox="0 0 48 48"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <path
-                        d="M18 6C18 9.31371 20.6863 12 24 12C27.3137 12 30 9.31371 30 6H35.4545L42 15.8182L36.2727 20.7273V42H11.7273V20.7273L6 15.8182L12.5455 6H18Z"
-                        fill="none"
-                        stroke-width="4"
-                        stroke-linejoin="round"
-                    />
-                </svg>
-                <span>
-                    <span>主题</span>
-                    <input type="color" title="背景色" id="背景色" />
-                    <input type="color" title="强调色" id="强调色" />
-                </span>
-            </button>
-            <button
-                type="button"
-                class="settingItem"
-                title="该功能需要向正在玩的游戏平台发送游戏信息和 您的 uid, 这些信息不会发送给除此以外的第三方"
-                id="自动获取游戏真实地址"
-            >
-                <input title="点击此复选框的外面来将其选中" type="checkbox" />
-                <span>自动获取游戏真实地址</span>
-            </button>
         </div>
-        <script src="/js/popup.js"></script>
+        <script type="module" src="/js/popup.js"></script>
     </body>
 </html>

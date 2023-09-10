@@ -1,7 +1,7 @@
 /*
-Copyright (C) 2022 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
-View License at <https://www.gnu.org/licenses/gpl-3.0.html>
-Source code: <https://github.com/dsy4567/Anti-addiction-terminator>
+    Copyright (C) 2022 - 2023 dsy4567 <https://github.com/dsy4567 | dsy4567@outlook.com>
+    View License at <https://www.gnu.org/licenses/gpl-3.0.html>
+    Source code: <https://github.com/dsy4567/Anti-addiction-terminator>
 */
 
 let generalRulesStyle = false;
@@ -188,7 +188,7 @@ try {
 try {
     if (location.host == "www.7k7k.com") {
         try {
-            document.querySelector("div.login_no").title = chrome.i18n.getMessage("msg2");
+            document.querySelector("div.login_no").title = chrome.i18n.getMessage("login7k7k");
         } catch (e) {}
 
         if (location.href.includes("AIT-doLogin"))
