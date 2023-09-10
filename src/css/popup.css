@@ -1,4 +1,4 @@
-@keyframes 齿轮 {
+@keyframes settings {
     from {
         transform: rotate(0deg);
     }
@@ -6,7 +6,7 @@
         transform: rotate(360deg);
     }
 }
-@keyframes 飞机 {
+@keyframes plane {
     0% {
         transform: translate(-1vw, 1vh);
     }
@@ -17,7 +17,7 @@
         transform: translate(-1vw, 1vh);
     }
 }
-@keyframes 游戏手柄 {
+@keyframes gamehandle {
     0% {
         transform: rotate(15deg);
     }
@@ -30,7 +30,6 @@
 }
 
 html {
-    display: none;
     background-color: var(--theme-color1);
     color: var(--theme-color2);
     margin: 0;
@@ -45,6 +44,7 @@ body {
 }
 p {
     font-size: 16px;
+    margin: 4px;
     text-align: center;
 }
 
@@ -66,14 +66,12 @@ p {
 #toolbar .left *,
 #toolbar .right * {
     margin: 4px;
-    /* margin-left: 4px; */
-    /* margin-right: 4px; */
 }
 #logo {
     border-radius: 50%;
 }
-#b-settings:active img {
-    animation-name: 齿轮;
+#b-settings:active svg {
+    animation-name: settings;
     animation-duration: 0.5s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
@@ -84,13 +82,13 @@ p {
     margin: 4px;
 }
 #about,
-.横幅 {
+.notifications {
     user-select: text;
 }
 #about,
 #settings,
-#通知 {
-    display: none;
+#notifications {
+    display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
@@ -105,57 +103,49 @@ p {
     align-content: center;
 }
 
-.横幅 {
+.notification {
     border-radius: 8px;
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
     font-size: large;
-    /* width: 100%; */
     min-height: 50px;
     margin-bottom: 4px;
     text-align: center;
     padding: 4px;
+    width: calc(100% - 16px);
     z-index: 99;
     flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
 }
-.横幅 span {
+.notification > span {
     max-width: calc(100% - 96px);
     min-width: calc(100% - 96px);
 }
-.横幅图标,
-.关闭横幅 {
-    width: 24px;
-}
-.关闭横幅 {
-    border: none;
+.notification > svg,
+.notification > .iconButton {
     width: 24px;
     height: 24px;
-    background-color: rgba(0, 0, 0, 0);
-    background-size: cover;
-    background-image: url(/icon/close.svg);
+}
+.notification > .iconButton {
+    border: none;
+    padding: 0;
 }
 
-#返回 {
-    display: none;
-}
-
-.装饰品 {
+.plane,.gamehandle {
     animation-duration: 5s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     position: absolute;
+    bottom: 5vh;
     width: 5vw;
     height: auto;
     z-index: 0;
 }
-.飞机 {
-    animation-name: 飞机;
+.plane {
+    animation-name: plane;
     right: 5vw;
-    bottom: 5vh;
 }
-.游戏手柄 {
-    animation-name: 游戏手柄;
+.gamehandle {
+    animation-name: gamehandle;
     left: 5vw;
-    bottom: 5vh;
 }

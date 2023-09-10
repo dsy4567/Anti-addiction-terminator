@@ -28,12 +28,22 @@
                 <small id="appVersion"></small>
             </div>
             <div class="right">
-                <button type="button" class="iconButton stroke" id="b_settings" title="settings">
+                <button
+                    type="button"
+                    class="iconButton stroke"
+                    id="b_settings"
+                    title="settings"
+                >
                     <svg data-icon="settings"></svg>
                 </button>
 
-                <button type="button" class="iconButton" id="b_goBack" title="返回">
-                    <svg data-icon="back"></svg>
+                <button
+                    type="button"
+                    class="iconButton hide"
+                    id="b_goBack"
+                    title="返回"
+                >
+                    <svg data-icon="goBack"></svg>
                 </button>
             </div>
         </div>
@@ -62,7 +72,9 @@
                 © 2022 - 2023
                 <a target="_blank" href="https://github.com/dsy4567">dsy4567</a>
                 | 在 <a target="_blank" href="/COPYING.txt">GPL-3.0</a> 下许可 |
-                <a href="https://github.com/dsy4567/Anti-addiction-terminator/">源代码</a>
+                <a href="https://github.com/dsy4567/Anti-addiction-terminator"
+                    >源代码</a
+                >
             </p>
             <p>
                 <a
@@ -85,8 +97,13 @@
             </p>
         </div>
 
-        <div id="settings">
-            <button type="button" class="settingItem" title="快捷键" id="shortcuts">
+        <div id="settings" class="hide">
+            <button
+                type="button"
+                class="settingItem"
+                title="快捷键"
+                id="shortcuts"
+            >
                 <svg data-icon="keyboard"></svg>
                 <span>配置快捷键</span>
             </button>

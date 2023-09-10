@@ -22,11 +22,15 @@ function addStyle(/** @type {string} */ css, /** @type {Action} */ type) {
     $style.innerHTML = css;
     $style.setAttribute("AIT-style-id", ("" + Math.random()).split(".")[1]);
     $style.setAttribute("AIT-style-type", type);
-    (document.body || document.head || document.documentElement).appendChild($style);
+    (document.body || document.head || document.documentElement).appendChild(
+        $style
+    );
     return true;
 }
 function removeStyle(/** @type {Action} */ type) {
-    document.querySelectorAll("style[AIT-style-type='" + type + "']").forEach(el => el.remove());
+    document
+        .querySelectorAll("style[AIT-style-type='" + type + "']")
+        .forEach(el => el.remove());
     return false;
 }
 
@@ -42,7 +46,14 @@ function useGeneralRules() {
         popupStyle = removeStyle("hideGame");
     } catch (e) {}
 
-    const idOrClassNameOfGame = ["flash", "game", "play", "youxi", "swf", "flash"];
+    const idOrClassNameOfGame = [
+        "flash",
+        "game",
+        "play",
+        "youxi",
+        "swf",
+        "flash",
+    ];
     const idOrClassNameOfAnti = [
         "anti",
         "fcm",
@@ -136,7 +147,9 @@ function hideGame() {
     mask = document.createElement("div");
     mask.className = "mycmMask";
     mask.style.cssText =
-        "height: " + document.documentElement.offsetHeight + "px; z-index: 99998; display: block";
+        "height: " +
+        document.documentElement.offsetHeight +
+        "px; z-index: 99998; display: block";
     mask.innerHTML = "";
     document.body.appendChild(mask);
 }
@@ -144,7 +157,9 @@ function injectsScript() {
     let $script = document.createElement("script");
     $script.charset = "utf-8";
     $script.src = chrome.runtime.getURL("/js/crackAnti.js");
-    (document.body || document.head || document.documentElement).appendChild($script);
+    (document.body || document.head || document.documentElement).appendChild(
+        $script
+    );
 }
 
 try {
@@ -181,19 +196,6 @@ try {
             sendResp("ok");
         }
     });
-} catch (e) {
-    reportError(e);
-}
-
-try {
-    if (location.host == "www.7k7k.com") {
-        try {
-            document.querySelector("div.login_no").title = chrome.i18n.getMessage("login7k7k");
-        } catch (e) {}
-
-        if (location.href.includes("AIT-doLogin"))
-            document.querySelector("div.login_no > div.h_login.login_btn > span")?.click();
-    }
 } catch (e) {
     reportError(e);
 }

@@ -6,7 +6,7 @@
         "message": "玩您想玩的游戏, 不受年龄限制"
     },
     "aboutHtml": {
-        "message": "<p>© 2022 - 2023 <a target='_blank' href='https://github.com/dsy4567'>dsy4567</a> | 在 <a target='_blank' href='/COPYING.txt'>GPL-3.0</a> 下许可 | <a href='https://github.com/dsy4567/Anti-addiction-terminator/'>源代码</a></p><p><a target='_blank' href='https://microsoftedge.microsoft.com/addons/detail/%E9%98%B2%E6%B2%89%E8%BF%B7%E7%BB%88%E7%BB%93%E8%80%85/chpenmljpdpkebnohfbbdpfelabcnlnp' >👍给个好评</a> | <a target='_blank' href='https://github.com/dsy4567/Anti-addiction-terminator/issues'>🐛报告bug</a> | <a target='_blank' href='https://github.com/dsy4567/Anti-addiction-terminator/blob/master/privacy.md' >🙈隐私政策</a></p>"
+        "message": "<p>© 2022 - 2023 <a target='_blank' href='https://github.com/dsy4567'>dsy4567</a> | 在 <a target='_blank' href='/COPYING.txt'>GPL-3.0</a> 下许可 | <a target='_blank' href='https://github.com/dsy4567/Anti-addiction-terminator'>源代码</a></p><p><a target='_blank' href='https://microsoftedge.microsoft.com/addons/detail/%E9%98%B2%E6%B2%89%E8%BF%B7%E7%BB%88%E7%BB%93%E8%80%85/chpenmljpdpkebnohfbbdpfelabcnlnp' >👍给个好评</a> | <a target='_blank' href='https://github.com/dsy4567/Anti-addiction-terminator/issues'>🐛报告bug</a> | <a target='_blank' href='https://github.com/dsy4567/Anti-addiction-terminator/blob/master/privacy.md' >🙈隐私政策</a></p>"
     },
     "tooManyErrors": {
         "message": "错误太多, 请单击右键 > 检查 > 控制台(console), 然后查看更多错误信息"

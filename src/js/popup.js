@@ -4,14 +4,36 @@
     Source code: <https://github.com/dsy4567/Anti-addiction-terminator>
 */
 
+window.onerror = ev => {
+    reportError(String(ev));
+};
+
 const svgIcons = await (await fetch("/icon/icon.json")).json();
 
 let errorCount = 0;
 let tooManyErrors = false;
 
-window.onerror = ev => {
-    reportError(String(ev));
-};
+const lastModificationDateOfPrivacyPolicy = "2022.7.18",
+    $appName = $("#appName"),
+    $appVersion = $("#appVersion"),
+    $b_settings = $("#b_settings"),
+    $b_goBack = $("#b_goBack"),
+    $notifications = $("#notifications"),
+    $tools = $("#tools"),
+    $b_useGeneralRules = $("#b_useGeneralRules"),
+    $b_hideGame = $("#b_hideGame"),
+    $b_login7k7k = $("#b_login7k7k"),
+    $about = $("#about"),
+    $settings = $("#settings"),
+    $shortcuts = $("#shortcuts"),
+    $shortcuts_text = $("#shortcuts span"),
+    $reload = $("#reload"),
+    $reload_text = $("#reload span");
+
+function $(selector) {
+    return document.querySelector(selector);
+}
+
 function reportError(e, friendlyMessage) {
     if (
         !e ||
@@ -50,6 +72,7 @@ function createNotification(content, type = 1, onclose = () => {}) {
         let $svgIcon = document.createElement("svg");
         let $content = document.createElement("span");
         let $close = document.createElement("button");
+        $notification.append($svgIcon, $content, $close);
 
         $notification.className = "notification";
         $notification.style.backgroundColor = colors[type];
@@ -57,46 +80,64 @@ function createNotification(content, type = 1, onclose = () => {}) {
         $svgIcon.outerHTML = icons[type];
         $content.innerText = content;
         $close.className = "iconButton";
+        $close.innerHTML = svgIcons["close"];
         $close.title = chrome.i18n.getMessage("close");
-        $close.type = "button";
+        $close.role = "button";
         $close.onclick = () => {
             onclose();
             $notification.remove();
         };
-        $notification.append($svgIcon);
-        $notification.append($content);
-        $notification.append($close);
         $notifications.append($notification);
     }
 }
+
+window.createNotification = createNotification;
 
 function useGeneralRules() {
     chrome.tabs
         .query({ active: true, currentWindow: true })
         .then(tabs => {
             try {
-                chrome.tabs.sendMessage(tabs[0].id, { action: "useGeneralRules" }, resp => {
-                    console.log("received: " + resp);
-                });
+                chrome.tabs.sendMessage(
+                    tabs[0].id,
+                    { action: "useGeneralRules" },
+                    resp => {
+                        console.log("received: " + resp);
+                    }
+                );
             } catch (e) {
-                reportError(new Error(e), chrome.i18n.getMessage("operationFailed"));
+                reportError(
+                    new Error(e),
+                    chrome.i18n.getMessage("operationFailed")
+                );
             }
         })
-        .catch(e => reportError(new Error(e), chrome.i18n.getMessage("operationFailed")));
+        .catch(e =>
+            reportError(new Error(e), chrome.i18n.getMessage("operationFailed"))
+        );
 }
 function hideGame() {
     chrome.tabs
         .query({ active: true, currentWindow: true })
         .then(tabs => {
             try {
-                chrome.tabs.sendMessage(tabs[0].id, { action: "hideGame" }, resp => {
-                    console.log("received: " + resp);
-                });
+                chrome.tabs.sendMessage(
+                    tabs[0].id,
+                    { action: "hideGame" },
+                    resp => {
+                        console.log("received: " + resp);
+                    }
+                );
             } catch (e) {
-                reportError(new Error(e), chrome.i18n.getMessage("operationFailed"));
+                reportError(
+                    new Error(e),
+                    chrome.i18n.getMessage("operationFailed")
+                );
             }
         })
-        .catch(e => reportError(new Error(e), chrome.i18n.getMessage("operationFailed")));
+        .catch(e =>
+            reportError(new Error(e), chrome.i18n.getMessage("operationFailed"))
+        );
 }
 
 function hideElement(/** @type {HTMLDivElement[]} */ ...elem) {
@@ -106,30 +147,12 @@ function showElement(/** @type {HTMLDivElement[]} */ ...elem) {
     for (const el of elem) el.classList.remove("hide");
 }
 
-const lastModificationDateOfPrivacyPolicy = "2022.7.18",
-    $ = document.querySelector;
-var $appName = $("#appName"),
-    $appVersion = $("#appVersion"),
-    $b_settings = $("#b_settings"),
-    $b_goBack = $("#goBack"),
-    $notifications = $("#notifications"),
-    $tools = $("#tools"),
-    $b_useGeneralRules = $("#b_useGeneralRules"),
-    $b_hideGame = $("#b_hideGame"),
-    $b_login7k7k = $("#b_login7k7k"),
-    $about = $("#about"),
-    $settings = $("#settings"),
-    $shortcuts = $("#shortcuts"),
-    $shortcuts_text = $("#shortcuts_ span"),
-    $reload = $("#reload"),
-    $reload_text = $("#reload span");
-
 $b_goBack.addEventListener("click", () => {
     hideElement($settings, $b_goBack);
-    showElement($tools, $about);
+    showElement($tools, $about, $b_settings);
 });
 $b_settings.addEventListener("click", () => {
-    hideElement($tools, $about);
+    hideElement($tools, $about, $b_settings);
     showElement($settings, $b_goBack);
 });
 $b_useGeneralRules.addEventListener("click", () => {
@@ -137,12 +160,17 @@ $b_useGeneralRules.addEventListener("click", () => {
 });
 $b_hideGame.addEventListener("click", hideGame);
 $b_login7k7k.addEventListener("click", () => {
-    chrome.tabs
-        .create({
-            url: "http://www.7k7k.com/swf/204220.htm#AIT-doLogin",
-            active: true,
-        })
-        .catch(e => reportError(new Error(e), chrome.i18n.getMessage("tabError")));
+    createNotification("将在 3 秒后打开游戏，请手动登录");
+    setTimeout(() => {
+        chrome.tabs
+            .create({
+                url: "http://www.7k7k.com/swf/204220.htm#AIT-doLogin",
+                active: true,
+            })
+            .catch(e =>
+                reportError(new Error(e), chrome.i18n.getMessage("tabError"))
+            );
+    }, 3000);
 });
 $shortcuts.addEventListener("click", () => {
     chrome.tabs
@@ -150,7 +178,9 @@ $shortcuts.addEventListener("click", () => {
             url: "chrome://extensions/shortcuts",
             active: true,
         })
-        .catch(e => reportError(new Error(e), chrome.i18n.getMessage("tabError")));
+        .catch(e =>
+            reportError(new Error(e), chrome.i18n.getMessage("tabError"))
+        );
 });
 $reload.addEventListener("click", () => {
     chrome.runtime.reload();
@@ -170,20 +200,33 @@ $about.innerHTML = chrome.i18n.getMessage("aboutHtml");
 $b_settings.setAttribute("title", chrome.i18n.getMessage("b_settings"));
 $b_goBack.setAttribute("title", chrome.i18n.getMessage("b_goBack"));
 
-$shortcuts.setAttribute("title", ($shortcuts_text.innerText = chrome.i18n.getMessage("shortcuts")));
-$reload.setAttribute("title", ($reload_text.innerText = chrome.i18n.getMessage("reload")));
+$shortcuts.setAttribute(
+    "title",
+    ($shortcuts_text.innerText = chrome.i18n.getMessage("shortcuts"))
+);
+$reload.setAttribute(
+    "title",
+    ($reload_text.innerText = chrome.i18n.getMessage("reload"))
+);
 
 document.querySelectorAll("svg[data-icon]").forEach(el => {
     const icon = svgIcons[el.dataset.icon];
     if (icon) el.outerHTML = icon;
 });
 
-if (localStorage.getItem("隐私策略最后修改日期") != lastModificationDateOfPrivacyPolicy) {
+if (
+    localStorage.getItem("隐私策略最后修改日期") !=
+    lastModificationDateOfPrivacyPolicy
+) {
     createNotification(
-        chrome.i18n.getMessage("policyUpdated") + `(${lastModificationDateOfPrivacyPolicy})`,
+        chrome.i18n.getMessage("policyUpdated") +
+            `(${lastModificationDateOfPrivacyPolicy})`,
         1,
         () => {
-            localStorage.setItem("隐私策略最后修改日期", lastModificationDateOfPrivacyPolicy);
+            localStorage.setItem(
+                "隐私策略最后修改日期",
+                lastModificationDateOfPrivacyPolicy
+            );
         }
     );
 }

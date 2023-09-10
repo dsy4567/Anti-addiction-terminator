@@ -16,7 +16,7 @@
         --red: rgb(128, 0, 0);
     }
 }
-@media (forced-colors: active) {
+/* @media (forced-colors: active) {
     html {
         --theme-color1: black;
         --theme-color2: white;
@@ -39,38 +39,32 @@
         text-decoration: 1px underline white !important;
     }
     .iconButton,
-    button.图标,
-    button.大按钮,
+    #tools > button,
     .settingItem {
         border: 2px solid var(--theme-color4) !important;
         color: white;
     }
     .iconButton:hover,
     .iconButton:focus-visible-visible,
-    button.图标:hover,
-    button.图标:focus-visible,
-    button.大按钮:hover,
-    button.大按钮:focus-visible,
+    #tools > button:hover,
+    #tools > button:focus-visible,
     .settingItem:hover,
     .settingItem:focus-visible {
         border: 2px dashed var(--theme-color4) !important;
     }
-    button.大按钮,
+    #tools > button,
     .settingItem,
     .iconButton {
         background-color: rgba(0, 0, 0, 0) !important;
     }
-    .横幅 {
+    .notification {
         border: 2px solid;
         background-color: black !important;
     }
-    .横幅:hover {
+    .notification:hover {
         border-style: dashed;
     }
-    .图标.不点击 {
-        border: 2px solid black;
-    }
-}
+} */
 
 html {
     --theme-color4: #66ccff;
@@ -94,6 +88,10 @@ input[type="checkbox"] {
     accent-color: var(--theme-color4);
 }
 
+.hide{
+    display: none !important;
+}
+
 a {
     text-decoration: none;
     font-weight: 200;
@@ -103,7 +101,7 @@ a:hover {
     text-decoration: 1px underline var(--theme-color2);
 }
 
-button.大按钮 {
+#tools > button {
     background-color: var(--theme-color4);
     border: none;
     border-radius: 8px;
@@ -111,26 +109,18 @@ button.大按钮 {
     margin: 4px;
     padding: 12px;
 }
-button.大按钮:active,
+#tools > button:active,
 .settingItem:active,
 .iconButton:active {
     filter: brightness(0.8) !important;
 }
-button.大按钮:hover,
+#tools > button:hover,
 .settingItem:hover,
 .iconButton:hover,
-button.大按钮:focus-visible,
+#tools > button:focus-visible,
 .settingItem:focus-visible,
 .iconButton:focus-visible {
     filter: brightness(1.2);
-}
-
-.图标 {
-    width: 24px;
-    height: 24px;
-}
-.图标.不点击 {
-    cursor: default;
 }
 
 .iconButton {
@@ -145,6 +135,10 @@ button.大按钮:focus-visible,
 .iconButton:hover,
 .iconButton:focus-visible {
     background-color: var(--theme-color3);
+}
+ svg{
+    width: 24px;
+    height: 24px;
 }
 .settingItem {
     border: none;
