@@ -16,58 +16,10 @@
         --red: rgb(128, 0, 0);
     }
 }
-/* @media (forced-colors: active) {
-    html {
-        --theme-color1: black;
-        --theme-color2: white;
-        --green: rgb(0, 255, 0);
-        --red: rgb(255, 0, 0);
-    }
-    ::selection {
-        background-color: white !important;
-        color: black;
-    }
-    body,
-    html {
-        background-color: black !important;
-        color: white !important;
-    }
-    a {
-        color: yellow !important;
-    }
-    a:hover {
-        text-decoration: 1px underline white !important;
-    }
-    .iconButton,
-    #tools > button,
-    .settingItem {
-        border: 2px solid var(--theme-color4) !important;
-        color: white;
-    }
-    .iconButton:hover,
-    .iconButton:focus-visible-visible,
-    #tools > button:hover,
-    #tools > button:focus-visible,
-    .settingItem:hover,
-    .settingItem:focus-visible {
-        border: 2px dashed var(--theme-color4) !important;
-    }
-    #tools > button,
-    .settingItem,
-    .iconButton {
-        background-color: rgba(0, 0, 0, 0) !important;
-    }
-    .notification {
-        border: 2px solid;
-        background-color: black !important;
-    }
-    .notification:hover {
-        border-style: dashed;
-    }
-} */
 
 html {
-    --theme-color4: #66ccff;
+    --theme-color4:
+    rgb(0 200 255);
 }
 ::selection {
     background-color: var(--theme-color3);
@@ -103,7 +55,7 @@ a:hover {
 
 #tools > button {
     background-color: var(--theme-color4);
-    border: none;
+    border: 2px solid #0000;
     border-radius: 8px;
     font-size: 16px;
     margin: 4px;
@@ -120,14 +72,17 @@ a:hover {
 #tools > button:focus-visible,
 .settingItem:focus-visible,
 .iconButton:focus-visible {
+    border: 2px dashed #0000;
     filter: brightness(1.2);
 }
 
 .iconButton {
-    border: none;
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0);
+    border: 2px solid #0000;
     border-radius: 50%;
+    display: flex;
+    align-items: center;
     padding: 8px;
     padding-left: 9.5px;
     padding-right: 9.5px;
@@ -141,7 +96,7 @@ a:hover {
     height: 24px;
 }
 .settingItem {
-    border: none;
+    border: 2px solid #0000;
     font-size: 16px;
     height: 50px;
     width: 95%;

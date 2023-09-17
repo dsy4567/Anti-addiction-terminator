@@ -104,6 +104,7 @@ p {
 }
 
 .notification {
+    border: 2px solid #0000;
     border-radius: 8px;
     display: flex;
     font-size: large;
@@ -127,7 +128,6 @@ p {
     height: 24px;
 }
 .notification > .iconButton {
-    border: none;
     padding: 0;
 }
 
